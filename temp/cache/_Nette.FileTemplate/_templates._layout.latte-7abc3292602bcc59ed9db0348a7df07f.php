@@ -1,30 +1,30 @@
-<?php //netteCache[01]000406a:2:{s:4:"time";s:21:"0.38858300 1380577850";s:9:"callbacks";a:2:{i:0;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:9:"checkFile";}i:1;s:84:"/Applications/XAMPP/xamppfiles/htdocs/spravaregistratury/app/templates/@layout.latte";i:2;i:1375917388;}i:1;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:10:"checkConst";}i:1;s:25:"Nette\Framework::REVISION";i:2;s:30:"80a7e46 released on 2013-08-08";}}}?><?php
+<?php //netteCache[01]000406a:2:{s:4:"time";s:21:"0.69147300 1380919376";s:9:"callbacks";a:2:{i:0;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:9:"checkFile";}i:1;s:84:"/Applications/XAMPP/xamppfiles/htdocs/spravaregistratury/app/templates/@layout.latte";i:2;i:1380919229;}i:1;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:10:"checkConst";}i:1;s:25:"Nette\Framework::REVISION";i:2;s:30:"80a7e46 released on 2013-08-08";}}}?><?php
 
 // source file: /Applications/XAMPP/xamppfiles/htdocs/spravaregistratury/app/templates/@layout.latte
 
 ?><?php
 // prolog Nette\Latte\Macros\CoreMacros
-list($_l, $_g) = Nette\Latte\Macros\CoreMacros::initRuntime($template, '00c2eyn0dv')
+list($_l, $_g) = Nette\Latte\Macros\CoreMacros::initRuntime($template, '9q5j54rq13')
 ;
 // prolog Nette\Latte\Macros\UIMacros
 //
 // block title
 //
-if (!function_exists($_l->blocks['title'][] = '_lb131ec24a8d_title')) { function _lb131ec24a8d_title($_l, $_args) { extract($_args)
-?>Nette Application Skeleton<?php
+if (!function_exists($_l->blocks['title'][] = '_lb162e0d50e7_title')) { function _lb162e0d50e7_title($_l, $_args) { extract($_args)
+?>NP-publication - prihlásenie<?php
 }}
 
 //
 // block head
 //
-if (!function_exists($_l->blocks['head'][] = '_lb486a90ee80_head')) { function _lb486a90ee80_head($_l, $_args) { extract($_args)
+if (!function_exists($_l->blocks['head'][] = '_lbf1bae6463e_head')) { function _lbf1bae6463e_head($_l, $_args) { extract($_args)
 ;
 }}
 
 //
 // block scripts
 //
-if (!function_exists($_l->blocks['scripts'][] = '_lb1f2e2c76b2_scripts')) { function _lb1f2e2c76b2_scripts($_l, $_args) { extract($_args)
+if (!function_exists($_l->blocks['scripts'][] = '_lb990869359d_scripts')) { function _lb990869359d_scripts($_l, $_args) { extract($_args)
 ?>	<script src="<?php echo htmlSpecialChars($basePath) ?>/js/jquery.js"></script>
 	<script src="<?php echo htmlSpecialChars($basePath) ?>/js/netteForms.js"></script>
 	<script src="<?php echo htmlSpecialChars($basePath) ?>/js/main.js"></script>
@@ -62,9 +62,10 @@ if ($_l->extends) {
 	<title><?php if ($_l->extends) { ob_end_clean(); return Nette\Latte\Macros\CoreMacros::includeTemplate($_l->extends, get_defined_vars(), $template)->render(); }
 ob_start(); call_user_func(reset($_l->blocks['title']), $_l, get_defined_vars()); echo $template->upper($template->striptags(ob_get_clean()))  ?></title>
 
-	<link rel="stylesheet" media="screen,projection,tv" href="<?php echo htmlSpecialChars($basePath) ?>/css/screen.css" />
+	<link rel="stylesheet" media="screen,projection,tv" href="<?php echo htmlSpecialChars($basePath) ?>/css/style.css" />
 	<link rel="stylesheet" media="print" href="<?php echo htmlSpecialChars($basePath) ?>/css/print.css" />
 	<link rel="shortcut icon" href="<?php echo htmlSpecialChars($basePath) ?>/favicon.ico" />
+        <link href='http://fonts.googleapis.com/css?family=Droid+Sans:400,700' rel='stylesheet' />
 	<?php call_user_func(reset($_l->blocks['head']), $_l, get_defined_vars())  ?>
 
 </head>

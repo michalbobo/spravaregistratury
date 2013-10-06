@@ -78,7 +78,6 @@ p { margin-bottom: 1.666em; } /* 20/12 */
 	display: inline-block;
 	background-repeat: no-repeat;
 }
-
 .image-left {
 	background-position: 0.833em center;
 	padding-left: 3em;	/*36/12*/
@@ -89,8 +88,8 @@ p { margin-bottom: 1.666em; } /* 20/12 */
 	padding-right: 3em;
 }
 
-.ic-left-arrow { background-image: url("../img/icons/ic-left-arrow.png"); }
-.ic-right-arrow { background-image: url("../img/icons/ic-right-arrow.png"); }
+.ic-left-arrow { background-image: url("../images/icons/ic-left-arrow.png"); }
+.ic-right-arrow { background-image: url("../images/icons/ic-right-arrow.png"); }
 
 
 
@@ -152,7 +151,7 @@ div#header {
 }
 
 div#login-intro {
-	background: transparent url("../img/lock-icon.png") no-repeat left center;
+	background: transparent url("../images/lock-icon.png") no-repeat left center;
 	padding: 0.3125em 0 0.3125em 3.125em; /* 5/16 50/16 */
 }
 
@@ -161,7 +160,7 @@ div#login-intro {
 
 /*-------------content-----------------------------*/
 div#content {
-	background: #f8f9fa url("../img/artwork-bg.png") repeat-x left bottom;
+	background: #f8f9fa url("../images/artwork-bg.png") repeat-x left bottom;
 	padding: 1.875em; /*30/16 */;
 	border: 1px solid #eeefef;
 }
@@ -169,7 +168,7 @@ div#content {
 
 
 /*-------------forms------------------------------*/
-form#login-form {
+form#frm-signInForm {
 	width: 18.75em; /* 300/16 */
 	margin: 0 auto;
 }

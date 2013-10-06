@@ -1,6 +1,6 @@
 <?php
 
-use Nette\Application\UI;
+use Nette\Application\UI\Form;
 
 
 /**
@@ -16,22 +16,37 @@ class SignPresenter extends BasePresenter
 	 */
 	protected function createComponentSignInForm()
 	{
-		$form = new UI\Form;
-		$form->addText('username', 'Username:')
-			->setRequired('Please enter your username.');
-
-		$form->addPassword('password', 'Password:')
-			->setRequired('Please enter your password.');
-
-		$form->addCheckbox('remember', 'Keep me signed in');
-
-		$form->addSubmit('send', 'Sign in');
-
-		// call method signInFormSucceeded() on success
-		$form->onSuccess[] = $this->signInFormSucceeded;
-		return $form;
+		$form = new Form();
+                $form->addText('username','Užívateľské meno:',30,20)
+		    ->addRule(Form::FILLED,'Je nutné zadať užívateľské meno')
+			    ->setAttribute('class','round full-width')
+			    ->setAttribute('name','username')
+			    ->setAttribute('placeholder','Užívateľské meno');
+		
+                $form->addPassword('password','Heslo:',30)
+			->addRule(Form::FILLED,'Je nutné zadať heslo')
+			->setAttribute('class','round full-width')
+			->setAttribute('name','password')
+			->setAttribute('placeholder','Heslo');
+                $form->addSubmit('login','Prihlásiť sa')
+			->setAttribute('class','button round blue text-upper image-right ic-right-arrow');
+                $form->onSuccess[] = $this->signInFormSubmitted;
+                return $form;
 	}
 
+
+	public function signInFormSubmitted(Form $form){
+            try {
+                $user = $this->getUser();
+                $values = $form->getValues();
+                $user->login($values->username,$values->password);
+                $this->flashMessage('Prihlasenie bolo uspesne','success');
+                $this->redirect('Homepage:');
+            } catch (NS\AuthenticationException $e) {
+                $form->addError('Neplatne uzivatelske meno alebo heslo.');
+            }
+            
+        }
 
 	public function signInFormSucceeded($form)
 	{

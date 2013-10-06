@@ -2,8 +2,64 @@
 
 {block #content}
 
-<h1 n:block=title>Sign in</h1>
+<body>
 
-{control signInForm}
+	<div id="top-bar">
+		
+		<div class="page-full-width">	
+		
+			<a href="http://www.npslovakia.com" class="button round dark image-left ic-left-arrow">Späť na stránku</a>
+		
+		</div>
+	
+	</div> <!-- end top-bar -->
+	
+	
+	
+	<div id="header"> <!-- clear float -->
+		<div class="page-full-width cf">	
+			<div id="login-intro" class="fl">
+				
+				<h1 n:block="title" class="text-upper">Prihlásenie do systému</h1>
+				<h5>Pre prihlásenie vložte užívateľské meno a heslo</h5>
+				
+			</div> <!-- end login-intro -->
+		
+			<a href="http://www.npslovakia.com" class="fr"  id="company-logo"><img src="{$basePath}/images/company-logo.png" alt="NP publication"/></a>
+		</div>
+	</div> <!-- end header -->
+	
+	
+	<!-- toto nahradit component form*/ -->
+	<div id="content">
+		{form signInForm}
+
+		    <fieldset>
+		{control $form errors}
+		<p>
+		{label username/}
+		{input username}
+		</p>
+		<p>
+		{label password/}
+		{input password}
+		</p>
+		<p><a href="michal.bobocky@me.com">Kontaktovať administrátora</a></p>
+			
+		{input login}
+		    </fieldset>
+	
+	{/form}
+	<!-- end -->
+	</div> <!-- end content -->
+	<div id="footer">
+	
+		<p>Vytvorené ako bakalárska práca.<strong> Michal Bobocký, MENDELU.</strong></p>
+		<p>2013</p>
+	</div> <!-- end footer -->
+	
+</body>
+
+</html>
 
 {* or use {include '../components/form.latte', form => $presenter[signInForm]} *}
