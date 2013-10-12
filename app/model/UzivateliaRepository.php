@@ -12,6 +12,6 @@ use Nette;
 class UzivateliaRepository extends Repository {
     
     public function findByName($username){
-	return $this->findAll()->where('username',$username)->fetch();
+	return $this->findAll()->where('email',$username)->fetch();
     }    
 }

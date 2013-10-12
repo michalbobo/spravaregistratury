@@ -3,17 +3,23 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/Applications/XAMPP/xamppfiles/htdocs/spravaregistratury/app/templates/@layout.latte</file>
+            <file>file:/Applications/XAMPP/xamppfiles/htdocs/spravaregistratury/app/presenters/PlanPresenter.php</file>
+            <file>file:/Applications/XAMPP/xamppfiles/htdocs/spravaregistratury/app/model/FirmyRepository.php</file>
+            <file>file:/Applications/XAMPP/xamppfiles/htdocs/spravaregistratury/app/templates/Choice/default.latte</file>
+            <file>file:/Applications/XAMPP/xamppfiles/htdocs/spravaregistratury/app/templates/Sign/in.latte</file>
+            <file>file:/Applications/XAMPP/xamppfiles/htdocs/spravaregistratury/app/presenters/ChoicePresenter.php</file>
+            <file>file:/Applications/XAMPP/xamppfiles/htdocs/spravaregistratury/www/css/style.css</file>
+            <file>file:/Applications/XAMPP/xamppfiles/htdocs/spravaregistratury/app/templates/Homepage/default.latte</file>
             <file>file:/Applications/XAMPP/xamppfiles/htdocs/spravaregistratury/app/presenters/HomepagePresenter.php</file>
+            <file>file:/Applications/XAMPP/xamppfiles/htdocs/spravaregistratury/app/templates/@layout.latte</file>
             <file>file:/Applications/XAMPP/xamppfiles/htdocs/spravaregistratury/app/config/config.neon</file>
             <file>file:/Applications/XAMPP/xamppfiles/htdocs/spravaregistratury/app/model/Authenticator.php</file>
             <file>file:/Applications/XAMPP/xamppfiles/htdocs/spravaregistratury/app/presenters/BasePresenter.php</file>
             <file>file:/Applications/XAMPP/xamppfiles/htdocs/spravaregistratury/app/model/Repository.php</file>
+            <file>file:/Applications/XAMPP/xamppfiles/htdocs/spravaregistratury/app/presenters/ErrorPresenter.php</file>
             <file>file:/Applications/XAMPP/xamppfiles/htdocs/spravaregistratury/app/presenters/SignPresenter.php</file>
             <file>file:/Applications/XAMPP/xamppfiles/htdocs/spravaregistratury/app/model/UzivateliaRepository.php</file>
-            <file>file:/Applications/XAMPP/xamppfiles/htdocs/spravaregistratury/app/templates/Sign/in.latte</file>
-            <file>file:/Applications/XAMPP/xamppfiles/htdocs/spravaregistratury/app/templates/Homepage/default.latte</file>
-            <file>file:/Applications/XAMPP/xamppfiles/htdocs/spravaregistratury/www/css/style.css</file>
+            <file>file:/Applications/XAMPP/xamppfiles/htdocs/spravaregistratury/app/templates/Plan/default.latte</file>
         </group>
     </open-files>
 </project-private>

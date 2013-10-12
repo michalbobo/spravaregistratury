@@ -6,6 +6,8 @@
 class HomepagePresenter extends BasePresenter
 {
 
+	private $userRepository;
+	
         public function startup() {
             parent::startup();
             if (!$this->getUser()->isLoggedIn()){
@@ -13,9 +15,15 @@ class HomepagePresenter extends BasePresenter
 	    }
         }
         
+	public function inject(SpravaRegistratury\UzivateliaRepository $userRepository){
+	    $this->userRepository = $userRepository;
+	}
+	
+	
+	
 	public function renderDefault()
 	{
-		$this->template->anyVariable = 'any value';
+		$this->template->users = $this->userRepository->findAll();
             
 	    
 	}

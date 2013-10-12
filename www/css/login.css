@@ -1,0 +1,238 @@
+/*------------- TU TREBA PODLA TUTORIALU Z AMAZONU STIAHNUT RESET A CLEARFIX---------------*/
+
+/* reset css */
+
+*, html, body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, 
+h5, h6, pre, form, label, fieldset, input, p, blockquote, th, td {
+	margin: 0;
+	padding: 0;
+}
+
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+fieldset, img {	border: 0; }
+
+address, caption, cite, code, dfn, em, strong, th, var {
+	font-style: normal;
+	font-weight: normal;
+}
+
+caption, th { text-align: left; }
+
+h1, h2, h3, h4, h5, h6 { font-weight: normal; }
+
+q:before, q:after { content: ''; }
+
+strong { font-weight: bold; }
+
+em { font-style: italic; }
+
+a img {	border: none; } /* Gets rid of IE's blue borders */
+
+a { text-decoration: none; }
+
+body { font-size: 1em; /* Prevents an IE bug where em's scale out of proportion */ }
+
+
+/* end reset */
+
+/* clearfix */
+
+/* For modern browsers */
+.cf:before,
+.cf:after {
+    content: "";
+    display: table;
+}
+
+.cf:after { clear:both; }
+
+/* For IE 6/7 (trigger hasLayout) */
+.cf { zoom: 1; }
+
+/* end clearfix */
+
+/* login page css */ 
+
+/*----------------general-------------------*/
+.round {
+	border-radius: 0.3125em; /*5/16*/
+	-moz-border-radius: 0.3125em;
+	-webkit-border-radius: 0.3125em;
+}
+
+.text-upper { text-transform: uppercase; }
+
+.fl { float: left; } /* float left */
+
+.fr { float: right; } /* float right */
+
+p { margin-bottom: 1.666em; } /* 20/12 */
+
+/*----------------button-------------------*/
+.button {
+	padding: 0.833em; /* 10/12 */
+	display: inline-block;
+	background-repeat: no-repeat;
+}
+.image-left {
+	background-position: 0.833em center;
+	padding-left: 3em;	/*36/12*/
+}
+
+.image-right {
+	background-position: right center;
+	padding-right: 3em;
+}
+
+.ic-left-arrow { background-image: url("../images/icons/ic-left-arrow.png"); }
+.ic-right-arrow { background-image: url("../images/icons/ic-right-arrow.png"); }
+
+
+
+
+
+
+
+/*----------------colors-------------------*/
+.dark {
+	background-color: #3f4551;
+	color: white;
+}
+	.dark:hover {
+		background-color: #5d6677;
+		color: white;
+	}
+	
+a { color: #2069b4 }
+	a:hover { color: #2a2e36; }
+
+p a { border-bottom: 1px dotted #2069b4; }
+	p a { border-bottom: 1px dotted #2a2e36; }
+	
+.blue {
+	background: #2069b4;
+	color: white;
+}
+	.blue:hover {
+		background-color: #5081b3;
+	}
+
+
+
+/*----------------typography----------------*/
+body {
+	font-family: "Droid Sans", Helvetica, Arial, sans-serif;
+}
+
+p, .button {
+	font-size: 0.75em;     /*body font-size:1em = 16px, tu chcem 12px a to je 12/16=0.75, em pouzivam aby bolo css liquid*/
+}
+
+h1 {
+	font-size: 1.125em; /*18/16*/
+}
+
+
+
+
+
+/*------------top bar & header----------------------*/
+div#top-bar	{
+	background-color: #2a2e36;
+	padding: 0.625em;   /* 10/16 */
+}
+
+div#header {
+	padding: 1.25em 0; /* 20/16*/
+}
+
+div#login-intro {
+	background: transparent url("../images/lock-icon.png") no-repeat left center;
+	padding: 0.3125em 0 0.3125em 3.125em; /* 5/16 50/16 */
+}
+
+
+
+
+/*-------------content-----------------------------*/
+div#content {
+	background: #f8f9fa url("../images/artwork-bg.png") repeat-x left bottom;
+	padding: 1.875em; /*30/16 */;
+	border: 1px solid #eeefef;
+}
+
+
+
+/*-------------forms------------------------------*/
+form#frm-signInForm {
+	width: 18.75em; /* 300/16 */
+	margin: 0 auto;
+}
+
+form label {
+	display: block;
+	text-transform: uppercase;
+	color: #2a2e36;
+	margin-bottom: 0.416em; /* 5/12 vzdy ta velksot v pixeloch ktoru chcem deleno velkost v pixeloch od parent prvku*/
+}
+
+form input[type="text"], form input[type="password"] {
+	border: 1px solid #d9dbdd;
+	padding: 1.25em; /* 15/12 */
+	outline: none;
+	
+}
+
+form input[type="text"]:hover, form input[type="password"]:hover, form input[type="text"]:focus, form input[type="password"]:focus {
+	border: 1px solid #bbbdbe;
+}
+
+form input[type="submit"] {
+	border: none;
+	cursor: pointer;
+}
+
+
+
+/*----------------widths---------------------------*/
+.full-width { width: 94%; }
+
+.page-full-width { padding: 0 1.875em; /* 30/16 */ }
+
+/*-----------------footer--------------------------*/
+div#footer {
+	padding: 1.875em 0 ; /* 30/16 */
+	text-align: center;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

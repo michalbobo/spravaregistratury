@@ -1,18 +1,19 @@
-<?php //netteCache[01]000415a:2:{s:4:"time";s:21:"0.60774400 1381598941";s:9:"callbacks";a:2:{i:0;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:9:"checkFile";}i:1;s:93:"/Applications/XAMPP/xamppfiles/htdocs/spravaregistratury/app/templates/Homepage/default.latte";i:2;i:1381598937;}i:1;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:10:"checkConst";}i:1;s:25:"Nette\Framework::REVISION";i:2;s:30:"80a7e46 released on 2013-08-08";}}}?><?php
+<?php //netteCache[01]000413a:2:{s:4:"time";s:21:"0.90427900 1381600958";s:9:"callbacks";a:2:{i:0;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:9:"checkFile";}i:1;s:91:"/Applications/XAMPP/xamppfiles/htdocs/spravaregistratury/app/templates/Choice/default.latte";i:2;i:1381600948;}i:1;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:10:"checkConst";}i:1;s:25:"Nette\Framework::REVISION";i:2;s:30:"80a7e46 released on 2013-08-08";}}}?><?php
 
-// source file: /Applications/XAMPP/xamppfiles/htdocs/spravaregistratury/app/templates/Homepage/default.latte
+// source file: /Applications/XAMPP/xamppfiles/htdocs/spravaregistratury/app/templates/Choice/default.latte
 
 ?><?php
 // prolog Nette\Latte\Macros\CoreMacros
-list($_l, $_g) = Nette\Latte\Macros\CoreMacros::initRuntime($template, 'txvkwvirzy')
+list($_l, $_g) = Nette\Latte\Macros\CoreMacros::initRuntime($template, 'cnq8aq360l')
 ;
 // prolog Nette\Latte\Macros\UIMacros
 //
 // block content
 //
-if (!function_exists($_l->blocks['content'][] = '_lb72c3b5f4a7_content')) { function _lb72c3b5f4a7_content($_l, $_args) { extract($_args)
+if (!function_exists($_l->blocks['content'][] = '_lbdba0ff3345_content')) { function _lbdba0ff3345_content($_l, $_args) { extract($_args)
 ?><body>
 
+    
 	<!-- TOP BAR -->
 	<div id="top-bar">
 		
@@ -20,8 +21,7 @@ if (!function_exists($_l->blocks['content'][] = '_lb72c3b5f4a7_content')) { func
 
 			<ul id="nav" class="fl">
 	
-				<li class="v-sep"><a class="round button dark ic-left-arrow image-left" href="<?php echo htmlSpecialChars($_control->link("Choice:")) ?>
-">Späť</a></li>
+				<!--<li class="v-sep"><a href="#" class="round button dark ic-left-arrow image-left">Go to website</a></li>-->
 				<li class="v-sep"><a href="#" class="round button dark menu-user image-left">Prihlásený ako <strong><?php echo Nette\Templating\Helpers::escapeHtml($user->getIdentity()->meno, ENT_NOQUOTES) ?>
  <?php echo Nette\Templating\Helpers::escapeHtml($user->getIdentity()->priezvisko, ENT_NOQUOTES) ?></strong></a>
 					<ul>
@@ -29,8 +29,32 @@ if (!function_exists($_l->blocks['content'][] = '_lb72c3b5f4a7_content')) { func
 						<li><a href="<?php echo htmlSpecialChars($_control->link("signOut!")) ?>">Odhlásiť</a></li>
 					</ul> 
 				</li>
+				<li class="v-sep"><a class="round button dark" href="<?php echo htmlSpecialChars($_control->link("Homepage:")) ?>
+">US Steel</a>
+					<ul>
+						<li><a href="<?php echo htmlSpecialChars($_control->link("Homepage:")) ?>">Registratúrny poriadok</a></li>
+						<li><a href="#">Databáza záznamov</a></li>
+					</ul> 
+				</li>
+				<li class="v-sep"><a href="#" class="round button dark">Union</a>
+					<ul>
+						<li><a href="#">Registratúrny poriadok</a></li>
+						<li><a href="#">Databáza záznamov</a></li>
+					</ul> 
+				</li>
+				<li class="v-sep"><a href="#" class="round button dark">Union ZP</a>
+					<ul>
+						<li><a href="#">Registratúrny poriadok</a></li>
+						<li><a href="#">Databáza záznamov</a></li>
+					</ul> 
+				</li>
+				<li class="v-sep"><a href="#" class="round button dark">ZIPP</a>
+					<ul>
+						<li><a href="#">Registratúrny poriadok</a></li>
+						<li><a href="#">Databáza záznamov</a></li>
+					</ul> 
+				</li>
 			
-				<li><a href="#" class="round button dark menu-email-special image-left">3 nové upozornenia</a></li>
 				<li><a class="round button dark menu-logoff image-left" href="<?php echo htmlSpecialChars($_control->link("signOut!")) ?>
 ">Odhlásiť sa</a></li>
 				
@@ -39,7 +63,7 @@ if (!function_exists($_l->blocks['content'][] = '_lb72c3b5f4a7_content')) { func
 					
 			<form action="#" method="POST" id="search-form" class="fr">
 				<fieldset>
-					<input type="text" id="search-keyword" class="round button dark ic-search image-right" placeholder="Search..." />
+					<input type="text" id="search-keyword" class="round button dark ic-search image-right" placeholder="Hľadať" />
 					<input type="hidden" value="SUBMIT" />
 				</fieldset>
 			</form>
@@ -51,24 +75,26 @@ if (!function_exists($_l->blocks['content'][] = '_lb72c3b5f4a7_content')) { func
 	
 	
 	<!-- HEADER -->
+	<!--
 	<div id="header-with-tabs">
 		
 		<div class="page-full-width cf">
 	
 			<ul id="tabs" class="fl">
-				<li><a href="dashboard.html" class="active-tab dashboard-tab">Úložné jednotky</a></li>
-				<li><a href="page-full-width.html">Výpožičky</a></li>
-				<li><a href="page-other.html">Ostatné</a></li>
+				<li><a href="dashboard.html" class="active-tab dashboard-tab">Domov</a></li>
+				<li><a href="page-full-width.html">Full width page</a></li>
+				<li><a href="page-other.html">Other page elements</a></li>
 			</ul> <!-- end tabs -->
 			
 			<!-- Change this image to your own company's logo -->
 			<!-- The logo will automatically be resized to 30px height. -->
-			<a href="#" id="company-branding-small" class="fr"><img src="images/company-logo.png" alt="Blue Hosting" /></a>
 			
+				<!--	<a href="#" id="company-branding-small" class="fr"><img src="images/company-logo.png" alt="Blue Hosting" /></a>
+		<!--	
 		</div> <!-- end full-width -->	
-
+<!--
 	</div> <!-- end header -->
-	
+
 	
 	
 	<!-- MAIN CONTENT -->
@@ -91,29 +117,32 @@ if (!function_exists($_l->blocks['content'][] = '_lb72c3b5f4a7_content')) { func
 			
 			<!--<div class="side-content fr">
 			
-				<div class="content-module">
+				<div class="content-module"> -->
 				
-					<!--<div class="content-module-heading cf">
+					<div class="content-module-heading cf">
 					
-						<h3 class="fl">Table design</h3>
-						<span class="fr expand-collapse-text">Click to collapse</span>
-						<span class="fr expand-collapse-text initial-expand">Click to expand</span>
-					
+<?php call_user_func(reset($_l->blocks['title']), $_l, get_defined_vars())  ?>
+						
+						
+					<!--	<span class="fr expand-collapse-text initial-expand">Click to expand</span>-->
 					</div> <!-- end content-module-heading -->
 					
 					
-					<div class="content-module-main">
 					
-						<table>
+					<div class="content-module-main">
+					    
+					    
+					    
+						<table id='ulohy'>
 						
 							<thead>
 						
 								<tr>
 									<th><input type="checkbox" id="table-select-all" /></th>
-									<th>Meno</th>
-									<th>Priezvisko</th>
-									<th>Email</th>
-									<th>Telefón</th>
+									<th>Dátum</th>
+									<th>Úloha</th>
+									<th>Popis</th>
+									<th>Hotovo</th>
 									<th>Akcie</th>
 								</tr>
 							
@@ -128,12 +157,12 @@ if (!function_exists($_l->blocks['content'][] = '_lb72c3b5f4a7_content')) { func
 										<label for="table-select-actions">S vybranými:</label>
 	
 										<select id="table-select-actions">
-											<option value="option1">Delete</option>
-											<option value="option2">Export</option>
-											<option value="option3">Archive</option>
+											<option value="option1">Hotovo</option>
+											<option value="option2">Vymazať</option>
+											<option value="option3">Odložiť</option>
 										</select>
 										
-										<a href="#" class="round button blue text-upper small-button">Apply to selected</a>	
+										<a href="#" class="round button blue text-upper small-button">Vykonať s vybranými</a>	
 	
 									</td>
 									
@@ -183,7 +212,14 @@ if (!function_exists($_l->blocks['content'][] = '_lb72c3b5f4a7_content')) { func
 	</div> <!-- end footer --><!-- end footer -->
 
 </body>
-</html>
+</html><?php
+}}
+
+//
+// block title
+//
+if (!function_exists($_l->blocks['title'][] = '_lb86e16c088b_title')) { function _lb86e16c088b_title($_l, $_args) { extract($_args)
+?>						<h3 class="fl">Prehľad výpožičiek</h3>
 <?php
 }}
 
@@ -206,9 +242,5 @@ if ($_l->extends) {
 //
 // main template
 //
-?>
-
-
-
-<?php if ($_l->extends) { ob_end_clean(); return Nette\Latte\Macros\CoreMacros::includeTemplate($_l->extends, get_defined_vars(), $template)->render(); }
+if ($_l->extends) { ob_end_clean(); return Nette\Latte\Macros\CoreMacros::includeTemplate($_l->extends, get_defined_vars(), $template)->render(); }
 call_user_func(reset($_l->blocks['content']), $_l, get_defined_vars()) ; 

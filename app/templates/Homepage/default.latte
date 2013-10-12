@@ -1,12 +1,175 @@
 {block content}
-<h1 n:block='title'>Výpis</h1>
-
-<p>{$user->getIdentity()->meno}</p>
-<p>{$user->getIdentity()->priezvisko}</p>
-<p>{$user->getIdentity()->telefon}</p>
 
 
-<a n:href="Sign:in">Prihlásenie</a>  
-<a n:href="signOut!">Odhlasit sa</a>
 
+<body>
+
+	<!-- TOP BAR -->
+	<div id="top-bar">
+		
+		<div class="page-full-width cf">
+
+			<ul id="nav" class="fl">
+	
+				<li class="v-sep"><a n:href="Choice:" class="round button dark ic-left-arrow image-left">Späť</a></li>
+				<li class="v-sep"><a href="#" class="round button dark menu-user image-left">Prihlásený ako <strong>{$user->getIdentity()->meno} {$user->getIdentity()->priezvisko}</strong></a>
+					<ul>
+						<li><a href="#">Zmeniť heslo</a></li>
+						<li><a n:href="signOut!">Odhlásiť</a></li>
+					</ul> 
+				</li>
+			
+				<li><a href="#" class="round button dark menu-email-special image-left">3 nové upozornenia</a></li>
+				<li><a n:href="signOut!" class="round button dark menu-logoff image-left">Odhlásiť sa</a></li>
+				
+			</ul> <!-- end nav -->
+
+					
+			<form action="#" method="POST" id="search-form" class="fr">
+				<fieldset>
+					<input type="text" id="search-keyword" class="round button dark ic-search image-right" placeholder="Search..." />
+					<input type="hidden" value="SUBMIT" />
+				</fieldset>
+			</form>
+
+		</div> <!-- end full-width -->	
+	
+	</div> <!-- end top-bar -->
+	
+	
+	
+	<!-- HEADER -->
+	<div id="header-with-tabs">
+		
+		<div class="page-full-width cf">
+	
+			<ul id="tabs" class="fl">
+				<li><a href="dashboard.html" class="active-tab dashboard-tab">Úložné jednotky</a></li>
+				<li><a href="page-full-width.html">Výpožičky</a></li>
+				<li><a href="page-other.html">Jednotky na vyradenie</a></li>
+			</ul> <!-- end tabs -->
+			
+			<!-- Change this image to your own company's logo -->
+			<!-- The logo will automatically be resized to 30px height. -->
+			<a href="#" id="company-branding-small" class="fr"><img src="images/company-logo.png" alt="Blue Hosting" /></a>
+			
+		</div> <!-- end full-width -->	
+
+	</div> <!-- end header -->
+	
+	
+	
+	<!-- MAIN CONTENT -->
+	<div id="content">
+		
+		<div class="page-full-width cf">
+
+			<!--<div class="side-menu fl">
+				
+				<h3>Menu</h3>
+				<ul>
+					<li><a href="#">Moje úlohy</a></li>
+					<li><a href="#">US Steel</a></li>
+					<li><a href="#">Union</a></li>
+					<li><a href="#">Union ZP</a></li>
+					<li><a href="#">Zipp</a></li>
+				</ul>
+				
+			</div> <!-- end side-menu -->
+			
+			<!--<div class="side-content fr">
+			
+				<div class="content-module">
+				
+					<!--<div class="content-module-heading cf">
+					
+						<h3 class="fl">Table design</h3>
+						<span class="fr expand-collapse-text">Click to collapse</span>
+						<span class="fr expand-collapse-text initial-expand">Click to expand</span>
+					
+					</div> <!-- end content-module-heading -->
+					
+					
+					<div class="content-module-main">
+					
+						<table>
+						
+							<thead>
+						
+								<tr>
+									<th><input type="checkbox" id="table-select-all"></th>
+									<th>Meno</th>
+									<th>Priezvisko</th>
+									<th>Email</th>
+									<th>Telefón</th>
+									<th>Akcie</th>
+								</tr>
+							
+							</thead>
+	
+							<tfoot>
+							
+								<tr>
+								
+									<td colspan="5" class="table-footer">
+									
+										<label for="table-select-actions">S vybranými:</label>
+	
+										<select id="table-select-actions">
+											<option value="option1">Delete</option>
+											<option value="option2">Export</option>
+											<option value="option3">Archive</option>
+										</select>
+										
+										<a href="#" class="round button blue text-upper small-button">Apply to selected</a>	
+	
+									</td>
+									
+								</tr>
+							
+							</tfoot>
+							
+							<tbody>
+	
+							    {foreach $users as $user}
+							    <tr>
+								<td><input type="checkbox"></td>
+								<td>{$user->meno}</td>
+								<td>{$user->priezvisko}</td>
+								<td>{$user->email}</td>
+								<td>{$user->telefon}</td>
+								<td>
+								    <a href="#" class="table-actions-button ic-table-edit"></a>
+								    <a href="#" class="table-actions-button ic-table-delete"></a>
+								</td>
+							    </tr>
+							    {/foreach}
+							
+							</tbody>
+							
+						</table>
+					
+					</div> <!-- end content-module-main -->
+				
+				</div> <!-- end content-module -->
+				
+				
+		
+			</div> <!-- end side-content -->
+		
+		</div> <!-- end full-width -->
+			
+	</div> <!-- end content -->
+	
+	
+	
+	<!-- FOOTER -->
+	<div id="footer">
+	
+		<p>Vytvorené ako bakalárska práca.<strong> Michal Bobocký, MENDELU.</strong></p>
+		<p>2013</p>
+	</div> <!-- end footer --><!-- end footer -->
+
+</body>
+</html>
 {/block}

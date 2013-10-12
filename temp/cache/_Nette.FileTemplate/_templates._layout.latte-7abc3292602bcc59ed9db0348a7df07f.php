@@ -1,30 +1,30 @@
-<?php //netteCache[01]000406a:2:{s:4:"time";s:21:"0.69147300 1380919376";s:9:"callbacks";a:2:{i:0;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:9:"checkFile";}i:1;s:84:"/Applications/XAMPP/xamppfiles/htdocs/spravaregistratury/app/templates/@layout.latte";i:2;i:1380919229;}i:1;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:10:"checkConst";}i:1;s:25:"Nette\Framework::REVISION";i:2;s:30:"80a7e46 released on 2013-08-08";}}}?><?php
+<?php //netteCache[01]000406a:2:{s:4:"time";s:21:"0.40172200 1381520407";s:9:"callbacks";a:2:{i:0;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:9:"checkFile";}i:1;s:84:"/Applications/XAMPP/xamppfiles/htdocs/spravaregistratury/app/templates/@layout.latte";i:2;i:1381520405;}i:1;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:10:"checkConst";}i:1;s:25:"Nette\Framework::REVISION";i:2;s:30:"80a7e46 released on 2013-08-08";}}}?><?php
 
 // source file: /Applications/XAMPP/xamppfiles/htdocs/spravaregistratury/app/templates/@layout.latte
 
 ?><?php
 // prolog Nette\Latte\Macros\CoreMacros
-list($_l, $_g) = Nette\Latte\Macros\CoreMacros::initRuntime($template, '9q5j54rq13')
+list($_l, $_g) = Nette\Latte\Macros\CoreMacros::initRuntime($template, 'osp91du8an')
 ;
 // prolog Nette\Latte\Macros\UIMacros
 //
 // block title
 //
-if (!function_exists($_l->blocks['title'][] = '_lb162e0d50e7_title')) { function _lb162e0d50e7_title($_l, $_args) { extract($_args)
+if (!function_exists($_l->blocks['title'][] = '_lbea1360cd0f_title')) { function _lbea1360cd0f_title($_l, $_args) { extract($_args)
 ?>NP-publication - prihlásenie<?php
 }}
 
 //
 // block head
 //
-if (!function_exists($_l->blocks['head'][] = '_lbf1bae6463e_head')) { function _lbf1bae6463e_head($_l, $_args) { extract($_args)
+if (!function_exists($_l->blocks['head'][] = '_lb6eee5ddebe_head')) { function _lb6eee5ddebe_head($_l, $_args) { extract($_args)
 ;
 }}
 
 //
 // block scripts
 //
-if (!function_exists($_l->blocks['scripts'][] = '_lb990869359d_scripts')) { function _lb990869359d_scripts($_l, $_args) { extract($_args)
+if (!function_exists($_l->blocks['scripts'][] = '_lb641b3f1a18_scripts')) { function _lb641b3f1a18_scripts($_l, $_args) { extract($_args)
 ?>	<script src="<?php echo htmlSpecialChars($basePath) ?>/js/jquery.js"></script>
 	<script src="<?php echo htmlSpecialChars($basePath) ?>/js/netteForms.js"></script>
 	<script src="<?php echo htmlSpecialChars($basePath) ?>/js/main.js"></script>
@@ -66,6 +66,10 @@ ob_start(); call_user_func(reset($_l->blocks['title']), $_l, get_defined_vars())
 	<link rel="stylesheet" media="print" href="<?php echo htmlSpecialChars($basePath) ?>/css/print.css" />
 	<link rel="shortcut icon" href="<?php echo htmlSpecialChars($basePath) ?>/favicon.ico" />
         <link href='http://fonts.googleapis.com/css?family=Droid+Sans:400,700' rel='stylesheet' />
+	<link rel="stylesheet" media="screen,projection,tv" href="<?php echo htmlSpecialChars($basePath) ?>/css/login.css" />
+	
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+	<script src="<?php echo htmlSpecialChars($basePath) ?>/js/script.js"></script>  
 	<?php call_user_func(reset($_l->blocks['head']), $_l, get_defined_vars())  ?>
 
 </head>

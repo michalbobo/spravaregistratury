@@ -1,4 +1,4 @@
-<?php //netteCache[01]000434a:2:{s:4:"time";s:21:"0.42482800 1380912063";s:9:"callbacks";a:2:{i:0;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:9:"checkFile";}i:1;s:79:"/Applications/XAMPP/xamppfiles/htdocs/spravaregistratury/app/config/config.neon";i:2;i:1375917388;}i:1;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:9:"checkFile";}i:1;s:85:"/Applications/XAMPP/xamppfiles/htdocs/spravaregistratury/app/config/config.local.neon";i:2;i:1375917388;}}}?><?php
+<?php //netteCache[01]000434a:2:{s:4:"time";s:21:"0.21778400 1381599083";s:9:"callbacks";a:2:{i:0;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:9:"checkFile";}i:1;s:79:"/Applications/XAMPP/xamppfiles/htdocs/spravaregistratury/app/config/config.neon";i:2;i:1381437972;}i:1;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:9:"checkFile";}i:1;s:85:"/Applications/XAMPP/xamppfiles/htdocs/spravaregistratury/app/config/config.local.neon";i:2;i:1375917388;}}}?><?php
 // source: /Applications/XAMPP/xamppfiles/htdocs/spravaregistratury/app/config/config.neon production
 // source: /Applications/XAMPP/xamppfiles/htdocs/spravaregistratury/app/config/config.local.neon 
 
@@ -16,12 +16,13 @@
  * @property RouterFactory $routerFactory
  * @property Nette\Http\Session $session
  * @property Nette\Security\User $user
+ * @property SpravaRegistratury\UzivateliaRepository $userRepository
  */
 class SystemContainer extends Nette\DI\Container
 {
 
 	public $classes = array(
-		'nette\\object' => FALSE, //: nette.cacheJournal, cacheStorage, nette.httpRequestFactory, httpRequest, httpResponse, nette.httpContext, session, nette.userStorage, user, application, nette.presenterFactory, nette.mailer, nette.database, authenticator, container,
+		'nette\\object' => FALSE, //: nette.cacheJournal, cacheStorage, nette.httpRequestFactory, httpRequest, httpResponse, nette.httpContext, session, nette.userStorage, user, application, nette.presenterFactory, nette.mailer, nette.database, userRepository, authenticator, container,
 		'nette\\caching\\storages\\ijournal' => 'nette.cacheJournal',
 		'nette\\caching\\storages\\filejournal' => 'nette.cacheJournal',
 		'nette\\caching\\istorage' => 'cacheStorage',
@@ -45,6 +46,8 @@ class SystemContainer extends Nette\DI\Container
 		'nette\\di\\nestedaccessor' => 'nette.database',
 		'pdo' => 'nette.database.default',
 		'nette\\database\\connection' => 'nette.database.default',
+		'spravaregistratury\\repository' => 'userRepository',
+		'spravaregistratury\\uzivateliarepository' => 'userRepository',
 		'routerfactory' => 'routerFactory',
 		'nette\\security\\iauthenticator' => 'authenticator',
 		'authenticator' => 'authenticator',
@@ -93,7 +96,7 @@ class SystemContainer extends Nette\DI\Container
 	 */
 	protected function createServiceAuthenticator()
 	{
-		$service = new Authenticator($this->getService('nette.database.default'));
+		$service = new Authenticator($this->getService('userRepository'));
 		return $service;
 	}
 
@@ -225,7 +228,7 @@ class SystemContainer extends Nette\DI\Container
 	 */
 	protected function createServiceNette__database__default()
 	{
-		$service = new Nette\Database\Connection('mysql:host=localhost;dbname=test', NULL, NULL, NULL);
+		$service = new Nette\Database\Connection('mysql:host=localhost;dbname=bakalarka', 'root', NULL, NULL);
 		$service->setCacheStorage($this->getService('cacheStorage'));
 		Nette\Diagnostics\Debugger::$blueScreen->addPanel('Nette\\Database\\Diagnostics\\ConnectionPanel::renderException');
 		$service->setDatabaseReflection(new Nette\Database\Reflection\DiscoveredReflection($this->getService('cacheStorage')));
@@ -407,6 +410,16 @@ class SystemContainer extends Nette\DI\Container
 	protected function createServiceUser()
 	{
 		$service = new Nette\Security\User($this->getService('nette.userStorage'), $this);
+		return $service;
+	}
+
+
+	/**
+	 * @return SpravaRegistratury\UzivateliaRepository
+	 */
+	protected function createServiceUserRepository()
+	{
+		$service = new SpravaRegistratury\UzivateliaRepository($this->getService('nette.database.default'));
 		return $service;
 	}
 

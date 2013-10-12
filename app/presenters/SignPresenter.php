@@ -17,18 +17,19 @@ class SignPresenter extends BasePresenter
 	protected function createComponentSignInForm()
 	{
 		$form = new Form();
-                $form->addText('username','Užívateľské meno:',30,20)
+                $form->addText('username','Užívateľské meno:',30,30)
 		    ->addRule(Form::FILLED,'Je nutné zadať užívateľské meno')
+			->addRule(Form::EMAIL,'Užívateľské meno má tvar e-mailovej adresy')
 			    ->setAttribute('class','round full-width')
 			    ->setAttribute('name','username')
-			    ->setAttribute('placeholder','Užívateľské meno');
+			    ->setAttribute('placeholder','vloz@adresu.tu');
 		
                 $form->addPassword('password','Heslo:',30)
 			->addRule(Form::FILLED,'Je nutné zadať heslo')
 			->setAttribute('class','round full-width')
 			->setAttribute('name','password')
 			->setAttribute('placeholder','Heslo');
-                $form->addSubmit('login','Prihlásiť sa')
+                $form->addSubmit('login','Prihlásiť sa')	
 			->setAttribute('class','button round blue text-upper image-right ic-right-arrow');
                 $form->onSuccess[] = $this->signInFormSubmitted;
                 return $form;
@@ -40,10 +41,10 @@ class SignPresenter extends BasePresenter
                 $user = $this->getUser();
                 $values = $form->getValues();
                 $user->login($values->username,$values->password);
-                $this->flashMessage('Prihlasenie bolo uspesne','success');
-                $this->redirect('Homepage:');
+                $this->flashMessage('Prihlásenie bolo úspešné','success');
+                $this->redirect('Choice:');
             } catch (NS\AuthenticationException $e) {
-                $form->addError('Neplatne uzivatelske meno alebo heslo.');
+                $form->addError('Neplatné užívateľské meno alebo heslo.');
             }
             
         }
@@ -60,7 +61,7 @@ class SignPresenter extends BasePresenter
 
 		try {
 			$this->getUser()->login($values->username, $values->password);
-			$this->redirect('Homepage:');
+			$this->redirect('Choice:');
 
 		} catch (Nette\Security\AuthenticationException $e) {
 			$form->addError($e->getMessage());
@@ -71,7 +72,7 @@ class SignPresenter extends BasePresenter
 	public function actionOut()
 	{
 		$this->getUser()->logout();
-		$this->flashMessage('You have been signed out.');
+		$this->flashMessage('Odhlásenie prebehlo úspešne.');
 		$this->redirect('in');
 	}
 
