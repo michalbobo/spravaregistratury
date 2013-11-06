@@ -1,16 +1,16 @@
-<?php //netteCache[01]000413a:2:{s:4:"time";s:21:"0.90427900 1381600958";s:9:"callbacks";a:2:{i:0;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:9:"checkFile";}i:1;s:91:"/Applications/XAMPP/xamppfiles/htdocs/spravaregistratury/app/templates/Choice/default.latte";i:2;i:1381600948;}i:1;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:10:"checkConst";}i:1;s:25:"Nette\Framework::REVISION";i:2;s:30:"80a7e46 released on 2013-08-08";}}}?><?php
+<?php //netteCache[01]000413a:2:{s:4:"time";s:21:"0.75758100 1383697266";s:9:"callbacks";a:2:{i:0;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:9:"checkFile";}i:1;s:91:"/Applications/XAMPP/xamppfiles/htdocs/spravaregistratury/app/templates/Choice/default.latte";i:2;i:1383697246;}i:1;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:10:"checkConst";}i:1;s:25:"Nette\Framework::REVISION";i:2;s:30:"80a7e46 released on 2013-08-08";}}}?><?php
 
 // source file: /Applications/XAMPP/xamppfiles/htdocs/spravaregistratury/app/templates/Choice/default.latte
 
 ?><?php
 // prolog Nette\Latte\Macros\CoreMacros
-list($_l, $_g) = Nette\Latte\Macros\CoreMacros::initRuntime($template, 'cnq8aq360l')
+list($_l, $_g) = Nette\Latte\Macros\CoreMacros::initRuntime($template, 'rv6ufghvyq')
 ;
 // prolog Nette\Latte\Macros\UIMacros
 //
 // block content
 //
-if (!function_exists($_l->blocks['content'][] = '_lbdba0ff3345_content')) { function _lbdba0ff3345_content($_l, $_args) { extract($_args)
+if (!function_exists($_l->blocks['content'][] = '_lbb26d3f65f7_content')) { function _lbb26d3f65f7_content($_l, $_args) { extract($_args)
 ?><body>
 
     
@@ -29,23 +29,25 @@ if (!function_exists($_l->blocks['content'][] = '_lbdba0ff3345_content')) { func
 						<li><a href="<?php echo htmlSpecialChars($_control->link("signOut!")) ?>">Odhlásiť</a></li>
 					</ul> 
 				</li>
-				<li class="v-sep"><a class="round button dark" href="<?php echo htmlSpecialChars($_control->link("Homepage:")) ?>
-">US Steel</a>
+				<li class="v-sep"><a href="#" class="round button dark">US Steel</a>
 					<ul>
-						<li><a href="<?php echo htmlSpecialChars($_control->link("Homepage:")) ?>">Registratúrny poriadok</a></li>
-						<li><a href="#">Databáza záznamov</a></li>
+						<li><a href="#">Registratúrny poriadok</a></li>
+						<li><a href="<?php echo htmlSpecialChars($_control->link("Homepage:", array('firma' => 1))) ?>
+">Databáza záznamov</a></li>
 					</ul> 
 				</li>
 				<li class="v-sep"><a href="#" class="round button dark">Union</a>
 					<ul>
 						<li><a href="#">Registratúrny poriadok</a></li>
-						<li><a href="#">Databáza záznamov</a></li>
+						<li><a href="<?php echo htmlSpecialChars($_control->link("Homepage:", array('firma' => 3))) ?>
+">Databáza záznamov</a></li>
 					</ul> 
 				</li>
 				<li class="v-sep"><a href="#" class="round button dark">Union ZP</a>
 					<ul>
 						<li><a href="#">Registratúrny poriadok</a></li>
-						<li><a href="#">Databáza záznamov</a></li>
+						<li><a href="<?php echo htmlSpecialChars($_control->link("Homepage:", array('firma' => 2))) ?>
+">Databáza záznamov</a></li>
 					</ul> 
 				</li>
 				<li class="v-sep"><a href="#" class="round button dark">ZIPP</a>
@@ -61,13 +63,7 @@ if (!function_exists($_l->blocks['content'][] = '_lbdba0ff3345_content')) { func
 			</ul> <!-- end nav -->
 
 					
-			<form action="#" method="POST" id="search-form" class="fr">
-				<fieldset>
-					<input type="text" id="search-keyword" class="round button dark ic-search image-right" placeholder="Hľadať" />
-					<input type="hidden" value="SUBMIT" />
-				</fieldset>
-			</form>
-
+			
 		</div> <!-- end full-width -->	
 	
 	</div> <!-- end top-bar -->
@@ -118,6 +114,8 @@ if (!function_exists($_l->blocks['content'][] = '_lbdba0ff3345_content')) { func
 			<!--<div class="side-content fr">
 			
 				<div class="content-module"> -->
+                    
+                  
 				
 					<div class="content-module-heading cf">
 					
@@ -131,78 +129,27 @@ if (!function_exists($_l->blocks['content'][] = '_lbdba0ff3345_content')) { func
 					
 					<div class="content-module-main">
 					    
-					    
-					    
-						<table id='ulohy'>
-						
-							<thead>
-						
-								<tr>
-									<th><input type="checkbox" id="table-select-all" /></th>
-									<th>Dátum</th>
-									<th>Úloha</th>
-									<th>Popis</th>
-									<th>Hotovo</th>
-									<th>Akcie</th>
-								</tr>
-							
-							</thead>
-	
-							<tfoot>
-							
-								<tr>
-								
-									<td colspan="5" class="table-footer">
-									
-										<label for="table-select-actions">S vybranými:</label>
-	
-										<select id="table-select-actions">
-											<option value="option1">Hotovo</option>
-											<option value="option2">Vymazať</option>
-											<option value="option3">Odložiť</option>
-										</select>
-										
-										<a href="#" class="round button blue text-upper small-button">Vykonať s vybranými</a>	
-	
-									</td>
-									
-								</tr>
-							
-							</tfoot>
-							
-							<tbody>
-	
-<?php $iterations = 0; foreach ($users as $user): ?>
-							    <tr>
-								<td><input type="checkbox" /></td>
-								<td><?php echo Nette\Templating\Helpers::escapeHtml($user->meno, ENT_NOQUOTES) ?></td>
-								<td><?php echo Nette\Templating\Helpers::escapeHtml($user->priezvisko, ENT_NOQUOTES) ?></td>
-								<td><?php echo Nette\Templating\Helpers::escapeHtml($user->email, ENT_NOQUOTES) ?></td>
-								<td><?php echo Nette\Templating\Helpers::escapeHtml($user->telefon, ENT_NOQUOTES) ?></td>
-								<td>
-								    <a href="#" class="table-actions-button ic-table-edit"></a>
-								    <a href="#" class="table-actions-button ic-table-delete"></a>
-								</td>
-							    </tr>
-<?php $iterations++; endforeach ?>
-							
-							</tbody>
-							
-						</table>
-					
+					    <p>Jednoduchý prehľad nesplnených úloh. Úlohy je možné pridávať pomocou formulára naspodu sekcie.
+					   
+<div id="<?php echo $_control->getSnippetId('') ?>"><?php call_user_func(reset($_l->blocks['_']), $_l, $template->getParameters()) ?>
+</div>					    
 					</div> <!-- end content-module-main -->
 				
 				</div> <!-- end content-module -->
 				
+                                
 				
 		
 			</div> <!-- end side-content -->
 		
+                                                            
+                                                            
+                
 		</div> <!-- end full-width -->
 			
 	</div> <!-- end content -->
 	
-	
+
 	
 	<!-- FOOTER -->
 	<div id="footer">
@@ -218,8 +165,81 @@ if (!function_exists($_l->blocks['content'][] = '_lbdba0ff3345_content')) { func
 //
 // block title
 //
-if (!function_exists($_l->blocks['title'][] = '_lb86e16c088b_title')) { function _lb86e16c088b_title($_l, $_args) { extract($_args)
-?>						<h3 class="fl">Prehľad výpožičiek</h3>
+if (!function_exists($_l->blocks['title'][] = '_lb781ac089cb_title')) { function _lb781ac089cb_title($_l, $_args) { extract($_args)
+?>						<h3 class="fl">Prehľad úloh</h3>
+<?php
+}}
+
+//
+// block _
+//
+if (!function_exists($_l->blocks['_'][] = '_lb52696a7113__')) { function _lb52696a7113__($_l, $_args) { extract($_args); $_control->validateControl(false)
+?>						<table id='ulohy'>
+						
+							<thead>
+						
+								<tr>
+									<th>Dátum</th>
+									<th>Úloha</th>
+									<th>Akcie</th>
+								</tr>
+							
+							</thead>
+	
+									
+							<tbody>
+	
+<?php $iterations = 0; foreach ($iterator = $_l->its[] = new Nette\Iterators\CachingIterator($ulohy) as $uloha): ?>
+							    <tr<?php if ($_l->tmp = array_filter(array($iterator->isOdd() ? 'odd' : 'even'))) echo ' class="' . htmlSpecialChars(implode(" ", array_unique($_l->tmp))) . '"' ?>>
+								<td><?php echo Nette\Templating\Helpers::escapeHtml($template->date($uloha->datum, 'j. n. Y'), ENT_NOQUOTES) ?></td>
+								<td><?php echo Nette\Templating\Helpers::escapeHtml($uloha->popis, ENT_NOQUOTES) ?></td>
+								<td>
+								    <a class="table-actions-button ic-table-done ajax" href="<?php echo htmlSpecialChars($_control->link("markDone!", array($uloha->id_uloha))) ?>
+"></a>
+								</td>
+							    </tr>
+<?php $iterations++; endforeach; array_pop($_l->its); $iterator = end($_l->its) ?>
+							
+							</tbody>
+							<!-- FORMULAR PRE PRIDAVANIE ULOH -->
+							<tfoot>
+							    <tr>
+							    <td colspan="3" class="table-footer">
+								
+<?php Nette\Latte\Macros\FormMacros::renderFormBegin($form = $_form = (is_object("addUlohaForm") ? "addUlohaForm" : $_control["addUlohaForm"]), array()) ?>
+
+								       <fieldset>
+<?php if (is_object($form)) $_ctrl = $form; else $_ctrl = $_control->getComponent($form); if ($_ctrl instanceof Nette\Application\UI\IRenderable) $_ctrl->validateControl(); $_ctrl->render('errors') ?>
+									    <p>
+<?php $_input = is_object("datum") ? "datum" : $_form["datum"]; if ($_label = $_input->getLabel()) echo $_label->addAttributes(array()) ;$_input = (is_object("datum") ? "datum" : $_form["datum"]); echo $_input->getControl()->addAttributes(array()) ?>
+									    </p>
+									    <p>
+<?php $_input = is_object("popis") ? "popis" : $_form["popis"]; if ($_label = $_input->getLabel()) echo $_label->addAttributes(array()) ;$_input = (is_object("popis") ? "popis" : $_form["popis"]); echo $_input->getControl()->addAttributes(array()) ?>
+									    </p>
+									   
+
+<?php $_input = (is_object("pridat") ? "pridat" : $_form["pridat"]); echo $_input->getControl()->addAttributes(array()) ?>
+									</fieldset>
+	
+<?php Nette\Latte\Macros\FormMacros::renderFormEnd($_form) ?>
+								<!--	
+								<form>
+								    <fieldset>
+								    <label for="datum" style="display:inline; padding-right: 10px;">Dátum</label>
+								    <select id="dropdown-actions" style="display:inline;">
+									<option value="option1">Select your action here</option>
+								    </select>
+								    
+								    <label for="popis" style="display:inline; padding-right: 10px; padding-left: 10px;">Úloha</label><input type="text" style="display:inline;  padding-right: 10px;" id="full-width-input" class="round default-width-input">
+								    <input type="submit" value="Pridať úlohu" class="round blue ic-right-arrow" style="display:inline;  padding-left: 10px;">
+								    </fieldset>
+								</form>	
+								-->
+							     </td>
+							</tfoot>
+							<!-- END FORMULAR -->
+							
+						</table>
 <?php
 }}
 

@@ -1,16 +1,16 @@
-<?php //netteCache[01]000415a:2:{s:4:"time";s:21:"0.60774400 1381598941";s:9:"callbacks";a:2:{i:0;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:9:"checkFile";}i:1;s:93:"/Applications/XAMPP/xamppfiles/htdocs/spravaregistratury/app/templates/Homepage/default.latte";i:2;i:1381598937;}i:1;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:10:"checkConst";}i:1;s:25:"Nette\Framework::REVISION";i:2;s:30:"80a7e46 released on 2013-08-08";}}}?><?php
+<?php //netteCache[01]000415a:2:{s:4:"time";s:21:"0.45157800 1382472930";s:9:"callbacks";a:2:{i:0;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:9:"checkFile";}i:1;s:93:"/Applications/XAMPP/xamppfiles/htdocs/spravaregistratury/app/templates/Homepage/default.latte";i:2;i:1382472925;}i:1;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:10:"checkConst";}i:1;s:25:"Nette\Framework::REVISION";i:2;s:30:"80a7e46 released on 2013-08-08";}}}?><?php
 
 // source file: /Applications/XAMPP/xamppfiles/htdocs/spravaregistratury/app/templates/Homepage/default.latte
 
 ?><?php
 // prolog Nette\Latte\Macros\CoreMacros
-list($_l, $_g) = Nette\Latte\Macros\CoreMacros::initRuntime($template, 'txvkwvirzy')
+list($_l, $_g) = Nette\Latte\Macros\CoreMacros::initRuntime($template, '5740osfzwu')
 ;
 // prolog Nette\Latte\Macros\UIMacros
 //
 // block content
 //
-if (!function_exists($_l->blocks['content'][] = '_lb72c3b5f4a7_content')) { function _lb72c3b5f4a7_content($_l, $_args) { extract($_args)
+if (!function_exists($_l->blocks['content'][] = '_lba2e164d472_content')) { function _lba2e164d472_content($_l, $_args) { extract($_args)
 ?><body>
 
 	<!-- TOP BAR -->
@@ -37,12 +37,7 @@ if (!function_exists($_l->blocks['content'][] = '_lb72c3b5f4a7_content')) { func
 			</ul> <!-- end nav -->
 
 					
-			<form action="#" method="POST" id="search-form" class="fr">
-				<fieldset>
-					<input type="text" id="search-keyword" class="round button dark ic-search image-right" placeholder="Search..." />
-					<input type="hidden" value="SUBMIT" />
-				</fieldset>
-			</form>
+			
 
 		</div> <!-- end full-width -->	
 	
@@ -58,7 +53,7 @@ if (!function_exists($_l->blocks['content'][] = '_lb72c3b5f4a7_content')) { func
 			<ul id="tabs" class="fl">
 				<li><a href="dashboard.html" class="active-tab dashboard-tab">Úložné jednotky</a></li>
 				<li><a href="page-full-width.html">Výpožičky</a></li>
-				<li><a href="page-other.html">Ostatné</a></li>
+				<li><a href="page-other.html">Jednotky na vyradenie</a></li>
 			</ul> <!-- end tabs -->
 			
 			<!-- Change this image to your own company's logo -->

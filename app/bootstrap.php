@@ -25,3 +25,4 @@ $configurator->addConfig(__DIR__ . '/config/config.local.neon', $configurator::N
 $container = $configurator->createContainer();
 
 return $container;
+

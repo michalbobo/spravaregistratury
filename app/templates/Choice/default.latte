@@ -18,22 +18,22 @@
 						<li><a n:href="signOut!">Odhlásiť</a></li>
 					</ul> 
 				</li>
-				<li class="v-sep"><a n:href="Homepage:" class="round button dark">US Steel</a>
+				<li class="v-sep"><a href="#" class="round button dark">US Steel</a>
 					<ul>
-						<li><a n:href="Homepage:">Registratúrny poriadok</a></li>
-						<li><a href="#">Databáza záznamov</a></li>
+						<li><a href="#">Registratúrny poriadok</a></li>
+						<li><a n:href="Homepage: firma => 1">Databáza záznamov</a></li>
 					</ul> 
 				</li>
 				<li class="v-sep"><a href="#" class="round button dark">Union</a>
 					<ul>
 						<li><a href="#">Registratúrny poriadok</a></li>
-						<li><a href="#">Databáza záznamov</a></li>
+						<li><a n:href="Homepage: firma => 3">Databáza záznamov</a></li>
 					</ul> 
 				</li>
 				<li class="v-sep"><a href="#" class="round button dark">Union ZP</a>
 					<ul>
 						<li><a href="#">Registratúrny poriadok</a></li>
-						<li><a href="#">Databáza záznamov</a></li>
+						<li><a n:href="Homepage: firma => 2">Databáza záznamov</a></li>
 					</ul> 
 				</li>
 				<li class="v-sep"><a href="#" class="round button dark">ZIPP</a>
@@ -48,13 +48,7 @@
 			</ul> <!-- end nav -->
 
 					
-			<form action="#" method="POST" id="search-form" class="fr">
-				<fieldset>
-					<input type="text" id="search-keyword" class="round button dark ic-search image-right" placeholder="Hľadať" />
-					<input type="hidden" value="SUBMIT" />
-				</fieldset>
-			</form>
-
+			
 		</div> <!-- end full-width -->	
 	
 	</div> <!-- end top-bar -->
@@ -105,10 +99,12 @@
 			<!--<div class="side-content fr">
 			
 				<div class="content-module"> -->
+                    
+                  
 				
 					<div class="content-module-heading cf">
 					
-						<h3 class="fl" n:block="title">Prehľad výpožičiek</h3>
+						<h3 class="fl" n:block="title">Prehľad úloh</h3>
 						
 						
 					<!--	<span class="fr expand-collapse-text initial-expand">Click to expand</span>-->
@@ -118,78 +114,95 @@
 					
 					<div class="content-module-main">
 					    
-					    
-					    
+					    <p>Jednoduchý prehľad nesplnených úloh. Úlohy je možné pridávať pomocou formulára naspodu sekcie.
+					   
+						{snippet}
 						<table id='ulohy'>
 						
 							<thead>
 						
 								<tr>
-									<th><input type="checkbox" id="table-select-all"></th>
 									<th>Dátum</th>
 									<th>Úloha</th>
-									<th>Popis</th>
-									<th>Hotovo</th>
 									<th>Akcie</th>
 								</tr>
 							
 							</thead>
 	
-							<tfoot>
-							
-								<tr>
-								
-									<td colspan="5" class="table-footer">
 									
-										<label for="table-select-actions">S vybranými:</label>
-	
-										<select id="table-select-actions">
-											<option value="option1">Hotovo</option>
-											<option value="option2">Vymazať</option>
-											<option value="option3">Odložiť</option>
-										</select>
-										
-										<a href="#" class="round button blue text-upper small-button">Vykonať s vybranými</a>	
-	
-									</td>
-									
-								</tr>
-							
-							</tfoot>
-							
 							<tbody>
 	
-							    {foreach $users as $user}
-							    <tr>
-								<td><input type="checkbox"></td>
-								<td>{$user->meno}</td>
-								<td>{$user->priezvisko}</td>
-								<td>{$user->email}</td>
-								<td>{$user->telefon}</td>
+							    {foreach $ulohy as $uloha}
+							    <tr n:class="$iterator->isOdd() ? odd : even">
+								<td>{$uloha->datum|date:'j. n. Y'}</td>
+								<td>{$uloha->popis}</td>
 								<td>
-								    <a href="#" class="table-actions-button ic-table-edit"></a>
-								    <a href="#" class="table-actions-button ic-table-delete"></a>
+								    <a n:href="markDone! $uloha->id_uloha" class="table-actions-button ic-table-done ajax"></a>
 								</td>
 							    </tr>
 							    {/foreach}
 							
 							</tbody>
+							<!-- FORMULAR PRE PRIDAVANIE ULOH -->
+							<tfoot>
+							    <tr>
+							    <td colspan="3" class="table-footer">
+								
+								{form addUlohaForm}
+
+								       <fieldset>
+									    {control $form errors}
+									    <p>
+									    {label datum/}
+									    {input datum}
+									    </p>
+									    <p>
+									    {label popis/}
+									    {input popis}
+									    </p>
+									   
+
+									    {input pridat}
+									</fieldset>
+	
+	{/form}
+								<!--	
+								<form>
+								    <fieldset>
+								    <label for="datum" style="display:inline; padding-right: 10px;">Dátum</label>
+								    <select id="dropdown-actions" style="display:inline;">
+									<option value="option1">Select your action here</option>
+								    </select>
+								    
+								    <label for="popis" style="display:inline; padding-right: 10px; padding-left: 10px;">Úloha</label><input type="text" style="display:inline;  padding-right: 10px;" id="full-width-input" class="round default-width-input">
+								    <input type="submit" value="Pridať úlohu" class="round blue ic-right-arrow" style="display:inline;  padding-left: 10px;">
+								    </fieldset>
+								</form>	
+								-->
+							     </td>
+							</tfoot>
+							<!-- END FORMULAR -->
 							
 						</table>
-					
+					{/snippet}
+					    
 					</div> <!-- end content-module-main -->
 				
 				</div> <!-- end content-module -->
 				
+                                
 				
 		
 			</div> <!-- end side-content -->
 		
+                                                            
+                                                            
+                
 		</div> <!-- end full-width -->
 			
 	</div> <!-- end content -->
 	
-	
+
 	
 	<!-- FOOTER -->
 	<div id="footer">

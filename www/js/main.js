@@ -1,3 +1,7 @@
 $(function(){
 
 });
+
+$(function () {
+    $.nette.init();
+});

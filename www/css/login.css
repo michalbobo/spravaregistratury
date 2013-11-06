@@ -161,7 +161,7 @@ div#login-intro {
 /*-------------content-----------------------------*/
 div#content {
 	background: #f8f9fa url("../images/artwork-bg.png") repeat-x left bottom;
-	padding: 1.875em; /*30/16 */;
+	padding: 1.875em; /*30/16 */
 	border: 1px solid #eeefef;
 }
 

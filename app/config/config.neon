@@ -30,6 +30,7 @@ common:
 		routerFactory: RouterFactory
 		router: @routerFactory::createRouter
 		userRepository:	SpravaRegistratury\UzivateliaRepository
+		ulohyRepository:    SpravaRegistratury\UlohyRepository
 
 
 	factories:
