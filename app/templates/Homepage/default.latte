@@ -93,10 +93,13 @@
 						
 								<tr>
 									<th><input type="checkbox" id="table-select-all"></th>
-									<th>Meno</th>
-									<th>Priezvisko</th>
-									<th>Email</th>
-									<th>Telefón</th>
+									<th>R.Z.</th>
+									<th>Názov</th>
+									<th>Rok vzniku</th>
+									<th>Rozsah</th>
+									<th>Typ</th>
+									<th>Číslo</th>
+									<th>Lokácia</th>
 									<th>Akcie</th>
 								</tr>
 							
@@ -125,14 +128,19 @@
 							</tfoot>
 							
 							<tbody>
-	
-							    {foreach $users as $user}
-							    <tr>
-								<td><input type="checkbox"></td>
-								<td>{$user->meno}</td>
-								<td>{$user->priezvisko}</td>
-								<td>{$user->email}</td>
-								<td>{$user->telefon}</td>
+								    
+							    {foreach $jednotky as $jednotka}
+							    <tr n:class="$iterator->isOdd() ? odd : even">
+								<td><input type="checkbox">{$iterator->counter}</td>
+								<td>{$jednotka->reg_znacka}</td>
+								<td>{$jednotka->nazov}</td>
+								<td>{$jednotka->rok_vzniku}</td>
+								<td>{$jednotka->rozsah}</td>
+								<td>{$jednotka->typ_jednotky}</td>
+								<td>{$jednotka->cislo_jednotky}</td>
+								<td>{$jednotka->lokacia}</td>
+								
+								
 								<td>
 								    <a href="#" class="table-actions-button ic-table-edit"></a>
 								    <a href="#" class="table-actions-button ic-table-delete"></a>

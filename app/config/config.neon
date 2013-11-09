@@ -31,6 +31,10 @@ common:
 		router: @routerFactory::createRouter
 		userRepository:	SpravaRegistratury\UzivateliaRepository
 		ulohyRepository:    SpravaRegistratury\UlohyRepository
+		firmyRepository:    SpravaRegistratury\FirmyRepository
+		utvaryRepository:   SpravaRegistratury\UtvaryRepository
+		ulozneJednotkyRepository:   SpravaRegistratury\Ulozne_JednotkyRepository
+		regZnackyRepository:	SpravaRegistratury\Reg_ZnackyRepository
 
 
 	factories:

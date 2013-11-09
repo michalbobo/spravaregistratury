@@ -1,16 +1,16 @@
-<?php //netteCache[01]000415a:2:{s:4:"time";s:21:"0.45157800 1382472930";s:9:"callbacks";a:2:{i:0;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:9:"checkFile";}i:1;s:93:"/Applications/XAMPP/xamppfiles/htdocs/spravaregistratury/app/templates/Homepage/default.latte";i:2;i:1382472925;}i:1;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:10:"checkConst";}i:1;s:25:"Nette\Framework::REVISION";i:2;s:30:"80a7e46 released on 2013-08-08";}}}?><?php
+<?php //netteCache[01]000415a:2:{s:4:"time";s:21:"0.45059700 1384029836";s:9:"callbacks";a:2:{i:0;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:9:"checkFile";}i:1;s:93:"/Applications/XAMPP/xamppfiles/htdocs/spravaregistratury/app/templates/Homepage/default.latte";i:2;i:1384029807;}i:1;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:10:"checkConst";}i:1;s:25:"Nette\Framework::REVISION";i:2;s:30:"80a7e46 released on 2013-08-08";}}}?><?php
 
 // source file: /Applications/XAMPP/xamppfiles/htdocs/spravaregistratury/app/templates/Homepage/default.latte
 
 ?><?php
 // prolog Nette\Latte\Macros\CoreMacros
-list($_l, $_g) = Nette\Latte\Macros\CoreMacros::initRuntime($template, '5740osfzwu')
+list($_l, $_g) = Nette\Latte\Macros\CoreMacros::initRuntime($template, 'xi9qj73fon')
 ;
 // prolog Nette\Latte\Macros\UIMacros
 //
 // block content
 //
-if (!function_exists($_l->blocks['content'][] = '_lba2e164d472_content')) { function _lba2e164d472_content($_l, $_args) { extract($_args)
+if (!function_exists($_l->blocks['content'][] = '_lb592017cee2_content')) { function _lb592017cee2_content($_l, $_args) { extract($_args)
 ?><body>
 
 	<!-- TOP BAR -->
@@ -105,10 +105,13 @@ if (!function_exists($_l->blocks['content'][] = '_lba2e164d472_content')) { func
 						
 								<tr>
 									<th><input type="checkbox" id="table-select-all" /></th>
-									<th>Meno</th>
-									<th>Priezvisko</th>
-									<th>Email</th>
-									<th>Telefón</th>
+									<th>R.Z.</th>
+									<th>Názov</th>
+									<th>Rok vzniku</th>
+									<th>Rozsah</th>
+									<th>Typ</th>
+									<th>Číslo</th>
+									<th>Lokácia</th>
 									<th>Akcie</th>
 								</tr>
 							
@@ -137,20 +140,25 @@ if (!function_exists($_l->blocks['content'][] = '_lba2e164d472_content')) { func
 							</tfoot>
 							
 							<tbody>
-	
-<?php $iterations = 0; foreach ($users as $user): ?>
-							    <tr>
-								<td><input type="checkbox" /></td>
-								<td><?php echo Nette\Templating\Helpers::escapeHtml($user->meno, ENT_NOQUOTES) ?></td>
-								<td><?php echo Nette\Templating\Helpers::escapeHtml($user->priezvisko, ENT_NOQUOTES) ?></td>
-								<td><?php echo Nette\Templating\Helpers::escapeHtml($user->email, ENT_NOQUOTES) ?></td>
-								<td><?php echo Nette\Templating\Helpers::escapeHtml($user->telefon, ENT_NOQUOTES) ?></td>
+								    
+<?php $iterations = 0; foreach ($iterator = $_l->its[] = new Nette\Iterators\CachingIterator($jednotky) as $jednotka): ?>
+							    <tr<?php if ($_l->tmp = array_filter(array($iterator->isOdd() ? 'odd' : 'even'))) echo ' class="' . htmlSpecialChars(implode(" ", array_unique($_l->tmp))) . '"' ?>>
+								<td><input type="checkbox" /><?php echo Nette\Templating\Helpers::escapeHtml($iterator->counter, ENT_NOQUOTES) ?></td>
+								<td><?php echo Nette\Templating\Helpers::escapeHtml($jednotka->reg_znacka, ENT_NOQUOTES) ?></td>
+								<td><?php echo Nette\Templating\Helpers::escapeHtml($jednotka->nazov, ENT_NOQUOTES) ?></td>
+								<td><?php echo Nette\Templating\Helpers::escapeHtml($jednotka->rok_vzniku, ENT_NOQUOTES) ?></td>
+								<td><?php echo Nette\Templating\Helpers::escapeHtml($jednotka->rozsah, ENT_NOQUOTES) ?></td>
+								<td><?php echo Nette\Templating\Helpers::escapeHtml($jednotka->typ_jednotky, ENT_NOQUOTES) ?></td>
+								<td><?php echo Nette\Templating\Helpers::escapeHtml($jednotka->cislo_jednotky, ENT_NOQUOTES) ?></td>
+								<td><?php echo Nette\Templating\Helpers::escapeHtml($jednotka->lokacia, ENT_NOQUOTES) ?></td>
+								
+								
 								<td>
 								    <a href="#" class="table-actions-button ic-table-edit"></a>
 								    <a href="#" class="table-actions-button ic-table-delete"></a>
 								</td>
 							    </tr>
-<?php $iterations++; endforeach ?>
+<?php $iterations++; endforeach; array_pop($_l->its); $iterator = end($_l->its) ?>
 							
 							</tbody>
 							

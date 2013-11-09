@@ -43,20 +43,20 @@ class ChoicePresenter extends BasePresenter{
 	    }
 	}
 	
-	protected function createComponentAddUlohaForm(){
+	public function createComponentAddUlohaForm(){
         
         
         
         $form = new Form();
         $form->addText('datum','Dátum:')
-		->addRule(Form::VALID, 'Zadaný dátum nie je platný!')
 		->setAttribute('placeholder','YYYY-MM-DD')
-		->setAttribute('style','display:inline');
+		->setAttribute('style','display:inline;');
         $form->addText('popis','Úloha')
 		->addRule(Form::FILLED,'Je nutné zadať úlohu!')
-		->setAttribute('style','display:inline')
+		
 		->setAttribute('class','round default-width-input')
-		->setAttribute('placeholder','Moja nová úloha');
+		->setAttribute('placeholder','Moja nová úloha')
+		->setAttribute('style','display:inline;');
         $form->addSubmit('pridat','Pridať úlohu')
 		->setAttribute('class','round blue ic-right-arrow ajax');
         $form->onSuccess[] = $this->addUlohaFormSubmitted;
@@ -64,12 +64,17 @@ class ChoicePresenter extends BasePresenter{
 	 }
 	
 	public function addUlohaFormSubmitted(Form $form){
-	    
+	
 	$this->ulohyRepository->createNewUloha($form->values->datum, $form->values->popis, $this->getUser()->getId() );
-        
-	    
-	    $this->redirect('this');
-	   
+	$this->flashMessage('Úloha úspesne pridaná!');
+	if(empty($form->values->datum));
+	if (!$this->isAjax()){
+	redirect('this');  
+	} else {
+	    $form->setValues(array(),TRUE);
+            $this->invalidateControl('form');
+	    $this->invalidateControl();
+	}
 	}
 	    
 

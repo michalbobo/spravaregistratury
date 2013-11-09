@@ -13,7 +13,7 @@ class UlohyRepository extends Repository{
     }
     
     public function findIncompleteByUser($userId){
-	return $this->findIncomplete()->where(array('uzivatel' => $userId));
+	return $this->findIncomplete()->where(array('uzivatel' => $userId))->order('datum ASC');
     }
     
     public function markDone($id){
@@ -24,7 +24,7 @@ class UlohyRepository extends Repository{
 	return $this->getTable()->insert(array(
 	    'id_uloha' => '',
             'popis' => $popis,
-            'datum' => $datum,
+	    'datum' => $datum,
 	    'splnene' => '',
             'uzivatel' => $uzivatel
             

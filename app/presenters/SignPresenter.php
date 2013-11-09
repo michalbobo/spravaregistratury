@@ -30,7 +30,7 @@ class SignPresenter extends BasePresenter
 			->setAttribute('name','password')
 			->setAttribute('placeholder','Heslo');
                 $form->addSubmit('login','Prihlásiť sa')	
-			->setAttribute('class','button round blue text-upper image-right ic-right-arrow');
+			->setAttribute('class','button round blue ic-right-arrow text-upper image-right');
                 $form->onSuccess[] = $this->signInFormSubmitted;
                 return $form;
 	}

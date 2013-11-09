@@ -1,6 +1,7 @@
 {* Latte template *}
 
 {block content}
+
 <body>
 
     
@@ -14,7 +15,7 @@
 				<!--<li class="v-sep"><a href="#" class="round button dark ic-left-arrow image-left">Go to website</a></li>-->
 				<li class="v-sep"><a href="#" class="round button dark menu-user image-left">Prihlásený ako <strong>{$user->getIdentity()->meno} {$user->getIdentity()->priezvisko}</strong></a>
 					<ul>
-					    <li><a n:href="Password:">Zmeniť heslo</a></li>
+						<li><a href="#">Zmeniť heslo</a></li>
 						<li><a n:href="signOut!">Odhlásiť</a></li>
 					</ul> 
 				</li>
@@ -104,7 +105,7 @@
 				
 					<div class="content-module-heading cf">
 					
-						<h3 class="fl" n:block="title">Prehľad úloh</h3>
+						<h3 class="fl" n:block="title">Zmena hesla</h3>
 						
 						
 					<!--	<span class="fr expand-collapse-text initial-expand">Click to expand</span>-->
@@ -114,79 +115,31 @@
 					
 					<div class="content-module-main">
 					    
-					    <p>Jednoduchý prehľad nesplnených úloh. Úlohy je možné pridávať pomocou formulára naspodu sekcie.
+					    <p>Pre zmenu hesla zadajte svoje súčasné heslo a nové heslo aj s potvrdením. Nové heslo musí mať aspoň 6 znakov</p>
 					   
-						{snippet}
-						<table id='ulohy'>
-						
-							<thead>
-						
-								<tr>
-									<th>Dátum</th>
-									<th>Úloha</th>
-									<th>Akcie</th>
-								</tr>
-							
-							</thead>
-	
-									
-							<tbody>
-	
-							    {foreach $ulohy as $uloha}
-							    <tr n:class="$iterator->isOdd() ? odd : even">
-								<td>{$uloha->datum|date:'j. n. Y'}</td>
-								<td>{$uloha->popis}</td>
-								<td>
-								    <a n:href="markDone! $uloha->id_uloha" class="table-actions-button ic-table-done ajax"></a>
-								</td>
-							    </tr>
-							    {/foreach}
-							
-							</tbody>
-							<!-- FORMULAR PRE PRIDAVANIE ULOH -->
-							<tfoot>
-							    <tr>
-							    <td colspan="3" class="table-footer">
-								
-								{form addUlohaForm}
+					    {form passwordForm}
 
 								       <fieldset>
 									    {control $form errors}
 									   <p>
-									    {label datum/}
-									    {input datum}
+									    {label oldPassword/}
+									    {input oldPassword}
 									   </p>
 									   <p>
-									    {label popis/}
-									    {input popis}
-									   
+									    {label newPassword/}
+									    {input newPassword}
 									   </p>
 									   <p>
-									    {input pridat}
+									   {label confirmPassword/}
+									   {input confirmPassword}
+									   </p>
+									   <p>
+									    {input set}
 									   </p>
 									</fieldset>
 	
-								{/form}
-								
-								<!--	
-								<form>
-								    <fieldset>
-								    <label for="datum" style="display:inline; padding-right: 10px;">Dátum</label>
-								    <select id="dropdown-actions" style="display:inline;">
-									<option value="option1">Select your action here</option>
-								    </select>
-								    
-								    <label for="popis" style="display:inline; padding-right: 10px; padding-left: 10px;">Úloha</label><input type="text" style="display:inline;  padding-right: 10px;" id="full-width-input" class="round default-width-input">
-								    <input type="submit" value="Pridať úlohu" class="round blue ic-right-arrow" style="display:inline;  padding-left: 10px;">
-								    </fieldset>
-								</form>	
-								-->
-							     </td>
-							</tfoot>
-							<!-- END FORMULAR -->
-							
-						</table>
-					{/snippet}
+					{/form}
+						
 					    
 					</div> <!-- end content-module-main -->
 				

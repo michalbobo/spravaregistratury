@@ -1,30 +1,30 @@
-<?php //netteCache[01]000406a:2:{s:4:"time";s:21:"0.23084700 1383695162";s:9:"callbacks";a:2:{i:0;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:9:"checkFile";}i:1;s:84:"/Applications/XAMPP/xamppfiles/htdocs/spravaregistratury/app/templates/@layout.latte";i:2;i:1383695000;}i:1;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:10:"checkConst";}i:1;s:25:"Nette\Framework::REVISION";i:2;s:30:"80a7e46 released on 2013-08-08";}}}?><?php
+<?php //netteCache[01]000406a:2:{s:4:"time";s:21:"0.57548200 1383853407";s:9:"callbacks";a:2:{i:0;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:9:"checkFile";}i:1;s:84:"/Applications/XAMPP/xamppfiles/htdocs/spravaregistratury/app/templates/@layout.latte";i:2;i:1383695000;}i:1;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:10:"checkConst";}i:1;s:25:"Nette\Framework::REVISION";i:2;s:30:"80a7e46 released on 2013-08-08";}}}?><?php
 
 // source file: /Applications/XAMPP/xamppfiles/htdocs/spravaregistratury/app/templates/@layout.latte
 
 ?><?php
 // prolog Nette\Latte\Macros\CoreMacros
-list($_l, $_g) = Nette\Latte\Macros\CoreMacros::initRuntime($template, '9n88an5kqj')
+list($_l, $_g) = Nette\Latte\Macros\CoreMacros::initRuntime($template, 'w5imiunqqi')
 ;
 // prolog Nette\Latte\Macros\UIMacros
 //
 // block title
 //
-if (!function_exists($_l->blocks['title'][] = '_lb1f3bb9af92_title')) { function _lb1f3bb9af92_title($_l, $_args) { extract($_args)
+if (!function_exists($_l->blocks['title'][] = '_lb3ce3462af8_title')) { function _lb3ce3462af8_title($_l, $_args) { extract($_args)
 ?>NP-publication - prihlásenie<?php
 }}
 
 //
 // block head
 //
-if (!function_exists($_l->blocks['head'][] = '_lbee42bd1bef_head')) { function _lbee42bd1bef_head($_l, $_args) { extract($_args)
+if (!function_exists($_l->blocks['head'][] = '_lbd1f8317fcb_head')) { function _lbd1f8317fcb_head($_l, $_args) { extract($_args)
 ;
 }}
 
 //
 // block scripts
 //
-if (!function_exists($_l->blocks['scripts'][] = '_lbd24c5d976b_scripts')) { function _lbd24c5d976b_scripts($_l, $_args) { extract($_args)
+if (!function_exists($_l->blocks['scripts'][] = '_lbe428e0cd79_scripts')) { function _lbe428e0cd79_scripts($_l, $_args) { extract($_args)
 ?>	<script src="<?php echo htmlSpecialChars($basePath) ?>/js/jquery.js"></script>
 	<script src="<?php echo htmlSpecialChars($basePath) ?>/js/netteForms.js"></script>
 	<script src="<?php echo htmlSpecialChars($basePath) ?>/js/main.js"></script>

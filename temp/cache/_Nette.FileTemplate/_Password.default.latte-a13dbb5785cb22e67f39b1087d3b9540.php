@@ -1,16 +1,16 @@
-<?php //netteCache[01]000413a:2:{s:4:"time";s:21:"0.29560600 1384032768";s:9:"callbacks";a:2:{i:0;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:9:"checkFile";}i:1;s:91:"/Applications/XAMPP/xamppfiles/htdocs/spravaregistratury/app/templates/Choice/default.latte";i:2;i:1384032764;}i:1;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:10:"checkConst";}i:1;s:25:"Nette\Framework::REVISION";i:2;s:30:"80a7e46 released on 2013-08-08";}}}?><?php
+<?php //netteCache[01]000415a:2:{s:4:"time";s:21:"0.72090800 1384032883";s:9:"callbacks";a:2:{i:0;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:9:"checkFile";}i:1;s:93:"/Applications/XAMPP/xamppfiles/htdocs/spravaregistratury/app/templates/Password/default.latte";i:2;i:1384032880;}i:1;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:10:"checkConst";}i:1;s:25:"Nette\Framework::REVISION";i:2;s:30:"80a7e46 released on 2013-08-08";}}}?><?php
 
-// source file: /Applications/XAMPP/xamppfiles/htdocs/spravaregistratury/app/templates/Choice/default.latte
+// source file: /Applications/XAMPP/xamppfiles/htdocs/spravaregistratury/app/templates/Password/default.latte
 
 ?><?php
 // prolog Nette\Latte\Macros\CoreMacros
-list($_l, $_g) = Nette\Latte\Macros\CoreMacros::initRuntime($template, 'llieiu54xc')
+list($_l, $_g) = Nette\Latte\Macros\CoreMacros::initRuntime($template, 'upm3rwrdbz')
 ;
 // prolog Nette\Latte\Macros\UIMacros
 //
 // block content
 //
-if (!function_exists($_l->blocks['content'][] = '_lb11f334919d_content')) { function _lb11f334919d_content($_l, $_args) { extract($_args)
+if (!function_exists($_l->blocks['content'][] = '_lb1bb7f2589e_content')) { function _lb1bb7f2589e_content($_l, $_args) { extract($_args)
 ?><body>
 
     
@@ -25,8 +25,7 @@ if (!function_exists($_l->blocks['content'][] = '_lb11f334919d_content')) { func
 				<li class="v-sep"><a href="#" class="round button dark menu-user image-left">Prihlásený ako <strong><?php echo Nette\Templating\Helpers::escapeHtml($user->getIdentity()->meno, ENT_NOQUOTES) ?>
  <?php echo Nette\Templating\Helpers::escapeHtml($user->getIdentity()->priezvisko, ENT_NOQUOTES) ?></strong></a>
 					<ul>
-					    <li><a href="<?php echo htmlSpecialChars($_control->link("Password:")) ?>
-">Zmeniť heslo</a></li>
+						<li><a href="#">Zmeniť heslo</a></li>
 						<li><a href="<?php echo htmlSpecialChars($_control->link("signOut!")) ?>">Odhlásiť</a></li>
 					</ul> 
 				</li>
@@ -135,10 +134,29 @@ if (!function_exists($_l->blocks['content'][] = '_lb11f334919d_content')) { func
 					
 					<div class="content-module-main">
 					    
-					    <p>Jednoduchý prehľad nesplnených úloh. Úlohy je možné pridávať pomocou formulára naspodu sekcie.
+					    <p>Pre zmenu hesla zadajte svoje súčasné heslo a nové heslo aj s potvrdením. Nové heslo musí mať aspoň 6 znakov</p>
 					   
-<div id="<?php echo $_control->getSnippetId('') ?>"><?php call_user_func(reset($_l->blocks['_']), $_l, $template->getParameters()) ?>
-</div>					    
+<?php Nette\Latte\Macros\FormMacros::renderFormBegin($form = $_form = (is_object("passwordForm") ? "passwordForm" : $_control["passwordForm"]), array()) ?>
+
+								       <fieldset>
+<?php if (is_object($form)) $_ctrl = $form; else $_ctrl = $_control->getComponent($form); if ($_ctrl instanceof Nette\Application\UI\IRenderable) $_ctrl->validateControl(); $_ctrl->render('errors') ?>
+									   <p>
+<?php $_input = is_object("oldPassword") ? "oldPassword" : $_form["oldPassword"]; if ($_label = $_input->getLabel()) echo $_label->addAttributes(array()) ;$_input = (is_object("oldPassword") ? "oldPassword" : $_form["oldPassword"]); echo $_input->getControl()->addAttributes(array()) ?>
+									   </p>
+									   <p>
+<?php $_input = is_object("newPassword") ? "newPassword" : $_form["newPassword"]; if ($_label = $_input->getLabel()) echo $_label->addAttributes(array()) ;$_input = (is_object("newPassword") ? "newPassword" : $_form["newPassword"]); echo $_input->getControl()->addAttributes(array()) ?>
+									   </p>
+									   <p>
+<?php $_input = is_object("confirmPassword") ? "confirmPassword" : $_form["confirmPassword"]; if ($_label = $_input->getLabel()) echo $_label->addAttributes(array()) ;$_input = (is_object("confirmPassword") ? "confirmPassword" : $_form["confirmPassword"]); echo $_input->getControl()->addAttributes(array()) ?>
+									   </p>
+									   <p>
+<?php $_input = (is_object("set") ? "set" : $_form["set"]); echo $_input->getControl()->addAttributes(array()) ?>
+									   </p>
+									</fieldset>
+	
+<?php Nette\Latte\Macros\FormMacros::renderFormEnd($_form) ?>
+						
+					    
 					</div> <!-- end content-module-main -->
 				
 				</div> <!-- end content-module -->
@@ -171,83 +189,8 @@ if (!function_exists($_l->blocks['content'][] = '_lb11f334919d_content')) { func
 //
 // block title
 //
-if (!function_exists($_l->blocks['title'][] = '_lbbd62429ffc_title')) { function _lbbd62429ffc_title($_l, $_args) { extract($_args)
-?>						<h3 class="fl">Prehľad úloh</h3>
-<?php
-}}
-
-//
-// block _
-//
-if (!function_exists($_l->blocks['_'][] = '_lb32df95953d__')) { function _lb32df95953d__($_l, $_args) { extract($_args); $_control->validateControl(false)
-?>						<table id='ulohy'>
-						
-							<thead>
-						
-								<tr>
-									<th>Dátum</th>
-									<th>Úloha</th>
-									<th>Akcie</th>
-								</tr>
-							
-							</thead>
-	
-									
-							<tbody>
-	
-<?php $iterations = 0; foreach ($iterator = $_l->its[] = new Nette\Iterators\CachingIterator($ulohy) as $uloha): ?>
-							    <tr<?php if ($_l->tmp = array_filter(array($iterator->isOdd() ? 'odd' : 'even'))) echo ' class="' . htmlSpecialChars(implode(" ", array_unique($_l->tmp))) . '"' ?>>
-								<td><?php echo Nette\Templating\Helpers::escapeHtml($template->date($uloha->datum, 'j. n. Y'), ENT_NOQUOTES) ?></td>
-								<td><?php echo Nette\Templating\Helpers::escapeHtml($uloha->popis, ENT_NOQUOTES) ?></td>
-								<td>
-								    <a class="table-actions-button ic-table-done ajax" href="<?php echo htmlSpecialChars($_control->link("markDone!", array($uloha->id_uloha))) ?>
-"></a>
-								</td>
-							    </tr>
-<?php $iterations++; endforeach; array_pop($_l->its); $iterator = end($_l->its) ?>
-							
-							</tbody>
-							<!-- FORMULAR PRE PRIDAVANIE ULOH -->
-							<tfoot>
-							    <tr>
-							    <td colspan="3" class="table-footer">
-								
-<?php Nette\Latte\Macros\FormMacros::renderFormBegin($form = $_form = (is_object("addUlohaForm") ? "addUlohaForm" : $_control["addUlohaForm"]), array()) ?>
-
-								       <fieldset>
-<?php if (is_object($form)) $_ctrl = $form; else $_ctrl = $_control->getComponent($form); if ($_ctrl instanceof Nette\Application\UI\IRenderable) $_ctrl->validateControl(); $_ctrl->render('errors') ?>
-									   <p>
-<?php $_input = is_object("datum") ? "datum" : $_form["datum"]; if ($_label = $_input->getLabel()) echo $_label->addAttributes(array()) ;$_input = (is_object("datum") ? "datum" : $_form["datum"]); echo $_input->getControl()->addAttributes(array()) ?>
-									   </p>
-									   <p>
-<?php $_input = is_object("popis") ? "popis" : $_form["popis"]; if ($_label = $_input->getLabel()) echo $_label->addAttributes(array()) ;$_input = (is_object("popis") ? "popis" : $_form["popis"]); echo $_input->getControl()->addAttributes(array()) ?>
-									   
-									   </p>
-									   <p>
-<?php $_input = (is_object("pridat") ? "pridat" : $_form["pridat"]); echo $_input->getControl()->addAttributes(array()) ?>
-									   </p>
-									</fieldset>
-	
-<?php Nette\Latte\Macros\FormMacros::renderFormEnd($_form) ?>
-								
-								<!--	
-								<form>
-								    <fieldset>
-								    <label for="datum" style="display:inline; padding-right: 10px;">Dátum</label>
-								    <select id="dropdown-actions" style="display:inline;">
-									<option value="option1">Select your action here</option>
-								    </select>
-								    
-								    <label for="popis" style="display:inline; padding-right: 10px; padding-left: 10px;">Úloha</label><input type="text" style="display:inline;  padding-right: 10px;" id="full-width-input" class="round default-width-input">
-								    <input type="submit" value="Pridať úlohu" class="round blue ic-right-arrow" style="display:inline;  padding-left: 10px;">
-								    </fieldset>
-								</form>	
-								-->
-							     </td>
-							</tfoot>
-							<!-- END FORMULAR -->
-							
-						</table>
+if (!function_exists($_l->blocks['title'][] = '_lb01cdb4cb58_title')) { function _lb01cdb4cb58_title($_l, $_args) { extract($_args)
+?>						<h3 class="fl">Zmena hesla</h3>
 <?php
 }}
 
@@ -270,5 +213,7 @@ if ($_l->extends) {
 //
 // main template
 //
-if ($_l->extends) { ob_end_clean(); return Nette\Latte\Macros\CoreMacros::includeTemplate($_l->extends, get_defined_vars(), $template)->render(); }
+?>
+
+<?php if ($_l->extends) { ob_end_clean(); return Nette\Latte\Macros\CoreMacros::includeTemplate($_l->extends, get_defined_vars(), $template)->render(); }
 call_user_func(reset($_l->blocks['content']), $_l, get_defined_vars()) ; 

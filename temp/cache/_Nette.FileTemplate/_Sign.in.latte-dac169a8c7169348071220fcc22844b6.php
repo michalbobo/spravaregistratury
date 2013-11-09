@@ -1,16 +1,16 @@
-<?php //netteCache[01]000406a:2:{s:4:"time";s:21:"0.92143800 1381083100";s:9:"callbacks";a:2:{i:0;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:9:"checkFile";}i:1;s:84:"/Applications/XAMPP/xamppfiles/htdocs/spravaregistratury/app/templates/Sign/in.latte";i:2;i:1381083094;}i:1;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:10:"checkConst";}i:1;s:25:"Nette\Framework::REVISION";i:2;s:30:"80a7e46 released on 2013-08-08";}}}?><?php
+<?php //netteCache[01]000406a:2:{s:4:"time";s:21:"0.21508400 1384004325";s:9:"callbacks";a:2:{i:0;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:9:"checkFile";}i:1;s:84:"/Applications/XAMPP/xamppfiles/htdocs/spravaregistratury/app/templates/Sign/in.latte";i:2;i:1384004319;}i:1;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:10:"checkConst";}i:1;s:25:"Nette\Framework::REVISION";i:2;s:30:"80a7e46 released on 2013-08-08";}}}?><?php
 
 // source file: /Applications/XAMPP/xamppfiles/htdocs/spravaregistratury/app/templates/Sign/in.latte
 
 ?><?php
 // prolog Nette\Latte\Macros\CoreMacros
-list($_l, $_g) = Nette\Latte\Macros\CoreMacros::initRuntime($template, 'enzmkf8o30')
+list($_l, $_g) = Nette\Latte\Macros\CoreMacros::initRuntime($template, '44d5z82m4e')
 ;
 // prolog Nette\Latte\Macros\UIMacros
 //
 // block content
 //
-if (!function_exists($_l->blocks['content'][] = '_lb08ba4ce540_content')) { function _lb08ba4ce540_content($_l, $_args) { extract($_args)
+if (!function_exists($_l->blocks['content'][] = '_lb274a927cb8_content')) { function _lb274a927cb8_content($_l, $_args) { extract($_args)
 ?><body>
 
 	<div id="top-bar">
@@ -51,7 +51,7 @@ if (!function_exists($_l->blocks['content'][] = '_lb08ba4ce540_content')) { func
 		<p>
 <?php $_input = is_object("password") ? "password" : $_form["password"]; if ($_label = $_input->getLabel()) echo $_label->addAttributes(array()) ;$_input = (is_object("password") ? "password" : $_form["password"]); echo $_input->getControl()->addAttributes(array()) ?>
 		</p>
-		<p><a href="michal.bobocky@me.com">Kontaktovať administrátora</a></p>
+		<p><a href="mailto:michal.bobocky@me.com">Kontaktovať administrátora</a></p>
 			
 <?php $_input = (is_object("login") ? "login" : $_form["login"]); echo $_input->getControl()->addAttributes(array()) ?>
 		    </fieldset>
@@ -61,7 +61,7 @@ if (!function_exists($_l->blocks['content'][] = '_lb08ba4ce540_content')) { func
 	</div> <!-- end content -->
 	<div id="footer">
 	
-		<p>Vytvorené ako bakalárska práca.<strong> Michal Bobocký, MENDELU.</strong></p>
+		<p>Vytvorené ako bakalárska práca.<strong><a href="mailto:michal.bobocky@me.com"> Michal Bobocký </a>, <a href="https://mendelu.cz">MENDELU.</a></strong></p>
 		<p>2013</p>
 	</div> <!-- end footer -->
 	
@@ -75,7 +75,7 @@ if (!function_exists($_l->blocks['content'][] = '_lb08ba4ce540_content')) { func
 //
 // block title
 //
-if (!function_exists($_l->blocks['title'][] = '_lbcc6154213e_title')) { function _lbcc6154213e_title($_l, $_args) { extract($_args)
+if (!function_exists($_l->blocks['title'][] = '_lbc01fecbdca_title')) { function _lbc01fecbdca_title($_l, $_args) { extract($_args)
 ?>				<h1 class="text-upper">Prihlásenie do systému</h1>
 <?php
 }}

@@ -6,7 +6,11 @@ use Nette;
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-class FirmyRepository extends Repository{
+class UtvaryRepository extends Repository{
     
+    public function findByFirma($idFirma){
+	
+	return $this->findBy(array('firma' => $idFirma));
+    }
     
 }
