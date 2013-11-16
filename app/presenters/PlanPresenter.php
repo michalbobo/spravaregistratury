@@ -42,6 +42,7 @@ class PlanPresenter extends BasePresenter{
         if ($this->template->znacky == FALSE){
             $this->setView('notFound');
         }
+	$this->template->firma = $firma;
 	
 	$this->template->titulok = $this->firmyRepository->find($firma);
 	 

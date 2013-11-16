@@ -1,16 +1,16 @@
-<?php //netteCache[01]000415a:2:{s:4:"time";s:21:"0.34198300 1384537468";s:9:"callbacks";a:2:{i:0;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:9:"checkFile";}i:1;s:93:"/Applications/XAMPP/xamppfiles/htdocs/spravaregistratury/app/templates/Password/default.latte";i:2;i:1384537464;}i:1;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:10:"checkConst";}i:1;s:25:"Nette\Framework::REVISION";i:2;s:30:"80a7e46 released on 2013-08-08";}}}?><?php
+<?php //netteCache[01]000419a:2:{s:4:"time";s:21:"0.30426900 1384544925";s:9:"callbacks";a:2:{i:0;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:9:"checkFile";}i:1;s:97:"/Applications/XAMPP/xamppfiles/htdocs/spravaregistratury/app/templates/EditJednotka/default.latte";i:2;i:1384544923;}i:1;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:10:"checkConst";}i:1;s:25:"Nette\Framework::REVISION";i:2;s:30:"80a7e46 released on 2013-08-08";}}}?><?php
 
-// source file: /Applications/XAMPP/xamppfiles/htdocs/spravaregistratury/app/templates/Password/default.latte
+// source file: /Applications/XAMPP/xamppfiles/htdocs/spravaregistratury/app/templates/EditJednotka/default.latte
 
 ?><?php
 // prolog Nette\Latte\Macros\CoreMacros
-list($_l, $_g) = Nette\Latte\Macros\CoreMacros::initRuntime($template, 'kk0kxknx4p')
+list($_l, $_g) = Nette\Latte\Macros\CoreMacros::initRuntime($template, 'ol6t05gf27')
 ;
 // prolog Nette\Latte\Macros\UIMacros
 //
 // block content
 //
-if (!function_exists($_l->blocks['content'][] = '_lb4289ed0d5f_content')) { function _lb4289ed0d5f_content($_l, $_args) { extract($_args)
+if (!function_exists($_l->blocks['content'][] = '_lb93304fe3ad_content')) { function _lb93304fe3ad_content($_l, $_args) { extract($_args)
 ?><body>
 
     
@@ -21,47 +21,18 @@ if (!function_exists($_l->blocks['content'][] = '_lb4289ed0d5f_content')) { func
 
 			<ul id="nav" class="fl">
 	
-				<!--<li class="v-sep"><a href="#" class="round button dark ic-left-arrow image-left">Go to website</a></li>-->
+				<li class="v-sep"><a class="round button dark ic-left-arrow image-left" href="<?php echo htmlSpecialChars($_control->link("Homepage:", array('firma' => $firma))) ?>
+">Späť</a></li>
 				<li class="v-sep"><a href="#" class="round button dark menu-user image-left">Prihlásený ako <strong><?php echo Nette\Templating\Helpers::escapeHtml($user->getIdentity()->meno, ENT_NOQUOTES) ?>
  <?php echo Nette\Templating\Helpers::escapeHtml($user->getIdentity()->priezvisko, ENT_NOQUOTES) ?></strong></a>
 					<ul>
-						<li><a href="#">Zmeniť heslo</a></li>
+						<li><a href="<?php echo htmlSpecialChars($_control->link("Password:")) ?>">Zmeniť heslo</a></li>
 						<li><a href="<?php echo htmlSpecialChars($_control->link("signOut!")) ?>">Odhlásiť</a></li>
 					</ul> 
 				</li>
-				<li class="v-sep"><a href="#" class="round button dark">US Steel</a>
-					<ul>
-						<li><a href="<?php echo htmlSpecialChars($_control->link("Plan:", array('firma' => 1))) ?>
-">Registratúrny poriadok</a></li>
-						<li><a href="<?php echo htmlSpecialChars($_control->link("Homepage:", array('firma' => 1))) ?>
-">Databáza záznamov</a></li>
-					</ul> 
-				</li>
-				<li class="v-sep"><a href="#" class="round button dark">Union</a>
-					<ul>
-						<li><a href="<?php echo htmlSpecialChars($_control->link("Plan:", array('firma' => 3))) ?>
-">Registratúrny poriadok</a></li>
-						<li><a href="<?php echo htmlSpecialChars($_control->link("Homepage:", array('firma' => 3))) ?>
-">Databáza záznamov</a></li>
-					</ul> 
-				</li>
-				<li class="v-sep"><a href="#" class="round button dark">Union ZP</a>
-					<ul>
-						<li><a href="<?php echo htmlSpecialChars($_control->link("Plan:", array('firma' => 2))) ?>
-">Registratúrny poriadok</a></li>
-						<li><a href="<?php echo htmlSpecialChars($_control->link("Homepage:", array('firma' => 2))) ?>
-">Databáza záznamov</a></li>
-					</ul> 
-				</li>
-				<li class="v-sep"><a href="#" class="round button dark">ZIPP</a>
-					<ul>
-						<li><a href="<?php echo htmlSpecialChars($_control->link("Plan:", array('firma' => 4))) ?>
-">Registratúrny poriadok</a></li>
-						<li><a href="<?php echo htmlSpecialChars($_control->link("Homepage:", array('firma' => 4))) ?>
-">Databáza záznamov</a></li>
-					</ul> 
-				</li>
-			
+				<li class="v-sep"><a class="round button dark" href="<?php echo htmlSpecialChars($_control->link("Plan:", array('firma' => $firma))) ?>
+">Registratúrny plán</a></li>
+				<li><a href="#" class="round button dark menu-email-special image-left">3 nové upozornenia</a></li>
 				<li><a class="round button dark menu-logoff image-left" href="<?php echo htmlSpecialChars($_control->link("signOut!")) ?>
 ">Odhlásiť sa</a></li>
 				
@@ -69,6 +40,7 @@ if (!function_exists($_l->blocks['content'][] = '_lb4289ed0d5f_content')) { func
 
 					
 			
+
 		</div> <!-- end full-width -->	
 	
 	</div> <!-- end top-bar -->
@@ -134,24 +106,37 @@ if (!function_exists($_l->blocks['content'][] = '_lb4289ed0d5f_content')) { func
 					
 					<div class="content-module-main">
 					    
+					    
 					   
-					   
-<?php Nette\Latte\Macros\FormMacros::renderFormBegin($form = $_form = (is_object("passwordForm") ? "passwordForm" : $_control["passwordForm"]), array()) ?>
-						<br /><div class="information-box round">Pre zmenu hesla zadajte svoje súčasné heslo a nové heslo aj s potvrdením. Nové heslo musí mať aspoň 6 znakov.</div>
+<?php Nette\Latte\Macros\FormMacros::renderFormBegin($form = $_form = (is_object("editJednotkaForm") ? "editJednotkaForm" : $_control["editJednotkaForm"]), array()) ?>
+
 								       <fieldset>
 <?php if (is_object($form)) $_ctrl = $form; else $_ctrl = $_control->getComponent($form); if ($_ctrl instanceof Nette\Application\UI\IRenderable) $_ctrl->validateControl(); $_ctrl->render('errors') ?>
 									   <p>
-<?php $_input = is_object("oldPassword") ? "oldPassword" : $_form["oldPassword"]; if ($_label = $_input->getLabel()) echo $_label->addAttributes(array()) ;$_input = (is_object("oldPassword") ? "oldPassword" : $_form["oldPassword"]); echo $_input->getControl()->addAttributes(array()) ?>
+<?php $_input = is_object("znacka") ? "znacka" : $_form["znacka"]; if ($_label = $_input->getLabel()) echo $_label->addAttributes(array()) ;$_input = (is_object("znacka") ? "znacka" : $_form["znacka"]); echo $_input->getControl()->addAttributes(array()) ?>
 									   </p>
 									   <p>
-<?php $_input = is_object("newPassword") ? "newPassword" : $_form["newPassword"]; if ($_label = $_input->getLabel()) echo $_label->addAttributes(array()) ;$_input = (is_object("newPassword") ? "newPassword" : $_form["newPassword"]); echo $_input->getControl()->addAttributes(array()) ?>
+<?php $_input = is_object("nazov") ? "nazov" : $_form["nazov"]; if ($_label = $_input->getLabel()) echo $_label->addAttributes(array()) ;$_input = (is_object("nazov") ? "nazov" : $_form["nazov"]); echo $_input->getControl()->addAttributes(array()) ?>
 									   </p>
 									   <p>
-<?php $_input = is_object("confirmPassword") ? "confirmPassword" : $_form["confirmPassword"]; if ($_label = $_input->getLabel()) echo $_label->addAttributes(array()) ;$_input = (is_object("confirmPassword") ? "confirmPassword" : $_form["confirmPassword"]); echo $_input->getControl()->addAttributes(array()) ?>
+<?php $_input = is_object("rok") ? "rok" : $_form["rok"]; if ($_label = $_input->getLabel()) echo $_label->addAttributes(array()) ;$_input = (is_object("rok") ? "rok" : $_form["rok"]); echo $_input->getControl()->addAttributes(array()) ?>
 									   </p>
 									   <p>
-<?php $_input = (is_object("set") ? "set" : $_form["set"]); echo $_input->getControl()->addAttributes(array()) ?>
+<?php $_input = is_object("rozsah") ? "rozsah" : $_form["rozsah"]; if ($_label = $_input->getLabel()) echo $_label->addAttributes(array()) ;$_input = (is_object("rozsah") ? "rozsah" : $_form["rozsah"]); echo $_input->getControl()->addAttributes(array()) ?>
 									   </p>
+									   <p>
+<?php $_input = is_object("typ") ? "typ" : $_form["typ"]; if ($_label = $_input->getLabel()) echo $_label->addAttributes(array()) ;$_input = (is_object("typ") ? "typ" : $_form["typ"]); echo $_input->getControl()->addAttributes(array()) ?>
+									    <em>Napr. RK - registratúrna krabica</em>
+									   </p>
+									   <p>
+<?php $_input = is_object("cislo") ? "cislo" : $_form["cislo"]; if ($_label = $_input->getLabel()) echo $_label->addAttributes(array()) ;$_input = (is_object("cislo") ? "cislo" : $_form["cislo"]); echo $_input->getControl()->addAttributes(array()) ?>
+									   </p>
+									   <p>
+<?php $_input = is_object("lokacia") ? "lokacia" : $_form["lokacia"]; if ($_label = $_input->getLabel()) echo $_label->addAttributes(array()) ;$_input = (is_object("lokacia") ? "lokacia" : $_form["lokacia"]); echo $_input->getControl()->addAttributes(array()) ?>
+									   </p>
+									   
+<?php $_input = (is_object("ulozit") ? "ulozit" : $_form["ulozit"]); echo $_input->getControl()->addAttributes(array()) ?>
+									   
 									</fieldset>
 	
 <?php Nette\Latte\Macros\FormMacros::renderFormEnd($_form) ?>
@@ -189,8 +174,8 @@ if (!function_exists($_l->blocks['content'][] = '_lb4289ed0d5f_content')) { func
 //
 // block title
 //
-if (!function_exists($_l->blocks['title'][] = '_lb74f11cde07_title')) { function _lb74f11cde07_title($_l, $_args) { extract($_args)
-?>						<h3 class="fl">Zmena hesla</h3>
+if (!function_exists($_l->blocks['title'][] = '_lba362aaa0d2_title')) { function _lba362aaa0d2_title($_l, $_args) { extract($_args)
+?>						<h3 class="fl">Editácia záznamu</h3>
 <?php
 }}
 

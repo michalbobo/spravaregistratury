@@ -1,16 +1,16 @@
-<?php //netteCache[01]000415a:2:{s:4:"time";s:21:"0.45059700 1384029836";s:9:"callbacks";a:2:{i:0;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:9:"checkFile";}i:1;s:93:"/Applications/XAMPP/xamppfiles/htdocs/spravaregistratury/app/templates/Homepage/default.latte";i:2;i:1384029807;}i:1;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:10:"checkConst";}i:1;s:25:"Nette\Framework::REVISION";i:2;s:30:"80a7e46 released on 2013-08-08";}}}?><?php
+<?php //netteCache[01]000415a:2:{s:4:"time";s:21:"0.78763700 1384643661";s:9:"callbacks";a:2:{i:0;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:9:"checkFile";}i:1;s:93:"/Applications/XAMPP/xamppfiles/htdocs/spravaregistratury/app/templates/Homepage/default.latte";i:2;i:1384643659;}i:1;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:10:"checkConst";}i:1;s:25:"Nette\Framework::REVISION";i:2;s:30:"80a7e46 released on 2013-08-08";}}}?><?php
 
 // source file: /Applications/XAMPP/xamppfiles/htdocs/spravaregistratury/app/templates/Homepage/default.latte
 
 ?><?php
 // prolog Nette\Latte\Macros\CoreMacros
-list($_l, $_g) = Nette\Latte\Macros\CoreMacros::initRuntime($template, 'xi9qj73fon')
+list($_l, $_g) = Nette\Latte\Macros\CoreMacros::initRuntime($template, 'wkyr7nuf6g')
 ;
 // prolog Nette\Latte\Macros\UIMacros
 //
 // block content
 //
-if (!function_exists($_l->blocks['content'][] = '_lb592017cee2_content')) { function _lb592017cee2_content($_l, $_args) { extract($_args)
+if (!function_exists($_l->blocks['content'][] = '_lb29d456f018_content')) { function _lb29d456f018_content($_l, $_args) { extract($_args)
 ?><body>
 
 	<!-- TOP BAR -->
@@ -25,11 +25,12 @@ if (!function_exists($_l->blocks['content'][] = '_lb592017cee2_content')) { func
 				<li class="v-sep"><a href="#" class="round button dark menu-user image-left">Prihlásený ako <strong><?php echo Nette\Templating\Helpers::escapeHtml($user->getIdentity()->meno, ENT_NOQUOTES) ?>
  <?php echo Nette\Templating\Helpers::escapeHtml($user->getIdentity()->priezvisko, ENT_NOQUOTES) ?></strong></a>
 					<ul>
-						<li><a href="#">Zmeniť heslo</a></li>
+						<li><a href="<?php echo htmlSpecialChars($_control->link("Password:")) ?>">Zmeniť heslo</a></li>
 						<li><a href="<?php echo htmlSpecialChars($_control->link("signOut!")) ?>">Odhlásiť</a></li>
 					</ul> 
 				</li>
-			
+				<li class="v-sep"><a class="round button dark" href="<?php echo htmlSpecialChars($_control->link("Plan:", array('firma' => $firma))) ?>
+">Registratúrny plán</a></li>
 				<li><a href="#" class="round button dark menu-email-special image-left">3 nové upozornenia</a></li>
 				<li><a class="round button dark menu-logoff image-left" href="<?php echo htmlSpecialChars($_control->link("signOut!")) ?>
 ">Odhlásiť sa</a></li>
@@ -51,7 +52,8 @@ if (!function_exists($_l->blocks['content'][] = '_lb592017cee2_content')) { func
 		<div class="page-full-width cf">
 	
 			<ul id="tabs" class="fl">
-				<li><a href="dashboard.html" class="active-tab dashboard-tab">Úložné jednotky</a></li>
+				<li><a class="active-tab dashboard-tab" href="<?php echo htmlSpecialChars($_control->link("Homepage:", array($firma))) ?>
+">Úložné jednotky</a></li>
 				<li><a href="page-full-width.html">Výpožičky</a></li>
 				<li><a href="page-other.html">Jednotky na vyradenie</a></li>
 			</ul> <!-- end tabs -->
@@ -70,21 +72,37 @@ if (!function_exists($_l->blocks['content'][] = '_lb592017cee2_content')) { func
 	<div id="content">
 		
 		<div class="page-full-width cf">
+		    
+		    <div class="content-module-heading cf">
+					
+<?php call_user_func(reset($_l->blocks['title']), $_l, get_defined_vars())  ?>
+						
+						
+					<!--	<span class="fr expand-collapse-text initial-expand">Click to expand</span>-->
+		    </div>
+<?php $iterations = 0; foreach ($flashes as $flash): ?>
+			<div class="flash <?php echo htmlSpecialChars($flash->type) ?>"><?php echo Nette\Templating\Helpers::escapeHtml($flash->message, ENT_NOQUOTES) ?></div>
+<?php $iterations++; endforeach ?>
+			<div class="side-menu fl"> 
+			    <h3>Filter</h3>
+<?php Nette\Latte\Macros\FormMacros::renderFormBegin($form = $_form = (is_object("filterJednotiekForm") ? "filterJednotiekForm" : $_control["filterJednotiekForm"]), array()) ?>
+				 
+				 
+								     
+<?php if (is_object($form)) $_ctrl = $form; else $_ctrl = $_control->getComponent($form); if ($_ctrl instanceof Nette\Application\UI\IRenderable) $_ctrl->validateControl(); $_ctrl->render('errors') ?>
 
-			<!--<div class="side-menu fl">
-				
-				<h3>Menu</h3>
-				<ul>
-					<li><a href="#">Moje úlohy</a></li>
-					<li><a href="#">US Steel</a></li>
-					<li><a href="#">Union</a></li>
-					<li><a href="#">Union ZP</a></li>
-					<li><a href="#">Zipp</a></li>
+				<ul style='padding-left: 10px;'>
+					<li><p><?php $_input = is_object("znacka") ? "znacka" : $_form["znacka"]; if ($_label = $_input->getLabel()) echo $_label->addAttributes(array()) ;$_input = (is_object("znacka") ? "znacka" : $_form["znacka"]); echo $_input->getControl()->addAttributes(array()) ?></p></li>
+					<li><p><?php $_input = is_object("rok") ? "rok" : $_form["rok"]; if ($_label = $_input->getLabel()) echo $_label->addAttributes(array()) ;$_input = (is_object("rok") ? "rok" : $_form["rok"]); echo $_input->getControl()->addAttributes(array()) ?></p></li>
+					<li><p><?php $_input = is_object("typ") ? "typ" : $_form["typ"]; if ($_label = $_input->getLabel()) echo $_label->addAttributes(array()) ;$_input = (is_object("typ") ? "typ" : $_form["typ"]); echo $_input->getControl()->addAttributes(array()) ?></p></li>
+					<li> </li>
+					<li><?php $_input = (is_object("filtrovat") ? "filtrovat" : $_form["filtrovat"]); echo $_input->getControl()->addAttributes(array()) ?></li>
+					
 				</ul>
-				
-			</div> <!-- end side-menu -->
+<?php Nette\Latte\Macros\FormMacros::renderFormEnd($_form) ?>
+			</div> <!-- end side-menu --> 
 			
-			<!--<div class="side-content fr">
+			<div class="side-content fr">
 			
 				<div class="content-module">
 				
@@ -98,73 +116,8 @@ if (!function_exists($_l->blocks['content'][] = '_lb592017cee2_content')) { func
 					
 					
 					<div class="content-module-main">
-					
-						<table>
-						
-							<thead>
-						
-								<tr>
-									<th><input type="checkbox" id="table-select-all" /></th>
-									<th>R.Z.</th>
-									<th>Názov</th>
-									<th>Rok vzniku</th>
-									<th>Rozsah</th>
-									<th>Typ</th>
-									<th>Číslo</th>
-									<th>Lokácia</th>
-									<th>Akcie</th>
-								</tr>
-							
-							</thead>
-	
-							<tfoot>
-							
-								<tr>
-								
-									<td colspan="5" class="table-footer">
-									
-										<label for="table-select-actions">S vybranými:</label>
-	
-										<select id="table-select-actions">
-											<option value="option1">Delete</option>
-											<option value="option2">Export</option>
-											<option value="option3">Archive</option>
-										</select>
-										
-										<a href="#" class="round button blue text-upper small-button">Apply to selected</a>	
-	
-									</td>
-									
-								</tr>
-							
-							</tfoot>
-							
-							<tbody>
-								    
-<?php $iterations = 0; foreach ($iterator = $_l->its[] = new Nette\Iterators\CachingIterator($jednotky) as $jednotka): ?>
-							    <tr<?php if ($_l->tmp = array_filter(array($iterator->isOdd() ? 'odd' : 'even'))) echo ' class="' . htmlSpecialChars(implode(" ", array_unique($_l->tmp))) . '"' ?>>
-								<td><input type="checkbox" /><?php echo Nette\Templating\Helpers::escapeHtml($iterator->counter, ENT_NOQUOTES) ?></td>
-								<td><?php echo Nette\Templating\Helpers::escapeHtml($jednotka->reg_znacka, ENT_NOQUOTES) ?></td>
-								<td><?php echo Nette\Templating\Helpers::escapeHtml($jednotka->nazov, ENT_NOQUOTES) ?></td>
-								<td><?php echo Nette\Templating\Helpers::escapeHtml($jednotka->rok_vzniku, ENT_NOQUOTES) ?></td>
-								<td><?php echo Nette\Templating\Helpers::escapeHtml($jednotka->rozsah, ENT_NOQUOTES) ?></td>
-								<td><?php echo Nette\Templating\Helpers::escapeHtml($jednotka->typ_jednotky, ENT_NOQUOTES) ?></td>
-								<td><?php echo Nette\Templating\Helpers::escapeHtml($jednotka->cislo_jednotky, ENT_NOQUOTES) ?></td>
-								<td><?php echo Nette\Templating\Helpers::escapeHtml($jednotka->lokacia, ENT_NOQUOTES) ?></td>
-								
-								
-								<td>
-								    <a href="#" class="table-actions-button ic-table-edit"></a>
-								    <a href="#" class="table-actions-button ic-table-delete"></a>
-								</td>
-							    </tr>
-<?php $iterations++; endforeach; array_pop($_l->its); $iterator = end($_l->its) ?>
-							
-							</tbody>
-							
-						</table>
-					
-					</div> <!-- end content-module-main -->
+<div id="<?php echo $_control->getSnippetId('') ?>"><?php call_user_func(reset($_l->blocks['_']), $_l, $template->getParameters()) ?>
+</div>					</div> <!-- end content-module-main -->
 				
 				</div> <!-- end content-module -->
 				
@@ -187,6 +140,101 @@ if (!function_exists($_l->blocks['content'][] = '_lb592017cee2_content')) { func
 
 </body>
 </html>
+<?php
+}}
+
+//
+// block title
+//
+if (!function_exists($_l->blocks['title'][] = '_lbcee0105eef_title')) { function _lbcee0105eef_title($_l, $_args) { extract($_args)
+?>			<h3 class="fl">Úložné jednotky - <?php echo Nette\Templating\Helpers::escapeHtml($infoFirma -> nazov, ENT_NOQUOTES) ?></h3>
+<?php
+}}
+
+//
+// block _
+//
+if (!function_exists($_l->blocks['_'][] = '_lb2f56e25f0d__')) { function _lb2f56e25f0d__($_l, $_args) { extract($_args); $_control->validateControl(false)
+?>						<table>
+						    
+							<thead>
+						
+								<tr>
+									<th><input type="checkbox" id="table-select-all" /></th>
+									<th>R.Z.</th>
+									<th>Názov</th>
+									<th>Rok vzniku</th>
+									<th>Rozsah</th>
+									<th>Typ</th>
+									<th>Číslo</th>
+									<th>Lokácia</th>
+									<th>Akcie</th>
+								</tr>
+							
+							</thead>
+	
+							<tfoot>
+							
+								<tr>
+									<th><input type="checkbox" id="table-select-all" /></th>
+									<th>R.Z.</th>
+									<th>Názov</th>
+									<th>Rok vzniku</th>
+									<th>Rozsah</th>
+									<th>Typ</th>
+									<th>Číslo</th>
+									<th>Lokácia</th>
+									<th>Akcie</th>
+									<!--<td colspan="5" class="table-footer">
+					 				
+										<label for="table-select-actions">S vybranými:</label>
+	
+										<select id="table-select-actions">
+											<option value="option1">Delete</option>
+											<option value="option2">Export</option>
+											<option value="option3">Archive</option>
+										</select>
+										
+										<a href="#" class="round button blue text-upper small-button">Apply to selected</a>	
+										
+										
+										
+									</td> -->
+									
+								</tr>
+							
+							</tfoot>
+							
+							<tbody>
+								    
+<?php $iterations = 0; foreach ($iterator = $_l->its[] = new Nette\Iterators\CachingIterator($jednotky) as $jednotka): ?>
+							    <tr<?php if ($_l->tmp = array_filter(array($iterator->isOdd() ? 'odd' : 'even'))) echo ' class="' . htmlSpecialChars(implode(" ", array_unique($_l->tmp))) . '"' ?>>
+								<td><input type="checkbox" /></td>
+								
+								<td><?php echo Nette\Templating\Helpers::escapeHtml($jednotka->znacka, ENT_NOQUOTES) ?></td>
+								<td><?php echo Nette\Templating\Helpers::escapeHtml($jednotka->nazov, ENT_NOQUOTES) ?></td>
+								<td><?php echo Nette\Templating\Helpers::escapeHtml($jednotka->rok_vzniku, ENT_NOQUOTES) ?></td>
+								<td><?php echo Nette\Templating\Helpers::escapeHtml($jednotka->rozsah, ENT_NOQUOTES) ?></td>
+								<td><?php echo Nette\Templating\Helpers::escapeHtml($jednotka->typ_jednotky, ENT_NOQUOTES) ?></td>
+								<td><?php echo Nette\Templating\Helpers::escapeHtml($jednotka->cislo_jednotky, ENT_NOQUOTES) ?></td>
+								<td><?php echo Nette\Templating\Helpers::escapeHtml($jednotka->lokacia, ENT_NOQUOTES) ?></td>
+								
+								
+								<td>
+								   
+								    <a class="table-actions-button ic-table-edit" href="<?php echo htmlSpecialChars($_control->link("EditJednotka:", array('jednotka' => $jednotka->id_jednotka, 'firma' => $firma))) ?>
+"></a>
+								    <a class="table-actions-button ic-table-archive ajax" href="<?php echo htmlSpecialChars($_control->link("Vyradit!", array($jednotka->id_jednotka))) ?>
+"></a>
+								    <a class="table-actions-button ic-table-upload-dark" href="<?php echo htmlSpecialChars($_control->link("Upload:", array('jednotka' => $jednotka->id_jednotka, 'firma' => $firma))) ?>
+"></a>
+								</td>
+							    </tr>
+<?php $iterations++; endforeach; array_pop($_l->its); $iterator = end($_l->its) ?>
+							
+							</tbody>
+							
+						</table>
 <?php
 }}
 

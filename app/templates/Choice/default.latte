@@ -3,10 +3,10 @@
 {block content}
 <body>
 
-    
-	<!-- TOP BAR -->
+
+<!-- TOP BAR -->
 	<div id="top-bar">
-		
+	
 		<div class="page-full-width cf">
 
 			<ul id="nav" class="fl">
@@ -18,28 +18,28 @@
 						<li><a n:href="signOut!">Odhlásiť</a></li>
 					</ul> 
 				</li>
-				<li class="v-sep"><a href="#" class="round button dark">US Steel</a>
+				<li class="v-sep"><a n:href="Homepage: firma => 1" class="round button dark">US Steel</a>
 					<ul>
-						<li><a n:href="Plan: firma => 1">Registratúrny poriadok</a></li>
-						<li><a n:href="Homepage: firma => 1">Databáza záznamov</a></li>
+						<li><a n:href="Plan: firma => 1">Registratúrny plán</a></li>
+						<li><a n:href="Homepage: firma => 1">Úložné jednotky</a></li>
 					</ul> 
 				</li>
-				<li class="v-sep"><a href="#" class="round button dark">Union</a>
+				<li class="v-sep"><a n:href="Homepage: firma => 3" class="round button dark">Union</a>
 					<ul>
-						<li><a n:href="Plan: firma => 3">Registratúrny poriadok</a></li>
-						<li><a n:href="Homepage: firma => 3">Databáza záznamov</a></li>
+						<li><a n:href="Plan: firma => 3">Registratúrny plán</a></li>
+						<li><a n:href="Homepage: firma => 3">Úložné jednotky</a></li>
 					</ul> 
 				</li>
-				<li class="v-sep"><a href="#" class="round button dark">Union ZP</a>
+				<li class="v-sep"><a n:href="Homepage: firma => 2" class="round button dark">Union ZP</a>
 					<ul>
-						<li><a n:href="Plan: firma => 2">Registratúrny poriadok</a></li>
-						<li><a n:href="Homepage: firma => 2">Databáza záznamov</a></li>
+						<li><a n:href="Plan: firma => 2">Registratúrny plán</a></li>
+						<li><a n:href="Homepage: firma => 2">Úložné jednotky</a></li>
 					</ul> 
 				</li>
-				<li class="v-sep"><a href="#" class="round button dark">ZIPP</a>
+				<li class="v-sep"><a n:href="Homepage: firma => 4" class="round button dark">ZIPP</a>
 					<ul>
-						<li><a n:href="Plan: firma => 4">Registratúrny poriadok</a></li>
-						<li><a n:href="Homepage: firma => 4">Databáza záznamov</a></li>
+						<li><a n:href="Plan: firma => 4">Registratúrny plán</a></li>
+						<li><a n:href="Homepage: firma => 4">Úložné jednotky</a></li>
 					</ul> 
 				</li>
 			
@@ -82,7 +82,9 @@
 	<div id="content">
 		
 		<div class="page-full-width cf">
-
+		    {foreach $flashes as $flash}
+			<div class="flash {$flash->type}">{$flash->message}</div>
+		    {/foreach}
 			<!--<div class="side-menu fl">
 				
 				<h3>Menu</h3>
@@ -149,21 +151,14 @@
 							    <td colspan="3" class="table-footer">
 								
 								{form addUlohaForm}
-
-								       <fieldset>
 									    {control $form errors}
-									   <p>
-									    {label datum/}
-									    {input datum}
-									   </p>
-									   <p>
-									    {label popis/}
-									    {input popis}
-									   
-									   </p>
-									   <p>
-									    {input pridat}
-									   </p>
+								       <fieldset>
+									   <div class="task-form">
+
+									   {label datum/}{input datum}
+									   {label popis/}{input popis}
+									   {input pridat}
+									    </div>
 									</fieldset>
 	
 								{/form}
@@ -182,6 +177,7 @@
 								</form>	
 								-->
 							     </td>
+							    </tr>
 							</tfoot>
 							<!-- END FORMULAR -->
 							

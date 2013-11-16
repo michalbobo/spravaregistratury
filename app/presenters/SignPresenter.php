@@ -28,7 +28,8 @@ class SignPresenter extends BasePresenter
 			->addRule(Form::FILLED,'Je nutné zadať heslo')
 			->setAttribute('class','round full-width')
 			->setAttribute('name','password')
-			->setAttribute('placeholder','Heslo');
+			->setAttribute('placeholder','Heslo')
+			->setAttribute('autocomplete','off');
                 $form->addSubmit('login','Prihlásiť sa')	
 			->setAttribute('class','button round blue ic-right-arrow text-upper image-right');
                 $form->onSuccess[] = $this->signInFormSubmitted;
@@ -41,7 +42,7 @@ class SignPresenter extends BasePresenter
                 $user = $this->getUser();
                 $values = $form->getValues();
                 $user->login($values->username,$values->password);
-                $this->flashMessage('Prihlásenie bolo úspešné','success');
+                $this->flashMessage('Prihlásenie bolo úspešné','confirmation-box round');
                 $this->redirect('Choice:');
             } catch (NS\AuthenticationException $e) {
                 $form->addError('Neplatné užívateľské meno alebo heslo.');

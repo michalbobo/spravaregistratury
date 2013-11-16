@@ -49,16 +49,17 @@ class ChoicePresenter extends BasePresenter{
         
         $form = new Form();
         $form->addText('datum','Dátum:')
-		->setAttribute('placeholder','YYYY-MM-DD')
-		->setAttribute('style','display:inline;');
+		->setAttribute('placeholder','YYYY-MM-DD');
+		
         $form->addText('popis','Úloha')
 		->addRule(Form::FILLED,'Je nutné zadať úlohu!')
 		
 		->setAttribute('class','round default-width-input')
-		->setAttribute('placeholder','Moja nová úloha')
-		->setAttribute('style','display:inline;');
+		->setAttribute('placeholder','Moja nová úloha');
+		
         $form->addSubmit('pridat','Pridať úlohu')
 		->setAttribute('class','round blue ic-right-arrow ajax');
+		
         $form->onSuccess[] = $this->addUlohaFormSubmitted;
         return $form;
 	 }
@@ -66,7 +67,7 @@ class ChoicePresenter extends BasePresenter{
 	public function addUlohaFormSubmitted(Form $form){
 	
 	$this->ulohyRepository->createNewUloha($form->values->datum, $form->values->popis, $this->getUser()->getId() );
-	$this->flashMessage('Úloha úspesne pridaná!');
+	$this->flashMessage('Úloha úspesne pridaná!','confirmation-box round');
 	if(empty($form->values->datum));
 	if (!$this->isAjax()){
 	redirect('this');  

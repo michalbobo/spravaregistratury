@@ -253,6 +253,8 @@ p a, p a:hover { border-bottom: 1px dotted; }
 .ic-upload { background-image: url("../images/icons/ic_upload.png"); }
 .ic-search { background-image: url("../images/icons/ic_zoom.png"); }
 
+.ic-table-archive { background-image: url("../images/icons/table/actions-archive.png");	}
+.ic-table-upload-dark { background-image: url("../images/icons/table/actions-upload.png"); }
 .ic-table-edit { background-image: url("../images/icons/table/actions-edit.png"); }
 .ic-table-delete { background-image: url("../images/icons/table/actions-delete.png"); }
 .ic-table-done  { background-image: url("../images/icons/table/actions-ok.png"); }
@@ -282,8 +284,9 @@ p a, p a:hover { border-bottom: 1px dotted; }
 
 
 /* ---------- FORMS ---------- */
+
 form label {
-	display: block;
+	display: block;  /*EDITAAAAACIA */
 	text-transform: uppercase;
 	color: #2a2e36;
 	margin: 0 0 0.3125em 0;
@@ -328,7 +331,7 @@ form#search-form input {
 
 form p em {
 	margin-top: 0.833em; /* 10/12 */
-	display: block;
+	display: inline;  /* EDITAAAACIA */
 }
 
 form p.form-error, form p.form-error label { color: #cf4425; }
@@ -579,8 +582,8 @@ form#login-form {
 }
 
 div.side-menu {
-	background: #3f4551;
-	border: 1px solid #eeefef;
+	background: /*#3f4551*/#FFFFFF;
+	/*border: 1px solid #eeefef;*/
 	width: 15%;
 	margin-bottom: 1em; /* 16/16 */
 }
@@ -640,4 +643,25 @@ div.content-module-main { padding: 1em; /* 16/16 */ }
 div#footer {
 	text-align: center;
 	padding: 1.875em 0; /* 30/16 */
+}
+
+/*------------MOJE--------------*/
+form div.pair label {
+	display: block;
+	width: 130px;
+	text-align: right;
+	float: left;
+	line-height: 2;
+	vertical-align: middle;
+}
+
+form div.pair div.input {
+	margin-left: 150px;
+}
+
+form div.pair div.input label {
+	width: auto;
+	display: inline;
+	float: none;
+	line-height: normal;
 }

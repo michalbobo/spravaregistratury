@@ -12,44 +12,22 @@
 
 			<ul id="nav" class="fl">
 	
-				<!--<li class="v-sep"><a href="#" class="round button dark ic-left-arrow image-left">Go to website</a></li>-->
+				<li class="v-sep"><a n:href="Homepage: firma => $firma" class="round button dark ic-left-arrow image-left">Späť</a></li>
 				<li class="v-sep"><a href="#" class="round button dark menu-user image-left">Prihlásený ako <strong>{$user->getIdentity()->meno} {$user->getIdentity()->priezvisko}</strong></a>
 					<ul>
-						<li><a href="#">Zmeniť heslo</a></li>
+						<li><a n:href="Password:">Zmeniť heslo</a></li>
 						<li><a n:href="signOut!">Odhlásiť</a></li>
 					</ul> 
 				</li>
-				<li class="v-sep"><a href="#" class="round button dark">US Steel</a>
-					<ul>
-						<li><a n:href="Plan: firma => 1">Registratúrny poriadok</a></li>
-						<li><a n:href="Homepage: firma => 1">Databáza záznamov</a></li>
-					</ul> 
-				</li>
-				<li class="v-sep"><a href="#" class="round button dark">Union</a>
-					<ul>
-						<li><a n:href="Plan: firma => 3">Registratúrny poriadok</a></li>
-						<li><a n:href="Homepage: firma => 3">Databáza záznamov</a></li>
-					</ul> 
-				</li>
-				<li class="v-sep"><a href="#" class="round button dark">Union ZP</a>
-					<ul>
-						<li><a n:href="Plan: firma => 2">Registratúrny poriadok</a></li>
-						<li><a n:href="Homepage: firma => 2">Databáza záznamov</a></li>
-					</ul> 
-				</li>
-				<li class="v-sep"><a href="#" class="round button dark">ZIPP</a>
-					<ul>
-						<li><a n:href="Plan: firma => 4">Registratúrny poriadok</a></li>
-						<li><a n:href="Homepage: firma => 4">Databáza záznamov</a></li>
-					</ul> 
-				</li>
-			
+				<li class="v-sep"><a n:href="Plan: firma => $firma" class="round button dark">Registratúrny plán</a></li>
+				<li><a href="#" class="round button dark menu-email-special image-left">3 nové upozornenia</a></li>
 				<li><a n:href="signOut!" class="round button dark menu-logoff image-left">Odhlásiť sa</a></li>
 				
 			</ul> <!-- end nav -->
 
 					
 			
+
 		</div> <!-- end full-width -->	
 	
 	</div> <!-- end top-bar -->
@@ -105,7 +83,7 @@
 				
 					<div class="content-module-heading cf">
 					
-						<h3 class="fl" n:block="title">Zmena hesla</h3>
+						<h3 class="fl" n:block="title">Editácia záznamu</h3>
 						
 						
 					<!--	<span class="fr expand-collapse-text initial-expand">Click to expand</span>-->
@@ -115,27 +93,44 @@
 					
 					<div class="content-module-main">
 					    
+					    
 					   
-					   
-					    {form passwordForm}
-						<br><div class="information-box round">Pre zmenu hesla zadajte svoje súčasné heslo a nové heslo aj s potvrdením. Nové heslo musí mať aspoň 6 znakov.</div>
+					    {form editJednotkaForm}
+
 								       <fieldset>
 									    {control $form errors}
 									   <p>
-									    {label oldPassword/}
-									    {input oldPassword}
+									    {label znacka/}
+									    {input znacka}
 									   </p>
 									   <p>
-									    {label newPassword/}
-									    {input newPassword}
+									    {label nazov/}
+									    {input nazov}
 									   </p>
 									   <p>
-									   {label confirmPassword/}
-									   {input confirmPassword}
+									   {label rok/}
+									   {input rok}
 									   </p>
 									   <p>
-									    {input set}
+									    {label rozsah/}
+									    {input rozsah}
 									   </p>
+									   <p>
+									    {label typ/}
+									    {input typ}
+									    <em>Napr. RK - registratúrna krabica</em>
+									   </p>
+									   <p>
+									   {label cislo/}
+									   {input cislo}
+									   </p>
+									   <p>
+									   {label lokacia/}
+									   {input lokacia}
+									   </p>
+									   
+									    {input ulozit}
+									   
 									</fieldset>
 	
 					{/form}

@@ -54,7 +54,7 @@ class PasswordPresenter extends BasePresenter{
 	     $this->authenticator->authenticate(array($user->getIdentity()->email,$values->oldPassword));
 	     $this->userRepository->setPassword($user->getId(), $values->newPassword);
 	     $this->flashMessage('Heslo bolo zmenené.', 'success');
-             $this->redirect('Homepage:');
+             $this->redirect('Choice:');
 	 } catch (Security\AuthenticationException $e) {
 		$form->addError('Zadané heslo nie je správne.');
 	 }
