@@ -1,16 +1,16 @@
-<?php //netteCache[01]000415a:2:{s:4:"time";s:21:"0.78763700 1384643661";s:9:"callbacks";a:2:{i:0;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:9:"checkFile";}i:1;s:93:"/Applications/XAMPP/xamppfiles/htdocs/spravaregistratury/app/templates/Homepage/default.latte";i:2;i:1384643659;}i:1;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:10:"checkConst";}i:1;s:25:"Nette\Framework::REVISION";i:2;s:30:"80a7e46 released on 2013-08-08";}}}?><?php
+<?php //netteCache[01]000415a:2:{s:4:"time";s:21:"0.06904100 1384811654";s:9:"callbacks";a:2:{i:0;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:9:"checkFile";}i:1;s:93:"/Applications/XAMPP/xamppfiles/htdocs/spravaregistratury/app/templates/Homepage/default.latte";i:2;i:1384811647;}i:1;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:10:"checkConst";}i:1;s:25:"Nette\Framework::REVISION";i:2;s:30:"80a7e46 released on 2013-08-08";}}}?><?php
 
 // source file: /Applications/XAMPP/xamppfiles/htdocs/spravaregistratury/app/templates/Homepage/default.latte
 
 ?><?php
 // prolog Nette\Latte\Macros\CoreMacros
-list($_l, $_g) = Nette\Latte\Macros\CoreMacros::initRuntime($template, 'wkyr7nuf6g')
+list($_l, $_g) = Nette\Latte\Macros\CoreMacros::initRuntime($template, '3vfld1o43d')
 ;
 // prolog Nette\Latte\Macros\UIMacros
 //
 // block content
 //
-if (!function_exists($_l->blocks['content'][] = '_lb29d456f018_content')) { function _lb29d456f018_content($_l, $_args) { extract($_args)
+if (!function_exists($_l->blocks['content'][] = '_lb3311be150e_content')) { function _lb3311be150e_content($_l, $_args) { extract($_args)
 ?><body>
 
 	<!-- TOP BAR -->
@@ -54,13 +54,14 @@ if (!function_exists($_l->blocks['content'][] = '_lb29d456f018_content')) { func
 			<ul id="tabs" class="fl">
 				<li><a class="active-tab dashboard-tab" href="<?php echo htmlSpecialChars($_control->link("Homepage:", array($firma))) ?>
 ">Úložné jednotky</a></li>
-				<li><a href="page-full-width.html">Výpožičky</a></li>
+				<li><a href="<?php echo htmlSpecialChars($_control->link("Vypozicky:", array('firma' => $firma))) ?>
+">Výpožičky</a></li>
 				<li><a href="page-other.html">Jednotky na vyradenie</a></li>
 			</ul> <!-- end tabs -->
 			
 			<!-- Change this image to your own company's logo -->
 			<!-- The logo will automatically be resized to 30px height. -->
-			<a href="#" id="company-branding-small" class="fr"><img src="images/company-logo.png" alt="Blue Hosting" /></a>
+			<a href="#" id="company-branding-small" class="fr"><img src="<?php echo htmlSpecialChars($basePath) ?>/images/company-logo.png" alt="Blue Hosting" /></a>
 			
 		</div> <!-- end full-width -->	
 
@@ -146,7 +147,7 @@ if (!function_exists($_l->blocks['content'][] = '_lb29d456f018_content')) { func
 //
 // block title
 //
-if (!function_exists($_l->blocks['title'][] = '_lbcee0105eef_title')) { function _lbcee0105eef_title($_l, $_args) { extract($_args)
+if (!function_exists($_l->blocks['title'][] = '_lbb75a1acc25_title')) { function _lbb75a1acc25_title($_l, $_args) { extract($_args)
 ?>			<h3 class="fl">Úložné jednotky - <?php echo Nette\Templating\Helpers::escapeHtml($infoFirma -> nazov, ENT_NOQUOTES) ?></h3>
 <?php
 }}
@@ -154,13 +155,16 @@ if (!function_exists($_l->blocks['title'][] = '_lbcee0105eef_title')) { function
 //
 // block _
 //
-if (!function_exists($_l->blocks['_'][] = '_lb2f56e25f0d__')) { function _lb2f56e25f0d__($_l, $_args) { extract($_args); $_control->validateControl(false)
-?>						<table>
+if (!function_exists($_l->blocks['_'][] = '_lb05184c9c4e__')) { function _lb05184c9c4e__($_l, $_args) { extract($_args); $_control->validateControl(false)
+;$iterations = 0; foreach ($flashes as $flash): ?>
+						    <div class="flash <?php echo htmlSpecialChars($flash->type) ?>"><?php echo Nette\Templating\Helpers::escapeHtml($flash->message, ENT_NOQUOTES) ?></div>
+<?php $iterations++; endforeach ?>
+						<table>
 						    
 							<thead>
 						
 								<tr>
-									<th><input type="checkbox" id="table-select-all" /></th>
+									
 									<th>R.Z.</th>
 									<th>Názov</th>
 									<th>Rok vzniku</th>
@@ -168,6 +172,7 @@ if (!function_exists($_l->blocks['_'][] = '_lb2f56e25f0d__')) { function _lb2f56
 									<th>Typ</th>
 									<th>Číslo</th>
 									<th>Lokácia</th>
+									<th>Scan</th>
 									<th>Akcie</th>
 								</tr>
 							
@@ -176,7 +181,7 @@ if (!function_exists($_l->blocks['_'][] = '_lb2f56e25f0d__')) { function _lb2f56
 							<tfoot>
 							
 								<tr>
-									<th><input type="checkbox" id="table-select-all" /></th>
+									
 									<th>R.Z.</th>
 									<th>Názov</th>
 									<th>Rok vzniku</th>
@@ -184,6 +189,7 @@ if (!function_exists($_l->blocks['_'][] = '_lb2f56e25f0d__')) { function _lb2f56
 									<th>Typ</th>
 									<th>Číslo</th>
 									<th>Lokácia</th>
+									<th>Scan</th>
 									<th>Akcie</th>
 									<!--<td colspan="5" class="table-footer">
 					 				
@@ -209,7 +215,7 @@ if (!function_exists($_l->blocks['_'][] = '_lb2f56e25f0d__')) { function _lb2f56
 								    
 <?php $iterations = 0; foreach ($iterator = $_l->its[] = new Nette\Iterators\CachingIterator($jednotky) as $jednotka): ?>
 							    <tr<?php if ($_l->tmp = array_filter(array($iterator->isOdd() ? 'odd' : 'even'))) echo ' class="' . htmlSpecialChars(implode(" ", array_unique($_l->tmp))) . '"' ?>>
-								<td><input type="checkbox" /></td>
+								
 								
 								<td><?php echo Nette\Templating\Helpers::escapeHtml($jednotka->znacka, ENT_NOQUOTES) ?></td>
 								<td><?php echo Nette\Templating\Helpers::escapeHtml($jednotka->nazov, ENT_NOQUOTES) ?></td>
@@ -218,6 +224,8 @@ if (!function_exists($_l->blocks['_'][] = '_lb2f56e25f0d__')) { function _lb2f56
 								<td><?php echo Nette\Templating\Helpers::escapeHtml($jednotka->typ_jednotky, ENT_NOQUOTES) ?></td>
 								<td><?php echo Nette\Templating\Helpers::escapeHtml($jednotka->cislo_jednotky, ENT_NOQUOTES) ?></td>
 								<td><?php echo Nette\Templating\Helpers::escapeHtml($jednotka->lokacia, ENT_NOQUOTES) ?></td>
+								<td><a href="<?php echo htmlSpecialChars($_control->link("Scany:", array('jednotka' => $jednotka->id_jednotka))) ?>
+">Zobraziť scany</a></td>
 								
 								
 								<td>
@@ -227,6 +235,8 @@ if (!function_exists($_l->blocks['_'][] = '_lb2f56e25f0d__')) { function _lb2f56
 								    <a class="table-actions-button ic-table-archive ajax" href="<?php echo htmlSpecialChars($_control->link("Vyradit!", array($jednotka->id_jednotka))) ?>
 "></a>
 								    <a class="table-actions-button ic-table-upload-dark" href="<?php echo htmlSpecialChars($_control->link("Upload:", array('jednotka' => $jednotka->id_jednotka, 'firma' => $firma))) ?>
+"></a>
+								    <a class="table-actions-button ic-table-done" href="<?php echo htmlSpecialChars($_control->link("AddVypozicka:", array('jednotka' => $jednotka->id_jednotka, 'firma' => $firma))) ?>
 "></a>
 								</td>
 							    </tr>

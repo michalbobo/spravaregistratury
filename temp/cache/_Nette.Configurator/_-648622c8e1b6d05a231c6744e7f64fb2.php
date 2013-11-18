@@ -1,5 +1,5 @@
-<?php //netteCache[01]010221a:2:{s:4:"time";s:21:"0.99896000 1384809086";s:9:"callbacks";a:53:{i:0;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:9:"checkFile";}i:1;s:79:"/Applications/XAMPP/xamppfiles/htdocs/spravaregistratury/app/config/config.neon";i:2;i:1384796801;}i:1;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:9:"checkFile";}i:1;s:85:"/Applications/XAMPP/xamppfiles/htdocs/spravaregistratury/app/config/config.local.neon";i:2;i:1375917388;}i:2;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:9:"checkFile";}i:1;s:102:"/Applications/XAMPP/xamppfiles/htdocs/spravaregistratury/libs/Nette/Config/Extensions/PhpExtension.php";i:2;i:1375917486;}i:3;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:9:"checkFile";}i:1;s:108:"/Applications/XAMPP/xamppfiles/htdocs/spravaregistratury/libs/Nette/Config/Extensions/ConstantsExtension.php";i:2;i:1375917486;}i:4;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:9:"checkFile";}i:1;s:104:"/Applications/XAMPP/xamppfiles/htdocs/spravaregistratury/libs/Nette/Config/Extensions/NetteExtension.php";i:2;i:1375917486;}i:5;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:9:"checkFile";}i:1;s:85:"/Applications/XAMPP/xamppfiles/htdocs/spravaregistratury/libs/Nette/common/Object.php";i:2;i:1375917486;}i:6;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:9:"checkFile";}i:1;s:97:"/Applications/XAMPP/xamppfiles/htdocs/spravaregistratury/libs/Nette/Caching/Storages/IJournal.php";i:2;i:1375917486;}i:7;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:9:"checkFile";}i:1;s:100:"/Applications/XAMPP/xamppfiles/htdocs/spravaregistratury/libs/Nette/Caching/Storages/FileJournal.php";i:2;i:1375917486;}i:8;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:9:"checkFile";}i:1;s:88:"/Applications/XAMPP/xamppfiles/htdocs/spravaregistratury/libs/Nette/Caching/IStorage.php";i:2;i:1375917486;}i:9;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:9:"checkFile";}i:1;s:100:"/Applications/XAMPP/xamppfiles/htdocs/spravaregistratury/libs/Nette/Caching/Storages/FileStorage.php";i:2;i:1375917486;}i:10;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:9:"checkFile";}i:1;s:91:"/Applications/XAMPP/xamppfiles/htdocs/spravaregistratury/libs/Nette/Http/RequestFactory.php";i:2;i:1375917486;}i:11;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:9:"checkFile";}i:1;s:85:"/Applications/XAMPP/xamppfiles/htdocs/spravaregistratury/libs/Nette/Http/IRequest.php";i:2;i:1375917486;}i:12;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:9:"checkFile";}i:1;s:84:"/Applications/XAMPP/xamppfiles/htdocs/spravaregistratury/libs/Nette/Http/Request.php";i:2;i:1375917486;}i:13;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:9:"checkFile";}i:1;s:86:"/Applications/XAMPP/xamppfiles/htdocs/spravaregistratury/libs/Nette/Http/IResponse.php";i:2;i:1375917486;}i:14;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:9:"checkFile";}i:1;s:85:"/Applications/XAMPP/xamppfiles/htdocs/spravaregistratury/libs/Nette/Http/Response.php";i:2;i:1375917486;}i:15;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:9:"checkFile";}i:1;s:84:"/Applications/XAMPP/xamppfiles/htdocs/spravaregistratury/libs/Nette/Http/Context.php";i:2;i:1375917486;}i:16;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:9:"checkFile";}i:1;s:84:"/Applications/XAMPP/xamppfiles/htdocs/spravaregistratury/libs/Nette/Http/Session.php";i:2;i:1375917486;}i:17;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:9:"checkFile";}i:1;s:93:"/Applications/XAMPP/xamppfiles/htdocs/spravaregistratury/libs/Nette/Security/IUserStorage.php";i:2;i:1375917486;}i:18;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:9:"checkFile";}i:1;s:88:"/Applications/XAMPP/xamppfiles/htdocs/spravaregistratury/libs/Nette/Http/UserStorage.php";i:2;i:1375917486;}i:19;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:9:"checkFile";}i:1;s:85:"/Applications/XAMPP/xamppfiles/htdocs/spravaregistratury/libs/Nette/Security/User.php";i:2;i:1375917486;}i:20;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:9:"checkFile";}i:1;s:95:"/Applications/XAMPP/xamppfiles/htdocs/spravaregistratury/libs/Nette/Application/Application.php";i:2;i:1375917486;}i:21;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:9:"checkFile";}i:1;s:101:"/Applications/XAMPP/xamppfiles/htdocs/spravaregistratury/libs/Nette/Application/IPresenterFactory.php";i:2;i:1375917486;}i:22;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:9:"checkFile";}i:1;s:100:"/Applications/XAMPP/xamppfiles/htdocs/spravaregistratury/libs/Nette/Application/PresenterFactory.php";i:2;i:1375917486;}i:23;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:9:"checkFile";}i:1;s:91:"/Applications/XAMPP/xamppfiles/htdocs/spravaregistratury/libs/Nette/Application/IRouter.php";i:2;i:1375917486;}i:24;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:9:"checkFile";}i:1;s:84:"/Applications/XAMPP/xamppfiles/htdocs/spravaregistratury/libs/Nette/Mail/IMailer.php";i:2;i:1375917486;}i:25;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:9:"checkFile";}i:1;s:91:"/Applications/XAMPP/xamppfiles/htdocs/spravaregistratury/libs/Nette/Mail/SendmailMailer.php";i:2;i:1375917486;}i:26;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:9:"checkFile";}i:1;s:89:"/Applications/XAMPP/xamppfiles/htdocs/spravaregistratury/libs/Nette/DI/NestedAccessor.php";i:2;i:1375917486;}i:27;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:9:"checkFile";}i:1;s:91:"/Applications/XAMPP/xamppfiles/htdocs/spravaregistratury/libs/Nette/Database/Connection.php";i:2;i:1375917486;}i:28;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:9:"checkFile";}i:1;s:81:"/Applications/XAMPP/xamppfiles/htdocs/spravaregistratury/app/model/Repository.php";i:2;i:1384538149;}i:29;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:9:"checkFile";}i:1;s:87:"/Applications/XAMPP/xamppfiles/htdocs/spravaregistratury/app/model/UtvaryRepository.php";i:2;i:1384027071;}i:30;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:9:"checkFile";}i:1;s:95:"/Applications/XAMPP/xamppfiles/htdocs/spravaregistratury/app/model/UlozneJednotkyRepository.php";i:2;i:1384809079;}i:31;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:9:"checkFile";}i:1;s:90:"/Applications/XAMPP/xamppfiles/htdocs/spravaregistratury/app/model/RegZnackyRepository.php";i:2;i:1384535729;}i:32;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:9:"checkFile";}i:1;s:80:"/Applications/XAMPP/xamppfiles/htdocs/spravaregistratury/app/model/Vypozicky.php";i:2;i:1384796724;}i:33;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:9:"checkFile";}i:1;s:86:"/Applications/XAMPP/xamppfiles/htdocs/spravaregistratury/app/model/FirmyRepository.php";i:2;i:1383998695;}i:34;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:9:"checkFile";}i:1;s:86:"/Applications/XAMPP/xamppfiles/htdocs/spravaregistratury/app/model/UlohyRepository.php";i:2;i:1384002203;}i:35;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:9:"checkFile";}i:1;s:85:"/Applications/XAMPP/xamppfiles/htdocs/spravaregistratury/app/router/RouterFactory.php";i:2;i:1383648062;}i:36;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:9:"checkFile";}i:1;s:91:"/Applications/XAMPP/xamppfiles/htdocs/spravaregistratury/app/model/UzivateliaRepository.php";i:2;i:1384033070;}i:37;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:9:"checkFile";}i:1;s:95:"/Applications/XAMPP/xamppfiles/htdocs/spravaregistratury/libs/Nette/Security/IAuthenticator.php";i:2;i:1375917486;}i:38;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:9:"checkFile";}i:1;s:84:"/Applications/XAMPP/xamppfiles/htdocs/spravaregistratury/app/model/Authenticator.php";i:2;i:1381009798;}i:39;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:9:"checkFile";}i:1;s:94:"/Applications/XAMPP/xamppfiles/htdocs/spravaregistratury/libs/Nette/common/FreezableObject.php";i:2;i:1375917486;}i:40;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:9:"checkFile";}i:1;s:89:"/Applications/XAMPP/xamppfiles/htdocs/spravaregistratury/libs/Nette/common/IFreezable.php";i:2;i:1375917486;}i:41;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:9:"checkFile";}i:1;s:85:"/Applications/XAMPP/xamppfiles/htdocs/spravaregistratury/libs/Nette/DI/IContainer.php";i:2;i:1375917486;}i:42;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:9:"checkFile";}i:1;s:84:"/Applications/XAMPP/xamppfiles/htdocs/spravaregistratury/libs/Nette/DI/Container.php";i:2;i:1375917486;}i:43;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:9:"checkFile";}i:1;s:108:"/Applications/XAMPP/xamppfiles/htdocs/spravaregistratury/libs/Nette/Application/Diagnostics/RoutingPanel.php";i:2;i:1375917486;}i:44;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:9:"checkFile";}i:1;s:82:"/Applications/XAMPP/xamppfiles/htdocs/spravaregistratury/libs/Nette/Forms/Form.php";i:2;i:1375917486;}i:45;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:9:"checkFile";}i:1;s:87:"/Applications/XAMPP/xamppfiles/htdocs/spravaregistratury/libs/Nette/common/Callback.php";i:2;i:1375917486;}i:46;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:9:"checkFile";}i:1;s:85:"/Applications/XAMPP/xamppfiles/htdocs/spravaregistratury/libs/Nette/Caching/Cache.php";i:2;i:1375917486;}i:47;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:9:"checkFile";}i:1;s:112:"/Applications/XAMPP/xamppfiles/htdocs/spravaregistratury/libs/Nette/Database/Reflection/DiscoveredReflection.php";i:2;i:1375917486;}i:48;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:9:"checkFile";}i:1;s:84:"/Applications/XAMPP/xamppfiles/htdocs/spravaregistratury/libs/Nette/Latte/Engine.php";i:2;i:1375917486;}i:49;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:9:"checkFile";}i:1;s:84:"/Applications/XAMPP/xamppfiles/htdocs/spravaregistratury/libs/Nette/Mail/Message.php";i:2;i:1375917486;}i:50;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:9:"checkFile";}i:1;s:95:"/Applications/XAMPP/xamppfiles/htdocs/spravaregistratury/libs/Nette/Templating/FileTemplate.php";i:2;i:1375917486;}i:51;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:9:"checkFile";}i:1;s:91:"/Applications/XAMPP/xamppfiles/htdocs/spravaregistratury/libs/Nette/Templating/Template.php";i:2;i:1375917486;}i:52;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:9:"checkFile";}i:1;s:102:"/Applications/XAMPP/xamppfiles/htdocs/spravaregistratury/libs/Nette/Security/Diagnostics/UserPanel.php";i:2;i:1375917486;}}}?><?php
-// source: /Applications/XAMPP/xamppfiles/htdocs/spravaregistratury/app/config/config.neon development
+<?php //netteCache[01]000434a:2:{s:4:"time";s:21:"0.21036900 1384644953";s:9:"callbacks";a:2:{i:0;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:9:"checkFile";}i:1;s:79:"/Applications/XAMPP/xamppfiles/htdocs/spravaregistratury/app/config/config.neon";i:2;i:1384029125;}i:1;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:9:"checkFile";}i:1;s:85:"/Applications/XAMPP/xamppfiles/htdocs/spravaregistratury/app/config/config.local.neon";i:2;i:1375917388;}}}?><?php
+// source: /Applications/XAMPP/xamppfiles/htdocs/spravaregistratury/app/config/config.neon production
 // source: /Applications/XAMPP/xamppfiles/htdocs/spravaregistratury/app/config/config.local.neon 
 
 /**
@@ -22,13 +22,12 @@
  * @property Nette\Security\User $user
  * @property SpravaRegistratury\UzivateliaRepository $userRepository
  * @property SpravaRegistratury\UtvaryRepository $utvaryRepository
- * @property SpravaRegistratury\VypozickyRepository $vypozickyRepository
  */
 class SystemContainer extends Nette\DI\Container
 {
 
 	public $classes = array(
-		'nette\\object' => FALSE, //: nette.cacheJournal, cacheStorage, nette.httpRequestFactory, httpRequest, httpResponse, nette.httpContext, session, nette.userStorage, user, application, nette.presenterFactory, nette.mailer, nette.database, utvaryRepository, ulozneJednotkyRepository, regZnackyRepository, vypozickyRepository, firmyRepository, ulohyRepository, userRepository, authenticator, container,
+		'nette\\object' => FALSE, //: nette.cacheJournal, cacheStorage, nette.httpRequestFactory, httpRequest, httpResponse, nette.httpContext, session, nette.userStorage, user, application, nette.presenterFactory, nette.mailer, nette.database, utvaryRepository, ulozneJednotkyRepository, regZnackyRepository, firmyRepository, ulohyRepository, userRepository, authenticator, container,
 		'nette\\caching\\storages\\ijournal' => 'nette.cacheJournal',
 		'nette\\caching\\storages\\filejournal' => 'nette.cacheJournal',
 		'nette\\caching\\istorage' => 'cacheStorage',
@@ -52,11 +51,10 @@ class SystemContainer extends Nette\DI\Container
 		'nette\\di\\nestedaccessor' => 'nette.database',
 		'pdo' => 'nette.database.default',
 		'nette\\database\\connection' => 'nette.database.default',
-		'spravaregistratury\\repository' => FALSE, //: utvaryRepository, ulozneJednotkyRepository, regZnackyRepository, vypozickyRepository, firmyRepository, ulohyRepository, userRepository,
+		'spravaregistratury\\repository' => FALSE, //: utvaryRepository, ulozneJednotkyRepository, regZnackyRepository, firmyRepository, ulohyRepository, userRepository,
 		'spravaregistratury\\utvaryrepository' => 'utvaryRepository',
 		'spravaregistratury\\ulozne_jednotkyrepository' => 'ulozneJednotkyRepository',
 		'spravaregistratury\\reg_znackyrepository' => 'regZnackyRepository',
-		'spravaregistratury\\vypozickyrepository' => 'vypozickyRepository',
 		'spravaregistratury\\firmyrepository' => 'firmyRepository',
 		'spravaregistratury\\ulohyrepository' => 'ulohyRepository',
 		'routerfactory' => 'routerFactory',
@@ -77,9 +75,9 @@ class SystemContainer extends Nette\DI\Container
 		parent::__construct(array(
 			'appDir' => '/Applications/XAMPP/xamppfiles/htdocs/spravaregistratury/app',
 			'wwwDir' => '/Applications/XAMPP/xamppfiles/htdocs/spravaregistratury/www',
-			'debugMode' => TRUE,
-			'productionMode' => FALSE,
-			'environment' => 'development',
+			'debugMode' => FALSE,
+			'productionMode' => TRUE,
+			'environment' => 'production',
 			'consoleMode' => FALSE,
 			'container' => array(
 				'class' => 'SystemContainer',
@@ -96,10 +94,9 @@ class SystemContainer extends Nette\DI\Container
 	protected function createServiceApplication()
 	{
 		$service = new Nette\Application\Application($this->getService('nette.presenterFactory'), $this->getService('router'), $this->getService('httpRequest'), $this->getService('httpResponse'));
-		$service->catchExceptions = FALSE;
+		$service->catchExceptions = TRUE;
 		$service->errorPresenter = 'Error';
 		Nette\Application\Diagnostics\RoutingPanel::initializePanel($service);
-		Nette\Diagnostics\Debugger::$bar->addPanel(new Nette\Application\Diagnostics\RoutingPanel($this->getService('router'), $this->getService('httpRequest')));
 		return $service;
 	}
 
@@ -255,23 +252,6 @@ class SystemContainer extends Nette\DI\Container
 		$service->setCacheStorage($this->getService('cacheStorage'));
 		Nette\Diagnostics\Debugger::$blueScreen->addPanel('Nette\\Database\\Diagnostics\\ConnectionPanel::renderException');
 		$service->setDatabaseReflection(new Nette\Database\Reflection\DiscoveredReflection($this->getService('cacheStorage')));
-		$service->onQuery[] = array(
-			$this->getService('nette.database.defaultConnectionPanel'),
-			'logQuery',
-		);
-		return $service;
-	}
-
-
-	/**
-	 * @return Nette\Database\Diagnostics\ConnectionPanel
-	 */
-	protected function createServiceNette__database__defaultConnectionPanel()
-	{
-		$service = new Nette\Database\Diagnostics\ConnectionPanel;
-		$service->explain = TRUE;
-		$service->name = 'default';
-		Nette\Diagnostics\Debugger::$bar->addPanel($service);
 		return $service;
 	}
 
@@ -480,7 +460,6 @@ class SystemContainer extends Nette\DI\Container
 	protected function createServiceUser()
 	{
 		$service = new Nette\Security\User($this->getService('nette.userStorage'), $this);
-		Nette\Diagnostics\Debugger::$bar->addPanel(new Nette\Security\Diagnostics\UserPanel($service));
 		return $service;
 	}
 
@@ -505,16 +484,6 @@ class SystemContainer extends Nette\DI\Container
 	}
 
 
-	/**
-	 * @return SpravaRegistratury\VypozickyRepository
-	 */
-	protected function createServiceVypozickyRepository()
-	{
-		$service = new SpravaRegistratury\VypozickyRepository($this->getService('nette.database.default'));
-		return $service;
-	}
-
-
 	public function initialize()
 	{
 		date_default_timezone_set('Europe/Prague');
@@ -530,7 +499,6 @@ class SystemContainer extends Nette\DI\Container
 
 /**
  * @property Nette\Database\Connection $default
- * @property Nette\Database\Diagnostics\ConnectionPanel $defaultConnectionPanel
  */
 class SystemContainer_nette_database
 {

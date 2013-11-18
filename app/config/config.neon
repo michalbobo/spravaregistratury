@@ -35,6 +35,7 @@ common:
 		utvaryRepository:   SpravaRegistratury\UtvaryRepository
 		ulozneJednotkyRepository:   SpravaRegistratury\Ulozne_JednotkyRepository
 		regZnackyRepository:	SpravaRegistratury\Reg_ZnackyRepository
+		vypozickyRepository:	SpravaRegistratury\VypozickyRepository	
 
 
 	factories:

@@ -39,9 +39,9 @@ class Ulozne_JednotkyRepository extends Repository{
 	
     }
     
-    public function vyraditJednotku($idJednotka){
+    public function vyraditJednotku($idJednotka, $datum){
 	$this->findBy(array('id_jednotka'=>$idJednotka))->
-		update(array('vyradenie'=> 'CURRENT_DATE'));
+		update(array('vyradenie'=> $datum));
 	
     }
     

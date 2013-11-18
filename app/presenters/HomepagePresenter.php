@@ -45,14 +45,14 @@ class HomepagePresenter extends BasePresenter
 	public function actionDefault($firma){
 	    $this->template->firma = $firma;
 	    $this->firma = $firma;
-	    $this->template->jednotky = $this->ulozneJednotkyRepository->findByFirma($this->firma)->where(array('vyradenie'=>NULL))->order('rok_vzniku DESC');
+	    $this->template->jednotky = $this->ulozneJednotkyRepository->findByFirma($this->firma)->where(array('vyradenie'=>NULL))->order('reg_znacka ASC')->order('rok_vzniku DESC');
 	}
 	
 
 	
 	public function handleVyradit($zaznam){
-	    
-	    $this->ulozneJednotkyRepository->vyraditJednotku($zaznam);
+	    $datum = date('Y-m-d');
+	    $this->ulozneJednotkyRepository->vyraditJednotku($zaznam,$datum);
 	    if(!$this->isAjax()){
 	    $this->redirect('this');
 	    $this->flashMessage('Záznam úspešne vyradený.','confirmation-box round');
@@ -76,16 +76,16 @@ class HomepagePresenter extends BasePresenter
 	
 	$form->addSelect('znacka','  Registratúrna značka: ',$znackyPairs)
                 ->setPrompt('-Vyberte značku-')
-		->setAttribute('class','default-width-input');
+		->setDefaultValue("%");
 	$form->addSelect('rok','  Rok vzniku: ',$rokPairs)
                 ->setPrompt('-Vyberte rok-')
-		->setAttribute('class','default-width-input');
+		->setDefaultValue("%");
 	  $form->addSelect('typ','  Typ úložnej jednotky: ',$typPairs)
                 ->setPrompt('-Vyberte typ-')
-		->setAttribute('class','default-width-input');
+		  ->setDefaultValue("%");
 	 
         $form->addSubmit('filtrovat','Filtrovať')
-		->setAttribute('class','round blue ic-edit ajax');
+		->setAttribute('class','round blue ic-power ajax');
 		
         $form->onSuccess[] = $this->filterJednotiekFormSubmitted;
         return $form;
@@ -93,12 +93,16 @@ class HomepagePresenter extends BasePresenter
 	 
 	
 	public function filterJednotiekFormSubmitted($form){
-	     $this->template->jednotky = $this->ulozneJednotkyRepository->findByFirma($this->firma)->where(array('vyradenie'=>NULL))->where(array(
-		 'reg_znacka'=>$form->values->znacka,
-		 'rok_vzniku' => $form->values->rok, 
-		 'typ_jednotky' => $form->values->typ 
-	    ));
-	     
+	    
+	    $where = array();
+	    $where['vyradenie'] = NULL;
+	    if(!is_null($form->values->znacka)) { $where['reg_znacka LIKE'] = $form->values->znacka; }
+	    if(!is_null($form->values->rok)) { $where['rok_vzniku LIKE'] = $form->values->rok; }
+	    if(!is_null($form->values->typ)) { $where['typ_jednotky LIKE'] = $form->values->typ; }
+
+	    
+	     $this->template->jednotky = $this->ulozneJednotkyRepository->findByFirma($this->firma)->where($where);
+	     $this->flashMessage('Vyfiltrované', 'confirmation-box round');
 	     $this->invalidateControl();
 	    
 	    

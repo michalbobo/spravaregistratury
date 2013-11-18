@@ -12,4 +12,12 @@ abstract class BasePresenter extends Nette\Application\UI\Presenter
             $this->redirect('Sign:in');
             
         }
+
+public function beforeRender() {
+    parent::beforeRender();
+    if ($this->isAjax()) {
+        $this->invalidateControl('flashMessages');
+    }
+}
+    
 }
