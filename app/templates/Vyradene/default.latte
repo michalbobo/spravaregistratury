@@ -1,0 +1,215 @@
+{block content}
+
+
+
+<body>
+
+	<!-- TOP BAR -->
+	<div id="top-bar">
+		
+		<div class="page-full-width cf">
+
+			<ul id="nav" class="fl">
+	
+				<li class="v-sep"><a n:href="Choice:" class="round button dark ic-left-arrow image-left">Späť</a></li>
+				<li class="v-sep"><a href="#" class="round button dark menu-user image-left">Prihlásený ako <strong>{$user->getIdentity()->meno} {$user->getIdentity()->priezvisko}</strong></a>
+					<ul>
+						<li><a n:href="Password:">Zmeniť heslo</a></li>
+						<li><a n:href="signOut!">Odhlásiť</a></li>
+					</ul> 
+				</li>
+				<li class="v-sep"><a n:href="Plan: firma => $firma" class="round button dark">Registratúrny plán</a></li>
+				<li><a href="#" class="round button dark menu-email-special image-left">3 nové upozornenia</a></li>
+				<li><a n:href="signOut!" class="round button dark menu-logoff image-left">Odhlásiť sa</a></li>
+				
+			</ul> <!-- end nav -->
+
+					
+			
+
+		</div> <!-- end full-width -->	
+	
+	</div> <!-- end top-bar -->
+	
+	
+	
+	<!-- HEADER -->
+	<div id="header-with-tabs">
+		
+		<div class="page-full-width cf">
+	
+			<ul id="tabs" class="fl">
+				<li><a n:href="Homepage: $firma">Úložné jednotky</a></li>
+				<li><a n:href="Vypozicky: firma => $firma">Výpožičky</a></li>
+				<li><a n:href="Vyradene: firma => $firma" class="active-tab dashboard-tab">Jednotky na vyradenie</a></li>
+			</ul> <!-- end tabs -->
+			
+			<!-- Change this image to your own company's logo -->
+			<!-- The logo will automatically be resized to 30px height. -->
+			<a href="#" id="company-branding-small" class="fr"><img src="{$basePath}/images/company-logo.png" alt="Blue Hosting" /></a>
+			
+		</div> <!-- end full-width -->	
+
+	</div> <!-- end header -->
+	
+	
+	
+	<!-- MAIN CONTENT -->
+	<div id="content">
+		
+		<div class="page-full-width cf">
+		    
+		    <div class="content-module-heading cf">
+					
+			<h3 class="fl" n:block='title'>Úložné jednotky - {$infoFirma -> nazov}</h3>
+						
+						
+					<!--	<span class="fr expand-collapse-text initial-expand">Click to expand</span>-->
+		    </div>
+		    {foreach $flashes as $flash}
+			<div class="flash {$flash->type}">{$flash->message}</div>
+		    {/foreach}
+			<div class="side-menu fl"> 
+			    <h3>Filter</h3>
+				{form filterJednotiekForm}
+				 
+				 
+								     
+									    {control $form errors}
+
+				<ul style='padding-left: 10px;'>
+					<li><p>{label znacka/}{input znacka}</p></li>
+					<li><p>{label rok/}{input rok}</p></li>
+					<li><p>{label typ/}{input typ}</p></li>
+					<li> </li>
+					<li>{input filtrovat}</li>
+					
+				</ul>
+				{/form}
+			</div> <!-- end side-menu --> 
+			
+			<div class="side-content fr">
+			
+				<div class="content-module">
+				
+					<!--<div class="content-module-heading cf">
+					
+						<h3 class="fl">Table design</h3>
+						<span class="fr expand-collapse-text">Click to collapse</span>
+						<span class="fr expand-collapse-text initial-expand">Click to expand</span>
+					
+					</div> <!-- end content-module-heading -->
+					
+					
+					<div class="content-module-main">
+						{snippet}
+						{foreach $flashes as $flash}
+						    <div class="flash {$flash->type}">{$flash->message}</div>
+						{/foreach}
+						<table>
+						    
+							<thead>
+						
+								<tr>
+									
+									<th>R.Z.</th>
+									<th>Názov</th>
+									<th>Rok vzniku</th>
+									<th>Rozsah</th>
+									<th>Typ</th>
+									<th>Číslo</th>
+									<th>Lokácia</th>
+									<th>Scan</th>
+									<th>Akcie</th>
+								</tr>
+							
+							</thead>
+	
+							<tfoot>
+							
+								<tr>
+									
+									<th>R.Z.</th>
+									<th>Názov</th>
+									<th>Rok vzniku</th>
+									<th>Rozsah</th>
+									<th>Typ</th>
+									<th>Číslo</th>
+									<th>Lokácia</th>
+									<th>Scan</th>
+									<th>Akcie</th>
+									<!--<td colspan="5" class="table-footer">
+					 				
+										<label for="table-select-actions">S vybranými:</label>
+	
+										<select id="table-select-actions">
+											<option value="option1">Delete</option>
+											<option value="option2">Export</option>
+											<option value="option3">Archive</option>
+										</select>
+										
+										<a href="#" class="round button blue text-upper small-button">Apply to selected</a>	
+										
+										
+										
+									</td> -->
+									
+								</tr>
+							
+							</tfoot>
+							
+							<tbody>
+								    
+							    {foreach $jednotky as $jednotka}
+							    <tr n:class="$iterator->isOdd() ? odd : even">
+								
+								
+								<td>{$jednotka->znacka}</td>
+								<td>{$jednotka->nazov}</td>
+								<td>{$jednotka->rok_vzniku}</td>
+								<td>{$jednotka->rozsah}</td>
+								<td>{$jednotka->typ_jednotky}</td>
+								<td>{$jednotka->cislo_jednotky}</td>
+								<td>{$jednotka->lokacia}</td>
+								<td><a n:href="Scany: jednotka => $jednotka->id_jednotka">Zobraziť scany</a></td>
+								
+								
+								<td>
+								   
+								    <a n:href="EditJednotka: jednotka => $jednotka->id_jednotka, firma => $firma, src=>'vyradenie'" class="table-actions-button ic-table-edit"></a>
+								    <a n:href="Vyradit! $jednotka->id_jednotka" class="table-actions-button ic-table-archive ajax"></a>
+								    <a n:href="Upload: jednotka => $jednotka->id_jednotka, firma => $firma" class="table-actions-button ic-table-upload-dark"></a>
+								    <a n:href="AddVypozicka: jednotka => $jednotka->id_jednotka, firma => $firma" class="table-actions-button ic-table-done"></a>
+								</td>
+								
+							    </tr>
+							    {/foreach}
+							
+							</tbody>
+							
+						</table>
+					{/snippet}
+					</div> <!-- end content-module-main -->
+				
+				</div> <!-- end content-module -->
+				
+				
+		
+			</div> <!-- end side-content -->
+		
+		</div> <!-- end full-width -->
+			
+	</div> <!-- end content -->
+	
+	
+	
+	<!-- FOOTER -->
+	<div id="footer">
+	
+		<p>Vytvorené ako bakalárska práca.<strong> Michal Bobocký, MENDELU.</strong></p>
+		<p>2013</p>
+	</div> <!-- end footer --><!-- end footer -->
+
+</body>
+</html>
+{/block}

@@ -42,6 +42,9 @@
 						<li><a n:href="Homepage: firma => 4">Úložné jednotky</a></li>
 					</ul> 
 				</li>
+				<li class="v-sep"><a n:href="Vypozicky:" class="round button dark">Výpožičky</a>
+					
+				</li>
 			
 				<li><a n:href="signOut!" class="round button dark menu-logoff image-left">Odhlásiť sa</a></li>
 				
@@ -153,12 +156,14 @@
 								{form addUlohaForm}
 									    {control $form errors}
 								       <fieldset>
-									   <div class="task-form">
+									   
 
-									   {label datum/}{input datum}
-									   {label popis/}{input popis}
+									   {label datum/}
+									   {input datum}
+									   {label popis/}
+									   {input popis}
 									   {input pridat}
-									    </div>
+									    
 									</fieldset>
 	
 								{/form}

@@ -582,17 +582,18 @@ form#login-form {
 }
 
 div.side-menu {
-	background: /*#3f4551*/#FFFFFF;
-	/*border: 1px solid #eeefef;*/
+	background: /*#3f4551*/#F8F9FA;
+	/* border: 1px solid #eeefef; */
 	width: 15%;
 	margin-bottom: 1em; /* 16/16 */
+	padding-bottom: 2em;
 }
 
 	div.side-menu h3 {
 		text-transform: uppercase;
 		font-weight: bold;
 		margin:  1.25em; /* 15/12 */
-		color: white;
+		color: #F8F9FA;
 	}
 	
 	div.side-menu ul { list-style-type: none; }

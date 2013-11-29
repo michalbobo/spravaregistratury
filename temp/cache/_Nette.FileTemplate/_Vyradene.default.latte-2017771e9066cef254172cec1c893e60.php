@@ -1,16 +1,16 @@
-<?php //netteCache[01]000415a:2:{s:4:"time";s:21:"0.18258200 1385142642";s:9:"callbacks";a:2:{i:0;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:9:"checkFile";}i:1;s:93:"/Applications/XAMPP/xamppfiles/htdocs/spravaregistratury/app/templates/Homepage/default.latte";i:2;i:1385142523;}i:1;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:10:"checkConst";}i:1;s:25:"Nette\Framework::REVISION";i:2;s:30:"80a7e46 released on 2013-08-08";}}}?><?php
+<?php //netteCache[01]000415a:2:{s:4:"time";s:21:"0.96763900 1385736673";s:9:"callbacks";a:2:{i:0;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:9:"checkFile";}i:1;s:93:"/Applications/XAMPP/xamppfiles/htdocs/spravaregistratury/app/templates/Vyradene/default.latte";i:2;i:1385736669;}i:1;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:10:"checkConst";}i:1;s:25:"Nette\Framework::REVISION";i:2;s:30:"80a7e46 released on 2013-08-08";}}}?><?php
 
-// source file: /Applications/XAMPP/xamppfiles/htdocs/spravaregistratury/app/templates/Homepage/default.latte
+// source file: /Applications/XAMPP/xamppfiles/htdocs/spravaregistratury/app/templates/Vyradene/default.latte
 
 ?><?php
 // prolog Nette\Latte\Macros\CoreMacros
-list($_l, $_g) = Nette\Latte\Macros\CoreMacros::initRuntime($template, 'tnks90m3w6')
+list($_l, $_g) = Nette\Latte\Macros\CoreMacros::initRuntime($template, '20qboaigji')
 ;
 // prolog Nette\Latte\Macros\UIMacros
 //
 // block content
 //
-if (!function_exists($_l->blocks['content'][] = '_lb1f55870fa1_content')) { function _lb1f55870fa1_content($_l, $_args) { extract($_args)
+if (!function_exists($_l->blocks['content'][] = '_lb160c681bda_content')) { function _lb160c681bda_content($_l, $_args) { extract($_args)
 ?><body>
 
 	<!-- TOP BAR -->
@@ -52,11 +52,11 @@ if (!function_exists($_l->blocks['content'][] = '_lb1f55870fa1_content')) { func
 		<div class="page-full-width cf">
 	
 			<ul id="tabs" class="fl">
-				<li><a class="active-tab dashboard-tab" href="<?php echo htmlSpecialChars($_control->link("Homepage:", array($firma))) ?>
+				<li><a href="<?php echo htmlSpecialChars($_control->link("Homepage:", array($firma))) ?>
 ">Úložné jednotky</a></li>
 				<li><a href="<?php echo htmlSpecialChars($_control->link("Vypozicky:", array('firma' => $firma))) ?>
 ">Výpožičky</a></li>
-				<li><a href="<?php echo htmlSpecialChars($_control->link("Vyradene:default", array('firma' => $firma))) ?>
+				<li><a class="active-tab dashboard-tab" href="<?php echo htmlSpecialChars($_control->link("Vyradene:", array('firma' => $firma))) ?>
 ">Jednotky na vyradenie</a></li>
 			</ul> <!-- end tabs -->
 			
@@ -148,7 +148,7 @@ if (!function_exists($_l->blocks['content'][] = '_lb1f55870fa1_content')) { func
 //
 // block title
 //
-if (!function_exists($_l->blocks['title'][] = '_lbc6b36c2d2e_title')) { function _lbc6b36c2d2e_title($_l, $_args) { extract($_args)
+if (!function_exists($_l->blocks['title'][] = '_lb2906e3c9bc_title')) { function _lb2906e3c9bc_title($_l, $_args) { extract($_args)
 ?>			<h3 class="fl">Úložné jednotky - <?php echo Nette\Templating\Helpers::escapeHtml($infoFirma -> nazov, ENT_NOQUOTES) ?></h3>
 <?php
 }}
@@ -156,7 +156,7 @@ if (!function_exists($_l->blocks['title'][] = '_lbc6b36c2d2e_title')) { function
 //
 // block _
 //
-if (!function_exists($_l->blocks['_'][] = '_lb353fd5f08e__')) { function _lb353fd5f08e__($_l, $_args) { extract($_args); $_control->validateControl(false)
+if (!function_exists($_l->blocks['_'][] = '_lbab16b5a78f__')) { function _lbab16b5a78f__($_l, $_args) { extract($_args); $_control->validateControl(false)
 ;$iterations = 0; foreach ($flashes as $flash): ?>
 						    <div class="flash <?php echo htmlSpecialChars($flash->type) ?>"><?php echo Nette\Templating\Helpers::escapeHtml($flash->message, ENT_NOQUOTES) ?></div>
 <?php $iterations++; endforeach ?>
@@ -231,7 +231,7 @@ if (!function_exists($_l->blocks['_'][] = '_lb353fd5f08e__')) { function _lb353f
 								
 								<td>
 								   
-								    <a class="table-actions-button ic-table-edit" href="<?php echo htmlSpecialChars($_control->link("EditJednotka:", array('jednotka' => $jednotka->id_jednotka, 'firma' => $firma))) ?>
+								    <a class="table-actions-button ic-table-edit" href="<?php echo htmlSpecialChars($_control->link("EditJednotka:", array('jednotka' => $jednotka->id_jednotka, 'firma' => $firma, 'src'=>'vyradenie'))) ?>
 "></a>
 								    <a class="table-actions-button ic-table-archive ajax" href="<?php echo htmlSpecialChars($_control->link("Vyradit!", array($jednotka->id_jednotka))) ?>
 "></a>
@@ -240,6 +240,7 @@ if (!function_exists($_l->blocks['_'][] = '_lb353fd5f08e__')) { function _lb353f
 								    <a class="table-actions-button ic-table-done" href="<?php echo htmlSpecialChars($_control->link("AddVypozicka:", array('jednotka' => $jednotka->id_jednotka, 'firma' => $firma))) ?>
 "></a>
 								</td>
+								
 							    </tr>
 <?php $iterations++; endforeach; array_pop($_l->its); $iterator = end($_l->its) ?>
 							

@@ -15,6 +15,7 @@ class EditJednotkaPresenter extends BasePresenter{
     private $aktualnyZaznam;
     private $firma;
     private $jednotka;
+    private $src;
     
     public function startup() {
             parent::startup();
@@ -30,11 +31,12 @@ class EditJednotkaPresenter extends BasePresenter{
 	    $this->regZnackyRepository = $regZnackyRepository;
 	}
 	
-    public function actionDefault($jednotka, $firma){
+    public function actionDefault($jednotka, $firma, $src){
 	$this->aktualnyZaznam = $this->ulozneJednotkyRepository->find($jednotka);
 	$this->template->firma = $firma;
 	$this->firma = $firma;
 	$this->jednotka = $jednotka;
+	$this->src = $src;
 	
     }
     
@@ -86,8 +88,11 @@ class EditJednotkaPresenter extends BasePresenter{
 	     $this->ulozneJednotkyRepository->updateJednotka($this->jednotka, $form->values->znacka, $form->values->nazov, $form->values->rok, $form->values->rozsah,
 		     $form->values->typ, $form->values->cislo, $form->values->lokacia);
 	     $this->flashMessage('Záznam bol úspešne pozmenený.','confirmation-box round');
-	     $this->redirect('Homepage:', array('firma'=> $this->firma));
-	     
+	     if ($this->src == 'vyradenie'){
+		$this->redirect('Vyradene:', array('firma'=> $this->firma));
+	     } else {
+		$this->redirect('Homepage:', array('firma'=> $this->firma));
+	     }
 	     
 	 } 
 }

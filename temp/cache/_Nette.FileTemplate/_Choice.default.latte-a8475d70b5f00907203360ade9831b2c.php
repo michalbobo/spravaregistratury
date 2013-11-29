@@ -1,16 +1,16 @@
-<?php //netteCache[01]000413a:2:{s:4:"time";s:21:"0.52893100 1384644262";s:9:"callbacks";a:2:{i:0;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:9:"checkFile";}i:1;s:91:"/Applications/XAMPP/xamppfiles/htdocs/spravaregistratury/app/templates/Choice/default.latte";i:2;i:1384644259;}i:1;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:10:"checkConst";}i:1;s:25:"Nette\Framework::REVISION";i:2;s:30:"80a7e46 released on 2013-08-08";}}}?><?php
+<?php //netteCache[01]000413a:2:{s:4:"time";s:21:"0.89726000 1384815948";s:9:"callbacks";a:2:{i:0;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:9:"checkFile";}i:1;s:91:"/Applications/XAMPP/xamppfiles/htdocs/spravaregistratury/app/templates/Choice/default.latte";i:2;i:1384815941;}i:1;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:10:"checkConst";}i:1;s:25:"Nette\Framework::REVISION";i:2;s:30:"80a7e46 released on 2013-08-08";}}}?><?php
 
 // source file: /Applications/XAMPP/xamppfiles/htdocs/spravaregistratury/app/templates/Choice/default.latte
 
 ?><?php
 // prolog Nette\Latte\Macros\CoreMacros
-list($_l, $_g) = Nette\Latte\Macros\CoreMacros::initRuntime($template, 'ixoyy4act7')
+list($_l, $_g) = Nette\Latte\Macros\CoreMacros::initRuntime($template, 'sdd0s681z7')
 ;
 // prolog Nette\Latte\Macros\UIMacros
 //
 // block content
 //
-if (!function_exists($_l->blocks['content'][] = '_lb36d7344247_content')) { function _lb36d7344247_content($_l, $_args) { extract($_args)
+if (!function_exists($_l->blocks['content'][] = '_lbbe60955c0d_content')) { function _lbbe60955c0d_content($_l, $_args) { extract($_args)
 ?><body>
 
 
@@ -65,6 +65,10 @@ if (!function_exists($_l->blocks['content'][] = '_lb36d7344247_content')) { func
 						<li><a href="<?php echo htmlSpecialChars($_control->link("Homepage:", array('firma' => 4))) ?>
 ">Úložné jednotky</a></li>
 					</ul> 
+				</li>
+				<li class="v-sep"><a class="round button dark" href="<?php echo htmlSpecialChars($_control->link("Vypozicky:")) ?>
+">Výpožičky</a>
+					
 				</li>
 			
 				<li><a class="round button dark menu-logoff image-left" href="<?php echo htmlSpecialChars($_control->link("signOut!")) ?>
@@ -177,7 +181,7 @@ if (!function_exists($_l->blocks['content'][] = '_lb36d7344247_content')) { func
 //
 // block title
 //
-if (!function_exists($_l->blocks['title'][] = '_lb3472ce064f_title')) { function _lb3472ce064f_title($_l, $_args) { extract($_args)
+if (!function_exists($_l->blocks['title'][] = '_lb14aa251686_title')) { function _lb14aa251686_title($_l, $_args) { extract($_args)
 ?>						<h3 class="fl">Prehľad úloh</h3>
 <?php
 }}
@@ -185,7 +189,7 @@ if (!function_exists($_l->blocks['title'][] = '_lb3472ce064f_title')) { function
 //
 // block _
 //
-if (!function_exists($_l->blocks['_'][] = '_lbffdb41eff8__')) { function _lbffdb41eff8__($_l, $_args) { extract($_args); $_control->validateControl(false)
+if (!function_exists($_l->blocks['_'][] = '_lb2b10a3226c__')) { function _lb2b10a3226c__($_l, $_args) { extract($_args); $_control->validateControl(false)
 ?>						<table id='ulohy'>
 						
 							<thead>
@@ -220,14 +224,10 @@ if (!function_exists($_l->blocks['_'][] = '_lbffdb41eff8__')) { function _lbffdb
 								
 <?php Nette\Latte\Macros\FormMacros::renderFormBegin($form = $_form = (is_object("addUlohaForm") ? "addUlohaForm" : $_control["addUlohaForm"]), array()) ;if (is_object($form)) $_ctrl = $form; else $_ctrl = $_control->getComponent($form); if ($_ctrl instanceof Nette\Application\UI\IRenderable) $_ctrl->validateControl(); $_ctrl->render('errors') ?>
 								       <fieldset>
-									   <div class="task-form">
+									   
 
-									   <?php $_input = is_object("datum") ? "datum" : $_form["datum"]; if ($_label = $_input->getLabel()) echo $_label->addAttributes(array()) ;$_input = (is_object("datum") ? "datum" : $_form["datum"]); echo $_input->getControl()->addAttributes(array()) ?>
-
-									   <?php $_input = is_object("popis") ? "popis" : $_form["popis"]; if ($_label = $_input->getLabel()) echo $_label->addAttributes(array()) ;$_input = (is_object("popis") ? "popis" : $_form["popis"]); echo $_input->getControl()->addAttributes(array()) ?>
-
-<?php $_input = (is_object("pridat") ? "pridat" : $_form["pridat"]); echo $_input->getControl()->addAttributes(array()) ?>
-									    </div>
+<?php $_input = is_object("datum") ? "datum" : $_form["datum"]; if ($_label = $_input->getLabel()) echo $_label->addAttributes(array()) ;$_input = (is_object("datum") ? "datum" : $_form["datum"]); echo $_input->getControl()->addAttributes(array()) ;$_input = is_object("popis") ? "popis" : $_form["popis"]; if ($_label = $_input->getLabel()) echo $_label->addAttributes(array()) ;$_input = (is_object("popis") ? "popis" : $_form["popis"]); echo $_input->getControl()->addAttributes(array()) ;$_input = (is_object("pridat") ? "pridat" : $_form["pridat"]); echo $_input->getControl()->addAttributes(array()) ?>
+									    
 									</fieldset>
 	
 <?php Nette\Latte\Macros\FormMacros::renderFormEnd($_form) ?>

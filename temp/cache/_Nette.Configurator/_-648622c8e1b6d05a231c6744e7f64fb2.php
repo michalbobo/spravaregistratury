@@ -1,4 +1,4 @@
-<?php //netteCache[01]000434a:2:{s:4:"time";s:21:"0.21036900 1384644953";s:9:"callbacks";a:2:{i:0;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:9:"checkFile";}i:1;s:79:"/Applications/XAMPP/xamppfiles/htdocs/spravaregistratury/app/config/config.neon";i:2;i:1384029125;}i:1;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:9:"checkFile";}i:1;s:85:"/Applications/XAMPP/xamppfiles/htdocs/spravaregistratury/app/config/config.local.neon";i:2;i:1375917388;}}}?><?php
+<?php //netteCache[01]000434a:2:{s:4:"time";s:21:"0.21921100 1385241162";s:9:"callbacks";a:2:{i:0;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:9:"checkFile";}i:1;s:79:"/Applications/XAMPP/xamppfiles/htdocs/spravaregistratury/app/config/config.neon";i:2;i:1384796801;}i:1;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:9:"checkFile";}i:1;s:85:"/Applications/XAMPP/xamppfiles/htdocs/spravaregistratury/app/config/config.local.neon";i:2;i:1375917388;}}}?><?php
 // source: /Applications/XAMPP/xamppfiles/htdocs/spravaregistratury/app/config/config.neon production
 // source: /Applications/XAMPP/xamppfiles/htdocs/spravaregistratury/app/config/config.local.neon 
 
@@ -22,12 +22,13 @@
  * @property Nette\Security\User $user
  * @property SpravaRegistratury\UzivateliaRepository $userRepository
  * @property SpravaRegistratury\UtvaryRepository $utvaryRepository
+ * @property SpravaRegistratury\VypozickyRepository $vypozickyRepository
  */
 class SystemContainer extends Nette\DI\Container
 {
 
 	public $classes = array(
-		'nette\\object' => FALSE, //: nette.cacheJournal, cacheStorage, nette.httpRequestFactory, httpRequest, httpResponse, nette.httpContext, session, nette.userStorage, user, application, nette.presenterFactory, nette.mailer, nette.database, utvaryRepository, ulozneJednotkyRepository, regZnackyRepository, firmyRepository, ulohyRepository, userRepository, authenticator, container,
+		'nette\\object' => FALSE, //: nette.cacheJournal, cacheStorage, nette.httpRequestFactory, httpRequest, httpResponse, nette.httpContext, session, nette.userStorage, user, application, nette.presenterFactory, nette.mailer, nette.database, utvaryRepository, ulozneJednotkyRepository, regZnackyRepository, vypozickyRepository, firmyRepository, ulohyRepository, userRepository, authenticator, container,
 		'nette\\caching\\storages\\ijournal' => 'nette.cacheJournal',
 		'nette\\caching\\storages\\filejournal' => 'nette.cacheJournal',
 		'nette\\caching\\istorage' => 'cacheStorage',
@@ -51,10 +52,11 @@ class SystemContainer extends Nette\DI\Container
 		'nette\\di\\nestedaccessor' => 'nette.database',
 		'pdo' => 'nette.database.default',
 		'nette\\database\\connection' => 'nette.database.default',
-		'spravaregistratury\\repository' => FALSE, //: utvaryRepository, ulozneJednotkyRepository, regZnackyRepository, firmyRepository, ulohyRepository, userRepository,
+		'spravaregistratury\\repository' => FALSE, //: utvaryRepository, ulozneJednotkyRepository, regZnackyRepository, vypozickyRepository, firmyRepository, ulohyRepository, userRepository,
 		'spravaregistratury\\utvaryrepository' => 'utvaryRepository',
 		'spravaregistratury\\ulozne_jednotkyrepository' => 'ulozneJednotkyRepository',
 		'spravaregistratury\\reg_znackyrepository' => 'regZnackyRepository',
+		'spravaregistratury\\vypozickyrepository' => 'vypozickyRepository',
 		'spravaregistratury\\firmyrepository' => 'firmyRepository',
 		'spravaregistratury\\ulohyrepository' => 'ulohyRepository',
 		'routerfactory' => 'routerFactory',
@@ -480,6 +482,16 @@ class SystemContainer extends Nette\DI\Container
 	protected function createServiceUtvaryRepository()
 	{
 		$service = new SpravaRegistratury\UtvaryRepository($this->getService('nette.database.default'));
+		return $service;
+	}
+
+
+	/**
+	 * @return SpravaRegistratury\VypozickyRepository
+	 */
+	protected function createServiceVypozickyRepository()
+	{
+		$service = new SpravaRegistratury\VypozickyRepository($this->getService('nette.database.default'));
 		return $service;
 	}
 

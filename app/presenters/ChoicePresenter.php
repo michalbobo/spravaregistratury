@@ -58,7 +58,7 @@ class ChoicePresenter extends BasePresenter{
 		->setAttribute('placeholder','Moja nová úloha');
 		
         $form->addSubmit('pridat','Pridať úlohu')
-		->setAttribute('class','round blue ic-right-arrow ajax');
+		->setAttribute('class','button round blue text-upper ic-right-arrow image-right ajax');
 		
         $form->onSuccess[] = $this->addUlohaFormSubmitted;
         return $form;

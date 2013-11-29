@@ -2,6 +2,29 @@
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
-        <group/>
+        <group>
+            <file>file:/Applications/XAMPP/xamppfiles/htdocs/spravaregistratury/app/model/RegZnackyRepository.php</file>
+            <file>file:/Applications/XAMPP/xamppfiles/htdocs/spravaregistratury/app/templates/Vyradene/default.latte</file>
+            <file>file:/Applications/XAMPP/xamppfiles/htdocs/spravaregistratury/app/presenters/VyradenePresenter.php</file>
+            <file>file:/Applications/XAMPP/xamppfiles/htdocs/spravaregistratury/app/model/UlozneJednotkyRepository.php</file>
+            <file>file:/Applications/XAMPP/xamppfiles/htdocs/spravaregistratury/app/model/UlohyRepository.php</file>
+            <file>file:/Applications/XAMPP/xamppfiles/htdocs/spravaregistratury/app/templates/Upload/default.latte</file>
+            <file>file:/Applications/XAMPP/xamppfiles/htdocs/spravaregistratury/app/model/Vypozicky.php</file>
+            <file>file:/Applications/XAMPP/xamppfiles/htdocs/spravaregistratury/app/templates/Choice/default.latte</file>
+            <file>file:/Applications/XAMPP/xamppfiles/htdocs/spravaregistratury/www/css/style.css</file>
+            <file>file:/Applications/XAMPP/xamppfiles/htdocs/spravaregistratury/app/presenters/ChoicePresenter.php</file>
+            <file>file:/Applications/XAMPP/xamppfiles/htdocs/spravaregistratury/app/templates/Homepage/default.latte</file>
+            <file>file:/Applications/XAMPP/xamppfiles/htdocs/spravaregistratury/app/presenters/HomepagePresenter.php</file>
+            <file>file:/Applications/XAMPP/xamppfiles/htdocs/spravaregistratury/app/templates/@layout.latte</file>
+            <file>file:/Applications/XAMPP/xamppfiles/htdocs/spravaregistratury/app/config/config.neon</file>
+            <file>file:/Applications/XAMPP/xamppfiles/htdocs/spravaregistratury/app/presenters/VypozickyPresenter.php</file>
+            <file>file:/Applications/XAMPP/xamppfiles/htdocs/spravaregistratury/app/presenters/EditJednotkaPresenter.php</file>
+            <file>file:/Applications/XAMPP/xamppfiles/htdocs/spravaregistratury/app/model/SuboryRepository.php</file>
+            <file>file:/Applications/XAMPP/xamppfiles/htdocs/spravaregistratury/app/model/Repository.php</file>
+            <file>file:/Applications/XAMPP/xamppfiles/htdocs/spravaregistratury/app/templates/EditJednotka/default.latte</file>
+            <file>file:/Applications/XAMPP/xamppfiles/htdocs/spravaregistratury/app/model/UzivateliaRepository.php</file>
+            <file>file:/Applications/XAMPP/xamppfiles/htdocs/spravaregistratury/app/presenters/UploadPresenter.php</file>
+            <file>file:/Applications/XAMPP/xamppfiles/htdocs/spravaregistratury/app/model/KopieRepository.php</file>
+        </group>
     </open-files>
 </project-private>

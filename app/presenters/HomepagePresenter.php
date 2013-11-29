@@ -85,7 +85,7 @@ class HomepagePresenter extends BasePresenter
 		  ->setDefaultValue("%");
 	 
         $form->addSubmit('filtrovat','Filtrovať')
-		->setAttribute('class','round blue ic-power ajax');
+		->setAttribute('class','button round blue text-upper ic-right-arrow image-right ajax');
 		
         $form->onSuccess[] = $this->filterJednotiekFormSubmitted;
         return $form;
