@@ -9,13 +9,14 @@ use Nette;
 
 class SuboryRepository extends Repository {
     
-    public function upload($data,$typ,$velkost,$nazov){
+    public function upload($data,$typ,$velkost,$nazov,$datum){
 	return $this->getTable()->insert(array(
 	    'id_subor' => '',
             'subor' => $data,
 	    'typ_suboru' => $typ,
 	    'velkost' => $velkost,
-            'nazov' => $nazov
+            'nazov' => $nazov,
+	    'datum_pridania' => $datum
             
         ));
 	

@@ -1,16 +1,16 @@
-<?php //netteCache[01]000413a:2:{s:4:"time";s:21:"0.46069500 1385755799";s:9:"callbacks";a:2:{i:0;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:9:"checkFile";}i:1;s:91:"/Applications/XAMPP/xamppfiles/htdocs/spravaregistratury/app/templates/Upload/default.latte";i:2;i:1385755796;}i:1;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:10:"checkConst";}i:1;s:25:"Nette\Framework::REVISION";i:2;s:30:"80a7e46 released on 2013-08-08";}}}?><?php
+<?php //netteCache[01]000411a:2:{s:4:"time";s:21:"0.95266200 1386363553";s:9:"callbacks";a:2:{i:0;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:9:"checkFile";}i:1;s:91:"/Applications/XAMPP/xamppfiles/htdocs/spravaregistratury/app/templates/Upload/default.latte";i:2;i:1386075853;}i:1;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:10:"checkConst";}i:1;s:25:"Nette\Framework::REVISION";i:2;s:28:"$WCREV$ released on $WCDATE$";}}}?><?php
 
 // source file: /Applications/XAMPP/xamppfiles/htdocs/spravaregistratury/app/templates/Upload/default.latte
 
 ?><?php
 // prolog Nette\Latte\Macros\CoreMacros
-list($_l, $_g) = Nette\Latte\Macros\CoreMacros::initRuntime($template, '76jkjd1gv1')
+list($_l, $_g) = Nette\Latte\Macros\CoreMacros::initRuntime($template, 'hsk2m12n08')
 ;
 // prolog Nette\Latte\Macros\UIMacros
 //
 // block content
 //
-if (!function_exists($_l->blocks['content'][] = '_lbc5ac2ad302_content')) { function _lbc5ac2ad302_content($_l, $_args) { extract($_args)
+if (!function_exists($_l->blocks['content'][] = '_lb77b214e120_content')) { function _lb77b214e120_content($_l, $_args) { extract($_args)
 ?><body>
 
     
@@ -23,7 +23,8 @@ if (!function_exists($_l->blocks['content'][] = '_lbc5ac2ad302_content')) { func
 	
 				<li class="v-sep"><a class="round button dark ic-left-arrow image-left" href="<?php echo htmlSpecialChars($_control->link("Homepage:", array('firma' => $firma))) ?>
 ">Späť</a></li>
-				<li class="v-sep"><a href="#" class="round button dark menu-user image-left">Prihlásený ako <strong><?php echo Nette\Templating\Helpers::escapeHtml($user->getIdentity()->meno, ENT_NOQUOTES) ?>
+				<li class="v-sep"><a class="round button dark menu-user image-left" href="<?php echo htmlSpecialChars($_control->link("Choice")) ?>
+">Prihlásený ako <strong><?php echo Nette\Templating\Helpers::escapeHtml($user->getIdentity()->meno, ENT_NOQUOTES) ?>
  <?php echo Nette\Templating\Helpers::escapeHtml($user->getIdentity()->priezvisko, ENT_NOQUOTES) ?></strong></a>
 					<ul>
 						<li><a href="<?php echo htmlSpecialChars($_control->link("Password:")) ?>">Zmeniť heslo</a></li>
@@ -158,7 +159,7 @@ if (!function_exists($_l->blocks['content'][] = '_lbc5ac2ad302_content')) { func
 //
 // block title
 //
-if (!function_exists($_l->blocks['title'][] = '_lbc2e6209a6d_title')) { function _lbc2e6209a6d_title($_l, $_args) { extract($_args)
+if (!function_exists($_l->blocks['title'][] = '_lbc7c4acc926_title')) { function _lbc7c4acc926_title($_l, $_args) { extract($_args)
 ?>						<h3 class="fl">Upload súboru</h3>
 <?php
 }}

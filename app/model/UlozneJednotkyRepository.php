@@ -23,7 +23,8 @@ class Ulozne_JednotkyRepository extends Repository{
 	
 	$parameters = array('spolocnost'=>$firma);
 	return $this->findAll()->select('rok_vzniku')->select('rozsah')->select('typ_jednotky')->select('cislo_jednotky')->select('lokacia')
-		->select('id_jednotka')->select('ulozne_Jednotky.nazov')->select('reg_znacka.nazov AS znacka')->select('reg_znacka.lehota_ulozenia AS lehota')
+		->select('id_jednotka')->select('ulozne_Jednotky.nazov')->select('reg_znacka')->select('reg_znacka.nazov AS znacka')->select('reg_znacka.lehota_ulozenia AS lehota')
+		->select('vlastnik.nazov AS utvar')->select('vlastnik.id_utvar AS id_utvar')
 		->where('vlastnik.spolocnost',$parameters);
 	}
 	

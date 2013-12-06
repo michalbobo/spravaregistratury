@@ -12,7 +12,7 @@
 			<ul id="nav" class="fl">
 	
 				<li class="v-sep"><a n:href="Choice:" class="round button dark ic-left-arrow image-left">Späť</a></li>
-				<li class="v-sep"><a href="#" class="round button dark menu-user image-left">Prihlásený ako <strong>{$user->getIdentity()->meno} {$user->getIdentity()->priezvisko}</strong></a>
+				<li class="v-sep"><a n:href="Choice:" class="round button dark menu-user image-left">Prihlásený ako <strong>{$user->getIdentity()->meno} {$user->getIdentity()->priezvisko}</strong></a>
 					<ul>
 						<li><a n:href="Password:">Zmeniť heslo</a></li>
 						<li><a n:href="signOut!">Odhlásiť</a></li>
@@ -81,6 +81,7 @@
 					<li><p>{label znacka/}{input znacka}</p></li>
 					<li><p>{label rok/}{input rok}</p></li>
 					<li><p>{label typ/}{input typ}</p></li>
+					<li><p>{label utvar/}{input utvar}</p></li>
 					<li> </li>
 					<li>{input filtrovat}</li>
 					
@@ -118,6 +119,7 @@
 									<th>Rozsah</th>
 									<th>Typ</th>
 									<th>Číslo</th>
+									<th>Útvar</th>
 									<th>Lokácia</th>
 									<th>Scan</th>
 									<th>Akcie</th>
@@ -135,6 +137,7 @@
 									<th>Rozsah</th>
 									<th>Typ</th>
 									<th>Číslo</th>
+									<th>Útvar</th>
 									<th>Lokácia</th>
 									<th>Scan</th>
 									<th>Akcie</th>
@@ -170,8 +173,9 @@
 								<td>{$jednotka->rozsah}</td>
 								<td>{$jednotka->typ_jednotky}</td>
 								<td>{$jednotka->cislo_jednotky}</td>
+								<td>{$jednotka->utvar}</td>
 								<td>{$jednotka->lokacia}</td>
-								<td><a n:href="Scany: jednotka => $jednotka->id_jednotka">Zobraziť scany</a></td>
+								<td><a n:href="VypisScan: jednotka => $jednotka->id_jednotka, firma => $firma">Zobraziť súbory</a></td>
 								
 								
 								<td>
@@ -179,7 +183,7 @@
 								    <a n:href="EditJednotka: jednotka => $jednotka->id_jednotka, firma => $firma" class="table-actions-button ic-table-edit"></a>
 								    <a n:href="Vyradit! $jednotka->id_jednotka" class="table-actions-button ic-table-archive ajax"></a>
 								    <a n:href="Upload: jednotka => $jednotka->id_jednotka, firma => $firma" class="table-actions-button ic-table-upload-dark"></a>
-								    <a n:href="AddVypozicka: jednotka => $jednotka->id_jednotka, firma => $firma" class="table-actions-button ic-table-done"></a>
+								    <a n:href="AddVypozicka: jednotka => $jednotka->id_jednotka, firma => $firma" class="table-actions-button ic-table-vypozicka"></a>
 								</td>
 							    </tr>
 							    {/foreach}

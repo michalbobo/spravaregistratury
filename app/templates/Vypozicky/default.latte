@@ -13,7 +13,7 @@
 			<ul id="nav" class="fl">
 	
 				<li class="v-sep"><a n:href="Choice:" class="round button dark ic-left-arrow image-left">Späť</a></li>
-				<li class="v-sep"><a href="#" class="round button dark menu-user image-left">Prihlásený ako <strong>{$user->getIdentity()->meno} {$user->getIdentity()->priezvisko}</strong></a>
+				<li class="v-sep"><a n:href="Choice:" class="round button dark menu-user image-left">Prihlásený ako <strong>{$user->getIdentity()->meno} {$user->getIdentity()->priezvisko}</strong></a>
 					<ul>
 						<li><a n:href="Password:">Zmeniť heslo</a></li>
 						<li><a n:href="signOut!">Odhlásiť</a></li>
@@ -42,7 +42,7 @@
 			<ul id="tabs" class="fl">
 				<li><a n:href="Homepage: $firma">Úložné jednotky</a></li>
 				<li><a n:href="Vypozicky: firma => $firma" class="active-tab dashboard-tab">Výpožičky</a></li>
-				<li><a href="page-other.html">Jednotky na vyradenie</a></li>
+				<li><a n:href="Vyradene:default firma => $firma">Jednotky na vyradenie</a></li>
 			</ul> <!-- end tabs -->
 			
 			<!-- Change this image to your own company's logo -->
@@ -62,7 +62,7 @@
 		    
 		    <div class="content-module-heading cf">
 					
-			<h3 class="fl" n:block='title'>Výpožičky - {$infoFirma -> nazov}</h3>
+			<h3 class="fl" n:block='title'>Výpožičky - {$infoFirma -> nazov} - Nevybavené</h3>
 						
 						
 					<!--	<span class="fr expand-collapse-text initial-expand">Click to expand</span>-->
@@ -71,7 +71,89 @@
 			<div class="flash {$flash->type}">{$flash->message}</div>
 		    {/foreach}
 			
+		    <br>
+		    <p>Výpožičky, ktoré zatiaľ neboli vybavené, po nahraní všetkých scanov alebo odoslaní originálu 
+		    výpožičku dokončite tlačítkom vybavené. Zadávateľovi sa následne odošle informačný mail.</p>
 			
+			<!-- <div class="side-content fr"> -->
+			{snippet}
+				<div class="content-module">
+				
+					<!--<div class="content-module-heading cf">
+					
+						<h3 class="fl">Table design</h3>
+						<span class="fr expand-collapse-text">Click to collapse</span>
+						<span class="fr expand-collapse-text initial-expand">Click to expand</span>
+					
+					</div> <!-- end content-module-heading -->
+					
+					
+					<div class="content-module-main">
+						
+						<table>
+						    
+							<thead>
+						
+								<tr>
+									
+									<th>Typ</th>
+									<th>Dátum žiadosti</th>
+									<th>Žiadatel</th>
+									<th>Poznámka</th>
+									<th>Množstvo</th>
+									<th>Číslo záznamu</th>
+									<th>Zadávateľ</th>
+									<th>Číslo jednotky</th>
+									<th>Lokácia</th>
+									<th>Názov</th>
+									<th>Akcie</th>
+								</tr>
+							
+							</thead>
+	
+							
+							<tbody>
+								{foreach $vypozicky as $vypozicka}    
+								     <tr n:class="$iterator->isOdd() ? odd : even">
+									<td>{$vypozicka->typ}</td>
+									<td>{$vypozicka->datum_ziadosti|date:'j. n. Y'}</td>
+									<td>{$vypozicka->ziadatel}</td>
+									<td>{$vypozicka->poznamka}</td>
+									<td>{$vypozicka->mnozstvo}</td>
+									<td>{$vypozicka->cislo_zaznamu}</td>
+									<td>{$vypozicka->meno} {$vypozicka->priezvisko}</td>
+									<td>{$vypozicka->jednotka}</td>
+									<td>{$vypozicka->lokacia}</td>
+									<td>{$vypozicka->nazovJednotky}</td>
+									<td>
+									    <a n:href="Done! id => $vypozicka->id_vypozicka" class="ic-table-done table-actions-button ajax"></a>
+									   {if $vypozicka->typ == "scan"} <a n:href="Upload: jednotka => $vypozicka->id_jednotka, firma => $firma, src => 'vypozicky' " class="table-actions-button ic-table-upload-dark"></a> {/if}
+									    <a href="#" class="table-actions-button ic-table-edit"></a>							
+									</td>
+								    </tr>
+								{/foreach}
+							</tbody>
+							
+						</table>
+					
+					</div> <!-- end content-module-main -->
+				
+				</div> <!-- end content-module -->
+				
+			<div class="content-module-heading cf">
+					
+			<h3 class="fl">Výpožičky - {$infoFirma -> nazov} - Vybavené</h3>
+						
+						
+					<!--	<span class="fr expand-collapse-text initial-expand">Click to expand</span>-->
+		    </div>
+		    {foreach $flashes as $flash}
+			<div class="flash {$flash->type}">{$flash->message}</div>
+		    {/foreach}
+			
+		    <br>
+		    <p>Výpožičky, ktoré už boli vybavené. V prípade nezrovnalosti alebo nespokojnosti je nutné vytvoriť novú výpožičku.</p>
+		    
 			<!-- <div class="side-content fr"> -->
 			
 				<div class="content-module">
@@ -86,71 +168,55 @@
 					
 					
 					<div class="content-module-main">
-						{snippet}
+						
 						<table>
 						    
 							<thead>
 						
 								<tr>
-									<th><input type="checkbox" id="table-select-all"></th>
-									<th>R.Z.</th>
-									<th>Názov</th>
-									<th>Rok vzniku</th>
-									<th>Rozsah</th>
 									<th>Typ</th>
-									<th>Číslo</th>
+									<th>Dátum žiadosti</th>
+									<th>Dátum vybavenia</th>
+									<th>Žiadatel</th>
+									<th>Poznámka</th>
+									<th>Množstvo</th>
+									<th>Číslo záznamu</th>
+									<th>Zadávateľ</th>
+									<th>Číslo jednotky</th>
 									<th>Lokácia</th>
+									<th>Názov</th>
 									<th>Akcie</th>
 								</tr>
 							
 							</thead>
-	
-							<tfoot>
-							
-								<tr>
-									<th><input type="checkbox" id="table-select-all"></th>
-									<th>R.Z.</th>
-									<th>Názov</th>
-									<th>Rok vzniku</th>
-									<th>Rozsah</th>
-									<th>Typ</th>
-									<th>Číslo</th>
-									<th>Lokácia</th>
-									<th>Akcie</th>
-									<!--<td colspan="5" class="table-footer">
-					 				
-										<label for="table-select-actions">S vybranými:</label>
-	
-										<select id="table-select-actions">
-											<option value="option1">Delete</option>
-											<option value="option2">Export</option>
-											<option value="option3">Archive</option>
-										</select>
-										
-										<a href="#" class="round button blue text-upper small-button">Apply to selected</a>	
-										
-										
-										
-									</td> -->
-									
-								</tr>
-							
-							</tfoot>
 							
 							<tbody>
-								    
+								    {foreach $vybavene as $vyb}    
+								     <tr n:class="$iterator->isOdd() ? odd : even">
+									<td>{$vyb->typ}</td>
+									<td>{$vyb->datum_ziadosti|date:'j. n. Y'}</td>
+									<td>{$vyb->datum_vybavenia|date:'j. n. Y'}</td>
+									<td>{$vyb->ziadatel}</td>
+									<td>{$vyb->poznamka}</td>
+									<td>{$vyb->mnozstvo}</td>
+									<td>{$vyb->cislo_zaznamu}</td>
+									<td>{$vyb->meno} {$vyb->priezvisko}</td>
+									<td>{$vyb->jednotka}</td>
+									<td>{$vyb->lokacia}</td>
+									<td>{$vyb->nazovJednotky}</td>
+									<td></td>
+								    </tr>
+								{/foreach}
 							    
 							
 							</tbody>
 							
 						</table>
-					{/snippet}
+					
 					</div> <!-- end content-module-main -->
 				
-				</div> <!-- end content-module -->
-				
-				
-		
+				</div> <!-- end content-module -->	
+			{/snippet}
 			</div> <!-- end side-content -->
 		
 		</div> <!-- end full-width -->

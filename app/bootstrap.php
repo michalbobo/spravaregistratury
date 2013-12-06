@@ -16,13 +16,15 @@ $configurator->setTempDirectory(__DIR__ . '/../temp');
 // Enable RobotLoader - this will load all classes automatically
 $configurator->createRobotLoader()
 	->addDirectory(__DIR__)
-	->addDirectory(__DIR__ . '/../libs')
+	->addDirectory(__DIR__ . '/../app')
 	->register();
 
 // Create Dependency Injection container from config.neon file
 $configurator->addConfig(__DIR__ . '/config/config.neon');
 $configurator->addConfig(__DIR__ . '/config/config.local.neon', $configurator::NONE); // none section
 $container = $configurator->createContainer();
+
+Vodacek\Forms\Controls\DateInput::register();
 
 return $container;
 

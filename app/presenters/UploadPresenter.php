@@ -14,6 +14,7 @@ class UploadPresenter extends BasePresenter{
     private $regZnackyRepository;
     private $firma;
     private $jednotka;
+    private $src;
     private $firmyRepository;
     private $suboryRepository;
     private $kopieRepository;
@@ -38,12 +39,13 @@ class UploadPresenter extends BasePresenter{
 	    $this->kopieRepository = $kopieRepository;
 	}
 	
-    public function actionDefault($jednotka, $firma){
+    public function actionDefault($jednotka, $firma, $src){
 	$this->template->aktualnyZaznam = $this->ulozneJednotkyRepository->find($jednotka);
 	$this->template->firma = $firma;
 	$this->template->spolocnost = $this->firmyRepository->find($firma);
 	$this->firma = $firma;
 	$this->jednotka = $jednotka;
+	$this->src = $src;
 	
 	
     }
@@ -55,7 +57,7 @@ class UploadPresenter extends BasePresenter{
 	
 	$form->addUpload('subor','Súbor:')
                 ->setAttribute('class','default-width-input');
-	$form->addHidden('MAX_FILE_SIZE','2000000');
+	
         $form->addSubmit('upload','Nahrať')
 		->setAttribute('class','button round blue text-upper ic-right-arrow image-right');
 		
@@ -75,13 +77,22 @@ class UploadPresenter extends BasePresenter{
             $filesize = $_FILES['subor']['size'];
             $filename = $_FILES['subor']['name'];
 	    
-	    
-		$this->suboryRepository->upload($data,$filetype,$filesize,$filename);
+		$date = date('Y-m-d');
+		$this->suboryRepository->upload($data,$filetype,$filesize,$filename,$date);
 		$lastId = $this->suboryRepository->findMax()->fetch();
 		$this->kopieRepository->newKopia($this->jednotka,$lastId->id_subor);
 		$this->flashMessage('Súbor bol úspešne nahraný.','confirmation-box round');
-		$this->redirect('Homepage:', array('firma'=> $this->firma));
+		
+		if($this->src == 'vypozicky'){
+		    
+		    $this->redirect('Vypozicky:', array('firma' => $this->firma));
+		    
+		} else {
+
+		    $this->redirect('Homepage:', array('firma' => $this->firma));
 	  
+		}
+		
     }
     
 	

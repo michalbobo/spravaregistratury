@@ -18,5 +18,10 @@ class KopieRepository extends Repository {
     }
     
     
+    public function findSubory($jednotka){
+	   return $this->findBy(array('ulozna_jednotka'=>$jednotka))->select('subor.id_subor AS id_subor')->select('subor.subor AS data')->select('subor.typ_suboru AS typ')
+		   ->select('subor.velkost AS velkost')->select('subor.nazov AS nazov')->select('subor.datum_pridania AS datum');
+    }
+    
     
 }

@@ -10,7 +10,7 @@ class UtvaryRepository extends Repository{
     
     public function findByFirma($idFirma){
 	
-	return $this->findBy(array('firma' => $idFirma));
+	return $this->findBy(array('spolocnost' => $idFirma));
     }
     
 }

@@ -1,16 +1,16 @@
-<?php //netteCache[01]000415a:2:{s:4:"time";s:21:"0.18258200 1385142642";s:9:"callbacks";a:2:{i:0;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:9:"checkFile";}i:1;s:93:"/Applications/XAMPP/xamppfiles/htdocs/spravaregistratury/app/templates/Homepage/default.latte";i:2;i:1385142523;}i:1;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:10:"checkConst";}i:1;s:25:"Nette\Framework::REVISION";i:2;s:30:"80a7e46 released on 2013-08-08";}}}?><?php
+<?php //netteCache[01]000413a:2:{s:4:"time";s:21:"0.17001200 1386352328";s:9:"callbacks";a:2:{i:0;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:9:"checkFile";}i:1;s:93:"/Applications/XAMPP/xamppfiles/htdocs/spravaregistratury/app/templates/Homepage/default.latte";i:2;i:1386352325;}i:1;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:10:"checkConst";}i:1;s:25:"Nette\Framework::REVISION";i:2;s:28:"$WCREV$ released on $WCDATE$";}}}?><?php
 
 // source file: /Applications/XAMPP/xamppfiles/htdocs/spravaregistratury/app/templates/Homepage/default.latte
 
 ?><?php
 // prolog Nette\Latte\Macros\CoreMacros
-list($_l, $_g) = Nette\Latte\Macros\CoreMacros::initRuntime($template, 'tnks90m3w6')
+list($_l, $_g) = Nette\Latte\Macros\CoreMacros::initRuntime($template, 'g3cagzk2jm')
 ;
 // prolog Nette\Latte\Macros\UIMacros
 //
 // block content
 //
-if (!function_exists($_l->blocks['content'][] = '_lb1f55870fa1_content')) { function _lb1f55870fa1_content($_l, $_args) { extract($_args)
+if (!function_exists($_l->blocks['content'][] = '_lb9cbf4537e0_content')) { function _lb9cbf4537e0_content($_l, $_args) { extract($_args)
 ?><body>
 
 	<!-- TOP BAR -->
@@ -22,7 +22,8 @@ if (!function_exists($_l->blocks['content'][] = '_lb1f55870fa1_content')) { func
 	
 				<li class="v-sep"><a class="round button dark ic-left-arrow image-left" href="<?php echo htmlSpecialChars($_control->link("Choice:")) ?>
 ">Späť</a></li>
-				<li class="v-sep"><a href="#" class="round button dark menu-user image-left">Prihlásený ako <strong><?php echo Nette\Templating\Helpers::escapeHtml($user->getIdentity()->meno, ENT_NOQUOTES) ?>
+				<li class="v-sep"><a class="round button dark menu-user image-left" href="<?php echo htmlSpecialChars($_control->link("Choice:")) ?>
+">Prihlásený ako <strong><?php echo Nette\Templating\Helpers::escapeHtml($user->getIdentity()->meno, ENT_NOQUOTES) ?>
  <?php echo Nette\Templating\Helpers::escapeHtml($user->getIdentity()->priezvisko, ENT_NOQUOTES) ?></strong></a>
 					<ul>
 						<li><a href="<?php echo htmlSpecialChars($_control->link("Password:")) ?>">Zmeniť heslo</a></li>
@@ -97,6 +98,7 @@ if (!function_exists($_l->blocks['content'][] = '_lb1f55870fa1_content')) { func
 					<li><p><?php $_input = is_object("znacka") ? "znacka" : $_form["znacka"]; if ($_label = $_input->getLabel()) echo $_label->addAttributes(array()) ;$_input = (is_object("znacka") ? "znacka" : $_form["znacka"]); echo $_input->getControl()->addAttributes(array()) ?></p></li>
 					<li><p><?php $_input = is_object("rok") ? "rok" : $_form["rok"]; if ($_label = $_input->getLabel()) echo $_label->addAttributes(array()) ;$_input = (is_object("rok") ? "rok" : $_form["rok"]); echo $_input->getControl()->addAttributes(array()) ?></p></li>
 					<li><p><?php $_input = is_object("typ") ? "typ" : $_form["typ"]; if ($_label = $_input->getLabel()) echo $_label->addAttributes(array()) ;$_input = (is_object("typ") ? "typ" : $_form["typ"]); echo $_input->getControl()->addAttributes(array()) ?></p></li>
+					<li><p><?php $_input = is_object("utvar") ? "utvar" : $_form["utvar"]; if ($_label = $_input->getLabel()) echo $_label->addAttributes(array()) ;$_input = (is_object("utvar") ? "utvar" : $_form["utvar"]); echo $_input->getControl()->addAttributes(array()) ?></p></li>
 					<li> </li>
 					<li><?php $_input = (is_object("filtrovat") ? "filtrovat" : $_form["filtrovat"]); echo $_input->getControl()->addAttributes(array()) ?></li>
 					
@@ -148,7 +150,7 @@ if (!function_exists($_l->blocks['content'][] = '_lb1f55870fa1_content')) { func
 //
 // block title
 //
-if (!function_exists($_l->blocks['title'][] = '_lbc6b36c2d2e_title')) { function _lbc6b36c2d2e_title($_l, $_args) { extract($_args)
+if (!function_exists($_l->blocks['title'][] = '_lbbf98642c61_title')) { function _lbbf98642c61_title($_l, $_args) { extract($_args)
 ?>			<h3 class="fl">Úložné jednotky - <?php echo Nette\Templating\Helpers::escapeHtml($infoFirma -> nazov, ENT_NOQUOTES) ?></h3>
 <?php
 }}
@@ -156,7 +158,7 @@ if (!function_exists($_l->blocks['title'][] = '_lbc6b36c2d2e_title')) { function
 //
 // block _
 //
-if (!function_exists($_l->blocks['_'][] = '_lb353fd5f08e__')) { function _lb353fd5f08e__($_l, $_args) { extract($_args); $_control->validateControl(false)
+if (!function_exists($_l->blocks['_'][] = '_lbd1f8c8bf56__')) { function _lbd1f8c8bf56__($_l, $_args) { extract($_args); $_control->validateControl(false)
 ;$iterations = 0; foreach ($flashes as $flash): ?>
 						    <div class="flash <?php echo htmlSpecialChars($flash->type) ?>"><?php echo Nette\Templating\Helpers::escapeHtml($flash->message, ENT_NOQUOTES) ?></div>
 <?php $iterations++; endforeach ?>
@@ -172,6 +174,7 @@ if (!function_exists($_l->blocks['_'][] = '_lb353fd5f08e__')) { function _lb353f
 									<th>Rozsah</th>
 									<th>Typ</th>
 									<th>Číslo</th>
+									<th>Útvar</th>
 									<th>Lokácia</th>
 									<th>Scan</th>
 									<th>Akcie</th>
@@ -189,6 +192,7 @@ if (!function_exists($_l->blocks['_'][] = '_lb353fd5f08e__')) { function _lb353f
 									<th>Rozsah</th>
 									<th>Typ</th>
 									<th>Číslo</th>
+									<th>Útvar</th>
 									<th>Lokácia</th>
 									<th>Scan</th>
 									<th>Akcie</th>
@@ -224,9 +228,10 @@ if (!function_exists($_l->blocks['_'][] = '_lb353fd5f08e__')) { function _lb353f
 								<td><?php echo Nette\Templating\Helpers::escapeHtml($jednotka->rozsah, ENT_NOQUOTES) ?></td>
 								<td><?php echo Nette\Templating\Helpers::escapeHtml($jednotka->typ_jednotky, ENT_NOQUOTES) ?></td>
 								<td><?php echo Nette\Templating\Helpers::escapeHtml($jednotka->cislo_jednotky, ENT_NOQUOTES) ?></td>
+								<td><?php echo Nette\Templating\Helpers::escapeHtml($jednotka->utvar, ENT_NOQUOTES) ?></td>
 								<td><?php echo Nette\Templating\Helpers::escapeHtml($jednotka->lokacia, ENT_NOQUOTES) ?></td>
-								<td><a href="<?php echo htmlSpecialChars($_control->link("Scany:", array('jednotka' => $jednotka->id_jednotka))) ?>
-">Zobraziť scany</a></td>
+								<td><a href="<?php echo htmlSpecialChars($_control->link("VypisScan:", array('jednotka' => $jednotka->id_jednotka, 'firma' => $firma))) ?>
+">Zobraziť súbory</a></td>
 								
 								
 								<td>
@@ -237,7 +242,7 @@ if (!function_exists($_l->blocks['_'][] = '_lb353fd5f08e__')) { function _lb353f
 "></a>
 								    <a class="table-actions-button ic-table-upload-dark" href="<?php echo htmlSpecialChars($_control->link("Upload:", array('jednotka' => $jednotka->id_jednotka, 'firma' => $firma))) ?>
 "></a>
-								    <a class="table-actions-button ic-table-done" href="<?php echo htmlSpecialChars($_control->link("AddVypozicka:", array('jednotka' => $jednotka->id_jednotka, 'firma' => $firma))) ?>
+								    <a class="table-actions-button ic-table-vypozicka" href="<?php echo htmlSpecialChars($_control->link("AddVypozicka:", array('jednotka' => $jednotka->id_jednotka, 'firma' => $firma))) ?>
 "></a>
 								</td>
 							    </tr>

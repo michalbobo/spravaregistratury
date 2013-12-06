@@ -1,0 +1,160 @@
+{* Latte template *}
+
+{block content}
+
+<body>
+
+    
+	<!-- TOP BAR -->
+	<div id="top-bar">
+		
+		<div class="page-full-width cf">
+
+			<ul id="nav" class="fl">
+	
+				<li class="v-sep"><a n:href="Homepage: firma => $firma" class="round button dark ic-left-arrow image-left">Späť</a></li>
+				<li class="v-sep"><a n:href="Choice:" class="round button dark menu-user image-left">Prihlásený ako <strong>{$user->getIdentity()->meno} {$user->getIdentity()->priezvisko}</strong></a>
+					<ul>
+						<li><a n:href="Password:">Zmeniť heslo</a></li>
+						<li><a n:href="signOut!">Odhlásiť</a></li>
+					</ul> 
+				</li>
+				<li class="v-sep"><a n:href="Homepage: firma => $firma" class="round button dark">Databáza záznamov</a></li>
+				<li><a href="#" class="round button dark menu-email-special image-left">3 nové upozornenia</a></li>
+				<li><a n:href="signOut!" class="round button dark menu-logoff image-left">Odhlásiť sa</a></li>
+				
+			</ul> <!-- end nav -->
+
+					
+			
+
+		</div> <!-- end full-width -->	
+	
+	</div> <!-- end top-bar -->
+	
+	
+	
+	<!-- HEADER -->
+	<!--
+	<div id="header-with-tabs">
+		
+		<div class="page-full-width cf">
+	
+			<ul id="tabs" class="fl">
+				<li><a href="dashboard.html" class="active-tab dashboard-tab">Domov</a></li>
+				<li><a href="page-full-width.html">Full width page</a></li>
+				<li><a href="page-other.html">Other page elements</a></li>
+			</ul> <!-- end tabs -->
+			
+			<!-- Change this image to your own company's logo -->
+			<!-- The logo will automatically be resized to 30px height. -->
+			
+				<!--	<a href="#" id="company-branding-small" class="fr"><img src="images/company-logo.png" alt="Blue Hosting" /></a>
+		<!--	
+		</div> <!-- end full-width -->	
+<!--
+	</div> <!-- end header -->
+
+	
+	
+	<!-- MAIN CONTENT -->
+	<div id="content">
+		
+		<div class="page-full-width cf">
+
+			<!--<div class="side-menu fl">
+				
+				<h3>Menu</h3>
+				<ul>
+					<li><a href="#">Moje úlohy</a></li>
+					<li><a href="#">US Steel</a></li>
+					<li><a href="#">Union</a></li>
+					<li><a href="#">Union ZP</a></li>
+					<li><a href="#">Zipp</a></li>
+				</ul>
+				
+			</div> <!-- end side-menu -->
+			
+			<!--<div class="side-content fr">
+			
+				<div class="content-module"> -->
+                    
+                  
+				
+					<div class="content-module-heading cf">
+					
+						<h3 class="fl" n:block="title">Výpis súborov k záznamu č.{$infoJednotka->cislo_jednotky}, z roku {$infoJednotka->rok_vzniku}</h3>
+						
+						
+					<!--	<span class="fr expand-collapse-text initial-expand">Click to expand</span>-->
+					</div> <!-- end content-module-heading -->
+					
+					
+					
+					<div class="content-module-main">
+					 
+					    
+					    <table>
+						    
+							<thead>
+						
+								<tr>
+									<th>Typ</th>
+									<th>Názov</th>
+									<th>Dátum nahrania</th>
+									<th>Veľkosť</th>
+									<th>Akcie</th>
+								</tr>
+							
+							</thead>
+				
+							<tbody>
+								    
+							    {foreach $subory as $subor}
+							    <tr n:class="$iterator->isOdd() ? odd : even">
+								
+								
+								<td>{$subor->typ|substr:12:3}</td>
+								<td>{$subor->nazov}</td>
+								<td>{$subor->datum|date:'j. n. Y'}</td>
+								<td>{$subor->velkost} B</td>
+								<td><a n:href="Download: subor => $subor->id_subor">Stiahnuť súbor</a></td>
+								
+							    </tr>
+							    {/foreach}
+							
+							</tbody>
+							
+						</table>
+					
+					   
+					   
+						
+				    
+					</div> <!-- end content-module-main -->
+				
+				</div> <!-- end content-module -->
+				
+                                
+				
+		
+			</div> <!-- end side-content -->
+		
+                                                            
+                                                            
+                
+		</div> <!-- end full-width -->
+			
+	</div> <!-- end content -->
+	
+
+	
+	<!-- FOOTER -->
+	<div id="footer">
+	
+	    <p>Vytvorené ako bakalárska práca.<strong><a href="mailto:michal.bobocky@me.com"> Michal Bobocký </a>, <a href="https://mendelu.cz">MENDELU.</a></strong></p>
+		<p>2013</p>
+	</div> <!-- end footer --><!-- end footer -->
+
+</body>
+</html>

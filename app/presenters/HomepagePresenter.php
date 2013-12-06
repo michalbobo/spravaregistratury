@@ -6,10 +6,11 @@ use Nette\Application\UI\Form;
 class HomepagePresenter extends BasePresenter
 {
 
-	//private $userRepository;
+	
 	private $ulozneJednotkyRepository;
 	private $firmyRepository;
 	private $regZnackyRepository;
+	private $utvaryRepository;
 	private $firma;
 
 	
@@ -20,12 +21,15 @@ class HomepagePresenter extends BasePresenter
 	    }
         }
         
-	public function inject(/**SpravaRegistratury\UzivateliaRepository $userRepository,**/
-		SpravaRegistratury\Ulozne_JednotkyRepository $ulozneJednotkyRepository, SpravaRegistratury\FirmyRepository $firmyRepository,
-		SpravaRegistratury\Reg_ZnackyRepository $regZnackyRepository){
+	public function inject(
+		SpravaRegistratury\Ulozne_JednotkyRepository $ulozneJednotkyRepository, 
+		SpravaRegistratury\FirmyRepository $firmyRepository,
+		SpravaRegistratury\Reg_ZnackyRepository $regZnackyRepository,
+		SpravaRegistratury\UtvaryRepository $utvaryRepository){
 	    $this->regZnackyRepository = $regZnackyRepository;
 	    $this->ulozneJednotkyRepository = $ulozneJednotkyRepository;
 	    $this->firmyRepository = $firmyRepository;
+	    $this->utvaryRepository = $utvaryRepository;
 	}
 	
 	
@@ -34,8 +38,7 @@ class HomepagePresenter extends BasePresenter
 	{
 		
 		
-		//$this->template->users = $this->userRepository->findAll();
-		//$this->template->jednotky = $this->ulozneJednotkyRepository->findAll()->limit(30);
+		
 		 $this->template->infoFirma = $this->firmyRepository->find($this->firma);
 		
 		
@@ -71,18 +74,19 @@ class HomepagePresenter extends BasePresenter
 		->fetchPairs('rok_vzniku','rok_vzniku');
 	$typPairs = $this->ulozneJednotkyRepository->findByFirma($this->firma)->where(array('vyradenie'=>NULL))->select('typ_jednotky')->order('typ_jednotky ASC')
 		->fetchPairs('typ_jednotky','typ_jednotky');
+	$utvaryPairs = $this->utvaryRepository->findByFirma($this->firma)->fetchPairs('spolocnost','nazov');
+
         
         $form = new Form();
 	
 	$form->addSelect('znacka','  Registratúrna značka: ',$znackyPairs)
-                ->setPrompt('-Vyberte značku-')
-		->setDefaultValue("%");
+                ->setPrompt('-Vyberte značku-');
 	$form->addSelect('rok','  Rok vzniku: ',$rokPairs)
-                ->setPrompt('-Vyberte rok-')
-		->setDefaultValue("%");
+                ->setPrompt('-Vyberte rok-');
 	  $form->addSelect('typ','  Typ úložnej jednotky: ',$typPairs)
-                ->setPrompt('-Vyberte typ-')
-		  ->setDefaultValue("%");
+                ->setPrompt('-Vyberte typ-');
+	 $form->addSelect('utvar','  Príslušiaci útvar: ',$utvaryPairs)
+		 ->setPrompt('-Vyberte útvar-');
 	 
         $form->addSubmit('filtrovat','Filtrovať')
 		->setAttribute('class','button round blue text-upper ic-right-arrow image-right ajax');
@@ -99,6 +103,8 @@ class HomepagePresenter extends BasePresenter
 	    if(!is_null($form->values->znacka)) { $where['reg_znacka LIKE'] = $form->values->znacka; }
 	    if(!is_null($form->values->rok)) { $where['rok_vzniku LIKE'] = $form->values->rok; }
 	    if(!is_null($form->values->typ)) { $where['typ_jednotky LIKE'] = $form->values->typ; }
+	    if(!is_null($form->values->utvar)) { $where['id_utvar LIKE'] = $form->values->utvar; }
+
 
 	    
 	     $this->template->jednotky = $this->ulozneJednotkyRepository->findByFirma($this->firma)->where($where);

@@ -258,6 +258,7 @@ p a, p a:hover { border-bottom: 1px dotted; }
 .ic-table-edit { background-image: url("../images/icons/table/actions-edit.png"); }
 .ic-table-delete { background-image: url("../images/icons/table/actions-delete.png"); }
 .ic-table-done  { background-image: url("../images/icons/table/actions-ok.png"); }
+.ic-table-vypozicka { background-image: url("../images/icons/table/actions-vypozicka.png"); } 
 
 
 
@@ -666,3 +667,6 @@ form div.pair div.input label {
 	float: none;
 	line-height: normal;
 }
+
+
+

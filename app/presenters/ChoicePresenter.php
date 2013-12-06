@@ -48,9 +48,14 @@ class ChoicePresenter extends BasePresenter{
         
         
         $form = new Form();
-        $form->addText('datum','Dátum:')
-		->setAttribute('placeholder','YYYY-MM-DD');
-		
+       
+	
+	$form->addDate('datum', 'Dátum',  \Vodacek\Forms\Controls\DateInput::TYPE_DATE)
+		->setAttribute('class','round default-width-input')
+		->addRule(Form::RANGE,'Úlohu je možné nastaviť na akýkoľvek dátum dnes alebo v budúcnosti.',array(new \DateTime('today'), NULL));
+	/*$form->addText('datum','Dátum:')
+	*    ->setAttribute('placeholder','YYYY-MM-DD');
+	*/	
         $form->addText('popis','Úloha')
 		->addRule(Form::FILLED,'Je nutné zadať úlohu!')
 		
@@ -68,7 +73,7 @@ class ChoicePresenter extends BasePresenter{
 	
 	$this->ulohyRepository->createNewUloha($form->values->datum, $form->values->popis, $this->getUser()->getId() );
 	$this->flashMessage('Úloha úspesne pridaná!','confirmation-box round');
-	if(empty($form->values->datum));
+	
 	if (!$this->isAjax()){
 	redirect('this');  
 	} else {

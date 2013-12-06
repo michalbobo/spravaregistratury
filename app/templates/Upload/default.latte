@@ -13,7 +13,7 @@
 			<ul id="nav" class="fl">
 	
 				<li class="v-sep"><a n:href="Homepage: firma => $firma" class="round button dark ic-left-arrow image-left">Späť</a></li>
-				<li class="v-sep"><a href="#" class="round button dark menu-user image-left">Prihlásený ako <strong>{$user->getIdentity()->meno} {$user->getIdentity()->priezvisko}</strong></a>
+				<li class="v-sep"><a n:href="Choice" class="round button dark menu-user image-left">Prihlásený ako <strong>{$user->getIdentity()->meno} {$user->getIdentity()->priezvisko}</strong></a>
 					<ul>
 						<li><a n:href="Password:">Zmeniť heslo</a></li>
 						<li><a n:href="signOut!">Odhlásiť</a></li>
