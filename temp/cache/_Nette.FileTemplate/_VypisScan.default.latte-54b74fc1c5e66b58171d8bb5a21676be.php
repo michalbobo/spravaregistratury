@@ -1,16 +1,16 @@
-<?php //netteCache[01]000413a:2:{s:4:"time";s:21:"0.69872000 1387046437";s:9:"callbacks";a:2:{i:0;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:9:"checkFile";}i:1;s:93:"/Applications/XAMPP/xamppfiles/htdocs/spravaregistratury/app/templates/Password/default.latte";i:2;i:1387046273;}i:1;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:10:"checkConst";}i:1;s:25:"Nette\Framework::REVISION";i:2;s:28:"$WCREV$ released on $WCDATE$";}}}?><?php
+<?php //netteCache[01]000414a:2:{s:4:"time";s:21:"0.70034500 1387054465";s:9:"callbacks";a:2:{i:0;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:9:"checkFile";}i:1;s:94:"/Applications/XAMPP/xamppfiles/htdocs/spravaregistratury/app/templates/VypisScan/default.latte";i:2;i:1386980690;}i:1;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:10:"checkConst";}i:1;s:25:"Nette\Framework::REVISION";i:2;s:28:"$WCREV$ released on $WCDATE$";}}}?><?php
 
-// source file: /Applications/XAMPP/xamppfiles/htdocs/spravaregistratury/app/templates/Password/default.latte
+// source file: /Applications/XAMPP/xamppfiles/htdocs/spravaregistratury/app/templates/VypisScan/default.latte
 
 ?><?php
 // prolog Nette\Latte\Macros\CoreMacros
-list($_l, $_g) = Nette\Latte\Macros\CoreMacros::initRuntime($template, 'gckl3vws9s')
+list($_l, $_g) = Nette\Latte\Macros\CoreMacros::initRuntime($template, 'hx9eu5zjp2')
 ;
 // prolog Nette\Latte\Macros\UIMacros
 //
 // block content
 //
-if (!function_exists($_l->blocks['content'][] = '_lba1a7cd64de_content')) { function _lba1a7cd64de_content($_l, $_args) { extract($_args)
+if (!function_exists($_l->blocks['content'][] = '_lbba8705fc2f_content')) { function _lbba8705fc2f_content($_l, $_args) { extract($_args)
 ?><body>
 
     
@@ -21,32 +21,19 @@ if (!function_exists($_l->blocks['content'][] = '_lba1a7cd64de_content')) { func
 
 			<ul id="nav" class="fl">
 	
-				<!--<li class="v-sep"><a href="#" class="round button dark ic-left-arrow image-left">Go to website</a></li>-->
+				<li class="v-sep"><a class="round button dark ic-left-arrow image-left" href="<?php echo htmlSpecialChars($_control->link("Homepage:", array('firma' => $firma))) ?>
+">Späť</a></li>
 				<li class="v-sep"><a class="round button dark menu-user image-left" href="<?php echo htmlSpecialChars($_control->link("Choice:")) ?>
 ">Prihlásený ako <strong><?php echo Nette\Templating\Helpers::escapeHtml($user->getIdentity()->meno, ENT_NOQUOTES) ?>
  <?php echo Nette\Templating\Helpers::escapeHtml($user->getIdentity()->priezvisko, ENT_NOQUOTES) ?></strong></a>
 					<ul>
-						<li><a href="#">Zmeniť heslo</a></li>
+						<li><a href="<?php echo htmlSpecialChars($_control->link("Password:")) ?>">Zmeniť heslo</a></li>
 						<li><a href="<?php echo htmlSpecialChars($_control->link("signOut!")) ?>">Odhlásiť</a></li>
 					</ul> 
 				</li>
-<?php $iterations = 0; foreach ($firmy as $polozka): ?>
-				    <li class="v-sep"><a class="round button dark" href="<?php echo htmlSpecialChars($_control->link("Homepage:", array('firma' => $polozka->id_firma))) ?>
-"><?php echo Nette\Templating\Helpers::escapeHtml($polozka->nazov, ENT_NOQUOTES) ?></a>
-					<ul>
-						<li><a href="<?php echo htmlSpecialChars($_control->link("Plan:", array('firma' => $polozka->id_firma))) ?>
-">Registratúrny plán</a></li>
-						<li><a href="<?php echo htmlSpecialChars($_control->link("Homepage:", array('firma' => $polozka->id_firma))) ?>
-">Úložné jednotky</a></li>
-					</ul> 
-				    </li>
-				    
-<?php $iterations++; endforeach ?>
+				<li class="v-sep"><a class="round button dark" href="<?php echo htmlSpecialChars($_control->link("Homepage:", array('firma' => $firma))) ?>
+">Databáza záznamov</a></li>
 				
-				<?php if ($admin == TRUE): ?><li class="v-sep"><a class="round button dark" href="<?php echo htmlSpecialChars($_control->link("PrehladVypoziciek:")) ?>
-">Výpožičky</a> <?php endif ?>
-
-			
 				<li><a class="round button dark menu-logoff image-left" href="<?php echo htmlSpecialChars($_control->link("signOut!")) ?>
 ">Odhlásiť sa</a></li>
 				
@@ -54,6 +41,7 @@ if (!function_exists($_l->blocks['content'][] = '_lba1a7cd64de_content')) { func
 
 					
 			
+
 		</div> <!-- end full-width -->	
 	
 	</div> <!-- end top-bar -->
@@ -118,30 +106,46 @@ if (!function_exists($_l->blocks['content'][] = '_lba1a7cd64de_content')) { func
 					
 					
 					<div class="content-module-main">
+					 
 					    
-					   
-					   
-<?php Nette\Latte\Macros\FormMacros::renderFormBegin($form = $_form = (is_object("passwordForm") ? "passwordForm" : $_control["passwordForm"]), array()) ?>
-						<br /><div class="information-box round">Pre zmenu hesla zadajte svoje súčasné heslo a nové heslo aj s potvrdením. Nové heslo musí mať aspoň 6 znakov.</div>
-								       <fieldset>
-<?php if (is_object($form)) $_ctrl = $form; else $_ctrl = $_control->getComponent($form); if ($_ctrl instanceof Nette\Application\UI\IRenderable) $_ctrl->validateControl(); $_ctrl->render('errors') ?>
-									   <p>
-<?php $_input = is_object("oldPassword") ? "oldPassword" : $_form["oldPassword"]; if ($_label = $_input->getLabel()) echo $_label->addAttributes(array()) ;$_input = (is_object("oldPassword") ? "oldPassword" : $_form["oldPassword"]); echo $_input->getControl()->addAttributes(array()) ?>
-									   </p>
-									   <p>
-<?php $_input = is_object("newPassword") ? "newPassword" : $_form["newPassword"]; if ($_label = $_input->getLabel()) echo $_label->addAttributes(array()) ;$_input = (is_object("newPassword") ? "newPassword" : $_form["newPassword"]); echo $_input->getControl()->addAttributes(array()) ?>
-									   </p>
-									   <p>
-<?php $_input = is_object("confirmPassword") ? "confirmPassword" : $_form["confirmPassword"]; if ($_label = $_input->getLabel()) echo $_label->addAttributes(array()) ;$_input = (is_object("confirmPassword") ? "confirmPassword" : $_form["confirmPassword"]); echo $_input->getControl()->addAttributes(array()) ?>
-									   </p>
-									   <p>
-<?php $_input = (is_object("set") ? "set" : $_form["set"]); echo $_input->getControl()->addAttributes(array()) ?>
-									   </p>
-									</fieldset>
-	
-<?php Nette\Latte\Macros\FormMacros::renderFormEnd($_form) ?>
+					    <table>
+						    
+							<thead>
 						
-					    
+								<tr>
+									<th>Typ</th>
+									<th>Názov</th>
+									<th>Dátum nahrania</th>
+									<th>Veľkosť</th>
+									<th>Akcie</th>
+								</tr>
+							
+							</thead>
+				
+							<tbody>
+								    
+<?php $iterations = 0; foreach ($iterator = $_l->its[] = new Nette\Iterators\CachingIterator($subory) as $subor): ?>
+							    <tr<?php if ($_l->tmp = array_filter(array($iterator->isOdd() ? 'odd' : 'even'))) echo ' class="' . htmlSpecialChars(implode(" ", array_unique($_l->tmp))) . '"' ?>>
+								
+								
+								<td><?php echo Nette\Templating\Helpers::escapeHtml($template->substr($subor->typ, 12, 3), ENT_NOQUOTES) ?></td>
+								<td><?php echo Nette\Templating\Helpers::escapeHtml($subor->nazov, ENT_NOQUOTES) ?></td>
+								<td><?php echo Nette\Templating\Helpers::escapeHtml($template->date($subor->datum, 'j. n. Y'), ENT_NOQUOTES) ?></td>
+								<td><?php echo Nette\Templating\Helpers::escapeHtml($subor->velkost, ENT_NOQUOTES) ?> B</td>
+								<td><a href="<?php echo htmlSpecialChars($_control->link("Download:", array('subor' => $subor->id_subor))) ?>
+">Stiahnuť súbor</a></td>
+								
+							    </tr>
+<?php $iterations++; endforeach; array_pop($_l->its); $iterator = end($_l->its) ?>
+							
+							</tbody>
+							
+						</table>
+					
+					   
+					   
+						
+				    
 					</div> <!-- end content-module-main -->
 				
 				</div> <!-- end content-module -->
@@ -174,8 +178,9 @@ if (!function_exists($_l->blocks['content'][] = '_lba1a7cd64de_content')) { func
 //
 // block title
 //
-if (!function_exists($_l->blocks['title'][] = '_lbef6240698b_title')) { function _lbef6240698b_title($_l, $_args) { extract($_args)
-?>						<h3 class="fl">Zmena hesla</h3>
+if (!function_exists($_l->blocks['title'][] = '_lbf9a8c275eb_title')) { function _lbf9a8c275eb_title($_l, $_args) { extract($_args)
+?>						<h3 class="fl">Výpis súborov k záznamu č.<?php echo Nette\Templating\Helpers::escapeHtml($infoJednotka->cislo_jednotky, ENT_NOQUOTES) ?>
+, z roku <?php echo Nette\Templating\Helpers::escapeHtml($infoJednotka->rok_vzniku, ENT_NOQUOTES) ?></h3>
 <?php
 }}
 

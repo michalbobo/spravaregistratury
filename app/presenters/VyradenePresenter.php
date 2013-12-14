@@ -13,6 +13,7 @@ class VyradenePresenter extends BasePresenter{
     private $ulozneJednotkyRepository;
     private $firmyRepository;
     private $utvaryRepository;
+    private $uzivateliaRepository;
     private $firma;
 
     
@@ -27,11 +28,13 @@ class VyradenePresenter extends BasePresenter{
 		SpravaRegistratury\Ulozne_JednotkyRepository $ulozneJednotkyRepository, 
 		SpravaRegistratury\FirmyRepository $firmyRepository,
 		SpravaRegistratury\Reg_ZnackyRepository $regZnackyRepository,
-		SpravaRegistratury\UtvaryRepository $utvaryRepository){
+		SpravaRegistratury\UtvaryRepository $utvaryRepository,
+		SpravaRegistratury\UzivateliaRepository $uzivateliaRepository){
 	    $this->regZnackyRepository = $regZnackyRepository;
 	    $this->ulozneJednotkyRepository = $ulozneJednotkyRepository;
 	    $this->firmyRepository = $firmyRepository;
 	    $this->utvaryRepository = $utvaryRepository;
+	    $this->uzivateliaRepository = $uzivateliaRepository;
 	}
 	
 	
@@ -49,12 +52,16 @@ class VyradenePresenter extends BasePresenter{
 	}
 	
 	public function actionDefault($firma){
-	    $this->template->firma = $firma;
-	    $this->firma = $firma;
-	    
-	    $this->template->jednotky= $this->ulozneJednotkyRepository->findVyradenie($this->firma)->where(array('vyradenie'=>NULL))->order('reg_znacka ASC')->order('rok_vzniku DESC');
-	    
-	    $this->template->aktRok = date('Y');
+	     $aktUser = $this->uzivateliaRepository->find($this->getUser()->getId());
+	    /* ak sa firma v parametri zhoduje so zamestnavatelom prihlaseneho uzivatela alebo je uzivatel admin */
+	    if (($aktUser->zamestnavatel == $this->adminFirma) OR ($firma == $aktUser->zamestnavatel)){
+		$this->template->firma = $firma;
+		$this->firma = $firma;
+		$this->template->jednotky= $this->ulozneJednotkyRepository->findVyradenie($this->firma)->where(array('vyradenie'=>NULL))->order('reg_znacka ASC')->order('rok_vzniku DESC');
+		$this->template->aktRok = date('Y');
+	    } else {
+		throw new Nette\Application\BadRequestException;
+	    }
 	}
 	
 

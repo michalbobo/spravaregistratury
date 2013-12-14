@@ -1,0 +1,153 @@
+{* Latte template *}
+{block content}
+
+
+
+<body>
+
+	<!-- TOP BAR -->
+	<div id="top-bar">
+		
+		<div class="page-full-width cf">
+
+			<ul id="nav" class="fl">
+	
+				<li class="v-sep"><a n:href="Choice:" class="round button dark ic-left-arrow image-left">Späť</a></li>
+				<li class="v-sep"><a n:href="Choice:" class="round button dark menu-user image-left">Prihlásený ako <strong>{$user->getIdentity()->meno} {$user->getIdentity()->priezvisko}</strong></a>
+					<ul>
+						<li><a n:href="Password:">Zmeniť heslo</a></li>
+						<li><a n:href="signOut!">Odhlásiť</a></li>
+					</ul> 
+				</li>
+				
+				{foreach $firmy as $polozka}
+				    <li class="v-sep"><a n:href="Homepage: firma => $polozka->id_firma" class="round button dark">{$polozka->nazov}</a>
+					<ul>
+						<li><a n:href="Plan: firma => $polozka->id_firma">Registratúrny plán</a></li>
+						<li><a n:href="Homepage: firma => $polozka->id_firma">Úložné jednotky</a></li>
+					</ul> 
+				    </li>
+				    
+				{/foreach}
+				
+				
+				<li><a n:href="signOut!" class="round button dark menu-logoff image-left">Odhlásiť sa</a></li>
+				
+			</ul> <!-- end nav -->
+
+					
+			
+
+		</div> <!-- end full-width -->	
+	
+	</div> <!-- end top-bar -->
+	
+	
+	
+	
+	
+	
+	
+	<!-- MAIN CONTENT -->
+	<div id="content">
+		
+		<div class="page-full-width cf">
+		    
+		    <div class="content-module-heading cf">
+					
+			<h3 class="fl" n:block='title'>Prehľad výpožičiek</h3>
+						
+						
+					<!--	<span class="fr expand-collapse-text initial-expand">Click to expand</span>-->
+		    </div>
+		    {foreach $flashes as $flash}
+			<div class="flash {$flash->type}">{$flash->message}</div>
+		    {/foreach}
+		    
+		   
+			
+			<!-- <div class="side-content fr"> -->
+			
+				<div class="content-module">
+				
+					<!--<div class="content-module-heading cf">
+					
+						<h3 class="fl">Table design</h3>
+						<span class="fr expand-collapse-text">Click to collapse</span>
+						<span class="fr expand-collapse-text initial-expand">Click to expand</span>
+					
+					</div> <!-- end content-module-heading -->
+					
+					
+					<div class="content-module-main">
+					{snippet}	
+						<table>
+						    
+							<thead>
+						
+								<tr>
+									<th>Číslo výpožičky</th>
+									<th>Typ</th>
+									<th>Dátum žiadosti</th>
+									<th>Žiadatel</th>
+									<th>Poznámka</th>
+									<th>Množstvo</th>
+									<th>Číslo záznamu</th>
+									<th>Zadávateľ</th>
+									<th>Číslo jednotky</th>
+									<th>Lokácia</th>
+									<th>Názov</th>
+									<th>Akcie</th>
+								</tr>
+							
+							</thead>
+	
+							
+							<tbody>
+								{foreach $vypozicky as $vypozicka}    
+								     <tr n:class="$iterator->isOdd() ? odd : even">
+									<td>{$vypozicka->id_vypozicka}</td>
+									<td>{$vypozicka->typ}</td>
+									<td>{$vypozicka->datum_ziadosti|date:'j. n. Y'}</td>
+									<td>{$vypozicka->ziadatel}</td>
+									<td>{$vypozicka->poznamka}</td>
+									<td>{$vypozicka->mnozstvo}</td>
+									<td>{$vypozicka->cislo_zaznamu}</td>
+									<td>{$vypozicka->meno} {$vypozicka->priezvisko}</td>
+									<td>{$vypozicka->jednotka}</td>
+									<td>{$vypozicka->lokacia}</td>
+									<td>{$vypozicka->nazovJednotky}</td>
+									<td>
+									    <a n:href="Done! id => $vypozicka->id_vypozicka" class="ic-table-done table-actions-button ajax"></a>
+									   {if $vypozicka->typ == "scan"} <a n:href="Upload: jednotka => $vypozicka->id_jednotka, src => 'prehlad' " class="table-actions-button ic-table-upload-dark"></a> {/if}
+									    <a n:href="EditVypozicka: vypozicka => $vypozicka->id_vypozicka, src => 'prehlad'" class="table-actions-button ic-table-edit"></a>							
+									</td>
+								    </tr>
+								{/foreach}
+							</tbody>
+							
+						</table>
+					{/snippet}
+					</div> <!-- end content-module-main -->
+				
+				</div> <!-- end content-module -->
+				
+			
+			</div> <!-- end side-content -->
+		
+		</div> <!-- end full-width -->
+			
+	</div> <!-- end content -->
+	
+	
+	
+	<!-- FOOTER -->
+	<div id="footer">
+	
+		<p>Vytvorené ako bakalárska práca.<strong> Michal Bobocký, MENDELU.</strong></p>
+		<p>2013</p>
+	</div> <!-- end footer --><!-- end footer -->
+
+</body>
+</html>
+{/block}

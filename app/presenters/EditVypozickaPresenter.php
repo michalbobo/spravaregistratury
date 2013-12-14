@@ -9,8 +9,11 @@ use Nette\Application\UI\Form;
 class EditVypozickaPresenter extends BasePresenter{
     
     private $vypozickyRepository;
+    private $uzivateliaRepository;
     private $firma;
     private $vypozicka;
+    private $src;
+    
     
     
     
@@ -22,17 +25,25 @@ class EditVypozickaPresenter extends BasePresenter{
 	    }
         }
     
-    public function inject(SpravaRegistratury\VypozickyRepository $vpyozickyRepository){
-	  
-	    $this->vypozickyRepository = $vpyozickyRepository;
+    public function inject(SpravaRegistratury\VypozickyRepository $vypozickyRepository,
+			SpravaRegistratury\UzivateliaRepository $uzivateliaRepository){
+	    $this->uzivateliaRepository = $uzivateliaRepository;
+	    $this->vypozickyRepository = $vypozickyRepository;
 	   
 	}
 	
-    public function actionDefault($firma, $vypozicka){
+    public function actionDefault($firma, $vypozicka, $src){
+	$aktUser = $this->uzivateliaRepository->find($this->getUser()->getId());
+	/* ak sa firma v parametri zhoduje so zamestnavatelom prihlaseneho uzivatela alebo je uzivatel admin */
+	if (($aktUser->zamestnavatel == $this->adminFirma) OR ($firma == $aktUser->zamestnavatel)){
 	$this->template->firma = $firma;
 	$this->firma = $firma;
 	$this->template->infoVypozicka = $this->vypozickyRepository->find($vypozicka);
 	$this->vypozicka = $this->vypozickyRepository->find($vypozicka);
+	$this->src = $src;
+	} else {
+	    throw new Nette\Application\BadRequestException;
+	}
     }
     
     public function createComponentEditVypozickaForm(){
@@ -76,8 +87,12 @@ class EditVypozickaPresenter extends BasePresenter{
 		    $form->values->poznamka, $form->values->mnozstvo, $form->values->cislo_zaznamu,$this->vypozicka->id_vypozicka);
 	     $this->flashMessage('Výpožička bola úspešne pozmenená.','confirmation-box round');
 	     
-	     $this->redirect('Vypozicky:', array('firma' => $this->firma));
 	     
+	    if($this->src == 'prehlad'){
+	      $this->redirect('PrehladVypoziciek:') ; 
+	    } else {
+		$this->redirect('Vypozicky:', array('firma' => $this->firma));
+	    }   
 	     
 	 } 
 }

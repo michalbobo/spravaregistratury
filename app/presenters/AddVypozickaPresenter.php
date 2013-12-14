@@ -37,12 +37,17 @@ class AddVypozickaPresenter extends BasePresenter{
 	}
 	
     public function actionDefault($jednotka, $firma){
-	
+	$aktUser = $this->uzivateliaRepository->find($this->getUser()->getId());
+	/* ak sa firma v parametri zhoduje so zamestnavatelom prihlaseneho uzivatela alebo je uzivatel admin */
+	if (($aktUser->zamestnavatel == $this->adminFirma) OR ($firma == $aktUser->zamestnavatel)){
 	$this->template->firma = $firma;
 	$this->firma = $firma;
 	$this->jednotka = $jednotka;
 	$this->template->infoJednotka = $this->ulozneJednotkyRepository->find($jednotka);
 	$this->template->infoFirma = $this->firmyRepository->find($firma);
+	} else {
+	    throw new Nette\Application\BadRequestException;
+	}
 	
     }
     

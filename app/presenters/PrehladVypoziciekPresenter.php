@@ -6,7 +6,7 @@ use Nette\Mail\Message;
  * and open the template in the editor.
  */
 
-class VypozickyPresenter extends BasePresenter{
+class PrehladVypoziciekPresenter extends BasePresenter{
     
     
 	
@@ -22,8 +22,6 @@ class VypozickyPresenter extends BasePresenter{
             if (!$this->getUser()->isLoggedIn()){
 		$this->redirect('Sign:in');
 	    }
-	    
-	   
         }
         
 	public function inject(
@@ -40,19 +38,15 @@ class VypozickyPresenter extends BasePresenter{
 	
 	public function renderDefault()
 	{
-		
-		 $this->template->infoFirma = $this->firmyRepository->find($this->firma);
-		 $this->template->vypozicky = $this->vypozickyRepository->findByFirma($this->firma)->where(array('vybavene' => 0));
-		 $this->template->vybavene = $this->vypozickyRepository->findByFirma($this->firma)->where(array('vybavene' => 1));
-		    
+		 $this->template->vypozicky = $this->vypozickyRepository->findPrehlad()->where(array('vybavene' => 0))->order('datum_ziadosti ASC');
+		 $this->template->firmy = $this->firmyRepository->findAll()->order('nazov ASC');
 	}
 	
-	public function actionDefault($firma){
+	public function actionDefault(){
 	    $aktUser = $this->uzivateliaRepository->find($this->getUser()->getId());
 	    /* ak sa firma v parametri zhoduje so zamestnavatelom prihlaseneho uzivatela alebo je uzivatel admin */
 	    if (($aktUser->zamestnavatel == $this->adminFirma) OR ($firma == $aktUser->zamestnavatel)){
-		$this->template->firma = $firma;
-		$this->firma = $firma;
+		
 	    } else {
 		throw new Nette\Application\BadRequestException;
 	    }
@@ -81,7 +75,7 @@ class VypozickyPresenter extends BasePresenter{
 	   
 	    
 	    if(!$this->isAjax()){
-	    $this->redirect('this',array("firma"=>$this->firma));
+	    $this->redirect('this');
 	    $this->flashMessage('Výpožička bola označená ako vybavená.','confirmation-box round');
 	    } else {
 		$this->invalidateControl();

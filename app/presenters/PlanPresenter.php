@@ -11,13 +11,14 @@ class PlanPresenter extends BasePresenter{
     private $userRepository;
 	private $regZnackyRepository;
 	private $firmyRepository;
+	private $firma;
 
 	
         public function startup() {
             parent::startup();
             if (!$this->getUser()->isLoggedIn()){
 		$this->redirect('Sign:in');
-	    }
+	    }    	    
         }
         
 	public function inject(SpravaRegistratury\UzivateliaRepository $userRepository,
@@ -43,6 +44,7 @@ class PlanPresenter extends BasePresenter{
             $this->setView('notFound');
         }
 	$this->template->firma = $firma;
+	$this->firma = $firma;
 	
 	$this->template->titulok = $this->firmyRepository->find($firma);
 	 

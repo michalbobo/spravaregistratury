@@ -18,6 +18,7 @@ class UploadPresenter extends BasePresenter{
     private $firmyRepository;
     private $suboryRepository;
     private $kopieRepository;
+    private $uzivateliaRepository;
     
     public function startup() {
             parent::startup();
@@ -30,24 +31,30 @@ class UploadPresenter extends BasePresenter{
 			    SpravaRegistratury\Reg_ZnackyRepository $regZnackyRepository,
 			    SpravaRegistratury\FirmyRepository $firmyRepository,
 			    SpravaRegistratury\SuboryRepository $suboryRepository,
-			    SpravaRegistratury\KopieRepository $kopieRepository){
+			    SpravaRegistratury\KopieRepository $kopieRepository,
+			    SpravaRegistratury\UzivateliaRepository $uzivateliaRepository){
 			    
 	    $this->firmyRepository = $firmyRepository;
 	    $this->ulozneJednotkyRepository = $ulozneJednotkyRepository;
 	    $this->regZnackyRepository = $regZnackyRepository;
 	    $this->suboryRepository = $suboryRepository;
 	    $this->kopieRepository = $kopieRepository;
+	    $this->uzivateliaRepository = $uzivateliaRepository;
 	}
 	
     public function actionDefault($jednotka, $firma, $src){
-	$this->template->aktualnyZaznam = $this->ulozneJednotkyRepository->find($jednotka);
-	$this->template->firma = $firma;
-	$this->template->spolocnost = $this->firmyRepository->find($firma);
-	$this->firma = $firma;
-	$this->jednotka = $jednotka;
-	$this->src = $src;
-	
-	
+	 $aktUser = $this->uzivateliaRepository->find($this->getUser()->getId());
+	    /* ak sa firma v parametri zhoduje so zamestnavatelom prihlaseneho uzivatela alebo je uzivatel admin */
+	    if (($aktUser->zamestnavatel == $this->adminFirma) OR ($firma == $aktUser->zamestnavatel)){
+		$this->template->aktualnyZaznam = $this->ulozneJednotkyRepository->find($jednotka);
+		$this->template->firma = $firma;
+		$this->template->spolocnost = $this->firmyRepository->find($firma);
+		$this->firma = $firma;
+		$this->jednotka = $jednotka;
+		$this->src = $src;
+	    } else {
+		throw new Nette\Application\BadRequestException;
+	    }
     }
     
     public function createComponentUploadForm() {

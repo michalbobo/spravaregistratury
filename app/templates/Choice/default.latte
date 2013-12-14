@@ -18,31 +18,17 @@
 						<li><a n:href="signOut!">Odhlásiť</a></li>
 					</ul> 
 				</li>
-				<li class="v-sep"><a n:href="Homepage: firma => 1" class="round button dark">US Steel</a>
+				{foreach $firmy as $polozka}
+				    <li class="v-sep"><a n:href="Homepage: firma => $polozka->id_firma" class="round button dark">{$polozka->nazov}</a>
 					<ul>
-						<li><a n:href="Plan: firma => 1">Registratúrny plán</a></li>
-						<li><a n:href="Homepage: firma => 1">Úložné jednotky</a></li>
+						<li><a n:href="Plan: firma => $polozka->id_firma">Registratúrny plán</a></li>
+						<li><a n:href="Homepage: firma => $polozka->id_firma">Úložné jednotky</a></li>
 					</ul> 
-				</li>
-				<li class="v-sep"><a n:href="Homepage: firma => 3" class="round button dark">Union</a>
-					<ul>
-						<li><a n:href="Plan: firma => 3">Registratúrny plán</a></li>
-						<li><a n:href="Homepage: firma => 3">Úložné jednotky</a></li>
-					</ul> 
-				</li>
-				<li class="v-sep"><a n:href="Homepage: firma => 2" class="round button dark">Union ZP</a>
-					<ul>
-						<li><a n:href="Plan: firma => 2">Registratúrny plán</a></li>
-						<li><a n:href="Homepage: firma => 2">Úložné jednotky</a></li>
-					</ul> 
-				</li>
-				<li class="v-sep"><a n:href="Homepage: firma => 4" class="round button dark">ZIPP</a>
-					<ul>
-						<li><a n:href="Plan: firma => 4">Registratúrny plán</a></li>
-						<li><a n:href="Homepage: firma => 4">Úložné jednotky</a></li>
-					</ul> 
-				</li>
-				<li class="v-sep"><a n:href="Vypozicky:" class="round button dark">Výpožičky</a>
+				    </li>
+				    
+				{/foreach}
+				
+				{if $admin == TRUE}<li class="v-sep"><a n:href="PrehladVypoziciek:" class="round button dark">Výpožičky</a> {/if}
 					
 				</li>
 			
@@ -55,32 +41,7 @@
 		</div> <!-- end full-width -->	
 	
 	</div> <!-- end top-bar -->
-	
-	
-	
-	<!-- HEADER -->
-	<!--
-	<div id="header-with-tabs">
-		
-		<div class="page-full-width cf">
-	
-			<ul id="tabs" class="fl">
-				<li><a href="dashboard.html" class="active-tab dashboard-tab">Domov</a></li>
-				<li><a href="page-full-width.html">Full width page</a></li>
-				<li><a href="page-other.html">Other page elements</a></li>
-			</ul> <!-- end tabs -->
-			
-			<!-- Change this image to your own company's logo -->
-			<!-- The logo will automatically be resized to 30px height. -->
-			
-				<!--	<a href="#" id="company-branding-small" class="fr"><img src="images/company-logo.png" alt="Blue Hosting" /></a>
-		<!--	
-		</div> <!-- end full-width -->	
-<!--
-	</div> <!-- end header -->
 
-	
-	
 	<!-- MAIN CONTENT -->
 	<div id="content">
 		
@@ -88,31 +49,13 @@
 		    {foreach $flashes as $flash}
 			<div class="flash {$flash->type}">{$flash->message}</div>
 		    {/foreach}
-			<!--<div class="side-menu fl">
-				
-				<h3>Menu</h3>
-				<ul>
-					<li><a href="#">Moje úlohy</a></li>
-					<li><a href="#">US Steel</a></li>
-					<li><a href="#">Union</a></li>
-					<li><a href="#">Union ZP</a></li>
-					<li><a href="#">Zipp</a></li>
-				</ul>
-				
-			</div> <!-- end side-menu -->
-			
-			<!--<div class="side-content fr">
-			
-				<div class="content-module"> -->
-                    
-                  
 				
 					<div class="content-module-heading cf">
 					
 						<h3 class="fl" n:block="title">Prehľad úloh</h3>
 						
 						
-					<!--	<span class="fr expand-collapse-text initial-expand">Click to expand</span>-->
+					
 					</div> <!-- end content-module-heading -->
 					
 					
@@ -150,46 +93,31 @@
 							</tbody>
 							<!-- FORMULAR PRE PRIDAVANIE ULOH -->
 							<tfoot>
-							    <tr>
-							    <td colspan="3" class="table-footer">
-								
-								{form addUlohaForm}
-									    {control $form errors}
-								       <fieldset>
-									   
-									  
-									   {label datum/}
-									   {input datum}
-									
-									   {label popis/}
-									   {input popis}
-									 
-									   {input pridat}
-									    
-									</fieldset>
-	
-								{/form}
-								
-								<!--	
-								<form>
-								    <fieldset>
-								    <label for="datum" style="display:inline; padding-right: 10px;">Dátum</label>
-								    <select id="dropdown-actions" style="display:inline;">
-									<option value="option1">Select your action here</option>
-								    </select>
-								    
-								    <label for="popis" style="display:inline; padding-right: 10px; padding-left: 10px;">Úloha</label><input type="text" style="display:inline;  padding-right: 10px;" id="full-width-input" class="round default-width-input">
-								    <input type="submit" value="Pridať úlohu" class="round blue ic-right-arrow" style="display:inline;  padding-left: 10px;">
-								    </fieldset>
-								</form>	
-								-->
-							     </td>
-							    </tr>
+							   
 							</tfoot>
 							<!-- END FORMULAR -->
 							
 						</table>
+						
+						{form addUlohaForm}
+									    {control $form errors}
+								       
+									   
+									   <p>
+									   {label datum/}
+									   {input datum}
+									   </p>
+									   <p>
+									   {label popis/}
+									   {input popis}
+									   </p>
+									   {input pridat}
+									    
+									
+	
+								{/form}
 					{/snippet}
+					    
 					    
 					</div> <!-- end content-module-main -->
 				

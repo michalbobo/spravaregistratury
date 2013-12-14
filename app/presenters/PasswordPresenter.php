@@ -9,7 +9,8 @@ use Nette\Application\UI\Form;
 class PasswordPresenter extends BasePresenter{
      private $userRepository;
      private $authenticator;
-
+     private $firmyRepository;
+     private $userZamestnavatel;
     
     public function startup() {
             parent::startup();
@@ -18,9 +19,11 @@ class PasswordPresenter extends BasePresenter{
 	    }
         }
     
-    public function inject(SpravaRegistratury\UzivateliaRepository $userRepository, Authenticator $authenticator){
+    public function inject(SpravaRegistratury\UzivateliaRepository $userRepository, Authenticator $authenticator,
+	    SpravaRegistratury\FirmyRepository $firmyRepository){
 	    $this->userRepository = $userRepository;
 	    $this->authenticator = $authenticator;
+	    $this->firmyRepository = $firmyRepository;
 	}
 	
 	
@@ -28,6 +31,18 @@ class PasswordPresenter extends BasePresenter{
 	public function renderDefault()
 	{
 		$this->template->users = $this->userRepository->findAll();
+		$this->userZamestnavatel = $this->userRepository->find($this->getUser()->getId());
+		
+		
+		if($this->userZamestnavatel->zamestnavatel == $this->adminFirma){
+		    $this->template->firmy = $this->firmyRepository->findAll()->order('nazov ASC');
+		    $this->template->admin = TRUE;
+		} else {
+		    $this->template->firmy = $this->firmyRepository->findAll()
+			    ->where(array('id_firma' => $this->userZamestnavatel->zamestnavatel))->order('nazov ASC');
+		    $this->template->admin = FALSE;
+		}
+		
 		
             
 	}

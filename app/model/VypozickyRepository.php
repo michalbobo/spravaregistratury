@@ -83,6 +83,25 @@ class VypozickyRepository extends Repository {
 	  ));
     }
     
+    public function findPrehlad(){
+	 return $this->findAll()->select('typ')
+		 ->select('id_vypozicka')
+		 ->select('datum_ziadosti')
+		 ->select('ziadatel')
+		 ->select('poznamka')
+		 ->select('mnozstvo')
+		 ->select('cislo_zaznamu')
+		 ->select('datum_vybavenia')
+		 ->select('zadavatel')
+		 ->select('zadavatel.meno AS meno')
+		 ->select('zadavatel.priezvisko AS priezvisko')
+		 ->select('ulozna_jednotka.cislo_jednotky AS jednotka')
+		 ->select('ulozna_jednotka.id_jednotka AS id_jednotka')
+		 ->select('ulozna_jednotka.lokacia AS lokacia')
+		 ->select('ulozna_jednotka.nazov AS nazovJednotky');
+    }
+    
+    
    
     
 }

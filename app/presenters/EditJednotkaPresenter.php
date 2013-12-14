@@ -16,6 +16,7 @@ class EditJednotkaPresenter extends BasePresenter{
     private $firma;
     private $jednotka;
     private $src;
+    private $uzivateliaRepository;
     
     public function startup() {
             parent::startup();
@@ -25,18 +26,28 @@ class EditJednotkaPresenter extends BasePresenter{
         }
     
     public function inject(SpravaRegistratury\Ulozne_JednotkyRepository $ulozneJednotkyRepository,
-			    SpravaRegistratury\Reg_ZnackyRepository $regZnackyRepository){
+			    SpravaRegistratury\Reg_ZnackyRepository $regZnackyRepository,
+			    SpravaRegistratury\UzivateliaRepository $uzivateliaRepository){
 	  
 	    $this->ulozneJednotkyRepository = $ulozneJednotkyRepository;
 	    $this->regZnackyRepository = $regZnackyRepository;
+	    $this->uzivateliaRepository = $uzivateliaRepository;
 	}
 	
     public function actionDefault($jednotka, $firma, $src){
-	$this->aktualnyZaznam = $this->ulozneJednotkyRepository->find($jednotka);
-	$this->template->firma = $firma;
-	$this->firma = $firma;
-	$this->jednotka = $jednotka;
-	$this->src = $src;
+	$aktUser = $this->uzivateliaRepository->find($this->getUser()->getId());
+	/* ak sa firma v parametri zhoduje so zamestnavatelom prihlaseneho uzivatela alebo je uzivatel admin */
+	if (($aktUser->zamestnavatel == $this->adminFirma) OR ($firma == $aktUser->zamestnavatel)){
+	
+		$this->aktualnyZaznam = $this->ulozneJednotkyRepository->find($jednotka);
+		$this->template->firma = $firma;
+		$this->firma = $firma;
+		$this->jednotka = $jednotka;
+		$this->src = $src;
+		
+	} else {
+	    throw new Nette\Application\BadRequestException;
+	}
 	
     }
     
@@ -57,7 +68,7 @@ class EditJednotkaPresenter extends BasePresenter{
 		->setAttribute('class','round default-width-input');
 	 $form->addText('rok','Rok vzniku')
 		->addRule(Form::FILLED,'Je nutné zadať rok vzniku')
-		//->addRule(Form::MAX_LENGTH,4)
+		->addRule(Form::MAX_LENGTH,'Neplatný rok vzniku',4)
 		->addRule(Form::NUMERIC)
 		->setDefaultValue($this->aktualnyZaznam->rok_vzniku)
 		->setAttribute('class','round default-width-input');
@@ -70,6 +81,7 @@ class EditJednotkaPresenter extends BasePresenter{
 		->setAttribute('class','round default-width-input');
 	 $form->addText('cislo','Číslo úložnej jednotky')
 		->addRule(Form::FILLED,'Je nutné zadať čislo úložnej jednotky.')
+		->addRule(Form::NUMERIC,'Neplatné číslo jednotky.')
 		->setDefaultValue($this->aktualnyZaznam->cislo_jednotky)
 		->setAttribute('class','round default-width-input');
 	 $form->addText('lokacia','Lokácia záznamu')

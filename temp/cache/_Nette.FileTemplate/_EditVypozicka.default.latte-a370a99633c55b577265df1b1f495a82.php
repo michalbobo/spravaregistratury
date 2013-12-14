@@ -1,16 +1,16 @@
-<?php //netteCache[01]000418a:2:{s:4:"time";s:21:"0.87437000 1386977026";s:9:"callbacks";a:2:{i:0;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:9:"checkFile";}i:1;s:98:"/Applications/XAMPP/xamppfiles/htdocs/spravaregistratury/app/templates/EditVypozicka/default.latte";i:2;i:1386976478;}i:1;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:10:"checkConst";}i:1;s:25:"Nette\Framework::REVISION";i:2;s:28:"$WCREV$ released on $WCDATE$";}}}?><?php
+<?php //netteCache[01]000418a:2:{s:4:"time";s:21:"0.09461500 1387039519";s:9:"callbacks";a:2:{i:0;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:9:"checkFile";}i:1;s:98:"/Applications/XAMPP/xamppfiles/htdocs/spravaregistratury/app/templates/EditVypozicka/default.latte";i:2;i:1386980690;}i:1;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:10:"checkConst";}i:1;s:25:"Nette\Framework::REVISION";i:2;s:28:"$WCREV$ released on $WCDATE$";}}}?><?php
 
 // source file: /Applications/XAMPP/xamppfiles/htdocs/spravaregistratury/app/templates/EditVypozicka/default.latte
 
 ?><?php
 // prolog Nette\Latte\Macros\CoreMacros
-list($_l, $_g) = Nette\Latte\Macros\CoreMacros::initRuntime($template, 'df55y7plk2')
+list($_l, $_g) = Nette\Latte\Macros\CoreMacros::initRuntime($template, 'lbn71lzu7c')
 ;
 // prolog Nette\Latte\Macros\UIMacros
 //
 // block content
 //
-if (!function_exists($_l->blocks['content'][] = '_lb1d562dd773_content')) { function _lb1d562dd773_content($_l, $_args) { extract($_args)
+if (!function_exists($_l->blocks['content'][] = '_lb5775cd4a84_content')) { function _lb5775cd4a84_content($_l, $_args) { extract($_args)
 ?><body>
 
     
@@ -33,7 +33,7 @@ if (!function_exists($_l->blocks['content'][] = '_lb1d562dd773_content')) { func
 				</li>
 				<li class="v-sep"><a class="round button dark" href="<?php echo htmlSpecialChars($_control->link("Plan:", array('firma' => $firma))) ?>
 ">Registratúrny plán</a></li>
-				<li><a href="#" class="round button dark menu-email-special image-left">3 nové upozornenia</a></li>
+
 				<li><a class="round button dark menu-logoff image-left" href="<?php echo htmlSpecialChars($_control->link("signOut!")) ?>
 ">Odhlásiť sa</a></li>
 				
@@ -169,7 +169,7 @@ if (!function_exists($_l->blocks['content'][] = '_lb1d562dd773_content')) { func
 //
 // block title
 //
-if (!function_exists($_l->blocks['title'][] = '_lb267fc0c8c6_title')) { function _lb267fc0c8c6_title($_l, $_args) { extract($_args)
+if (!function_exists($_l->blocks['title'][] = '_lb0d5fe71efb_title')) { function _lb0d5fe71efb_title($_l, $_args) { extract($_args)
 ?>						<h3 class="fl">Editácia výpožičky č. <?php echo Nette\Templating\Helpers::escapeHtml($infoVypozicka->id_vypozicka, ENT_NOQUOTES) ?></h3>
 <?php
 }}

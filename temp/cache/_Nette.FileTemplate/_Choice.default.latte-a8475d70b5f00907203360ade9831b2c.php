@@ -1,16 +1,16 @@
-<?php //netteCache[01]000411a:2:{s:4:"time";s:21:"0.34737300 1386973449";s:9:"callbacks";a:2:{i:0;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:9:"checkFile";}i:1;s:91:"/Applications/XAMPP/xamppfiles/htdocs/spravaregistratury/app/templates/Choice/default.latte";i:2;i:1385908078;}i:1;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:10:"checkConst";}i:1;s:25:"Nette\Framework::REVISION";i:2;s:28:"$WCREV$ released on $WCDATE$";}}}?><?php
+<?php //netteCache[01]000411a:2:{s:4:"time";s:21:"0.16482500 1387054913";s:9:"callbacks";a:2:{i:0;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:9:"checkFile";}i:1;s:91:"/Applications/XAMPP/xamppfiles/htdocs/spravaregistratury/app/templates/Choice/default.latte";i:2;i:1387054909;}i:1;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:10:"checkConst";}i:1;s:25:"Nette\Framework::REVISION";i:2;s:28:"$WCREV$ released on $WCDATE$";}}}?><?php
 
 // source file: /Applications/XAMPP/xamppfiles/htdocs/spravaregistratury/app/templates/Choice/default.latte
 
 ?><?php
 // prolog Nette\Latte\Macros\CoreMacros
-list($_l, $_g) = Nette\Latte\Macros\CoreMacros::initRuntime($template, 'k83suewf4e')
+list($_l, $_g) = Nette\Latte\Macros\CoreMacros::initRuntime($template, 'ghhxdiwha9')
 ;
 // prolog Nette\Latte\Macros\UIMacros
 //
 // block content
 //
-if (!function_exists($_l->blocks['content'][] = '_lbe3bf600284_content')) { function _lbe3bf600284_content($_l, $_args) { extract($_args)
+if (!function_exists($_l->blocks['content'][] = '_lb866bf6e229_content')) { function _lb866bf6e229_content($_l, $_args) { extract($_args)
 ?><body>
 
 
@@ -30,44 +30,22 @@ if (!function_exists($_l->blocks['content'][] = '_lbe3bf600284_content')) { func
 						<li><a href="<?php echo htmlSpecialChars($_control->link("signOut!")) ?>">Odhlásiť</a></li>
 					</ul> 
 				</li>
-				<li class="v-sep"><a class="round button dark" href="<?php echo htmlSpecialChars($_control->link("Homepage:", array('firma' => 1))) ?>
-">US Steel</a>
+<?php $iterations = 0; foreach ($firmy as $polozka): ?>
+				    <li class="v-sep"><a class="round button dark" href="<?php echo htmlSpecialChars($_control->link("Homepage:", array('firma' => $polozka->id_firma))) ?>
+"><?php echo Nette\Templating\Helpers::escapeHtml($polozka->nazov, ENT_NOQUOTES) ?></a>
 					<ul>
-						<li><a href="<?php echo htmlSpecialChars($_control->link("Plan:", array('firma' => 1))) ?>
+						<li><a href="<?php echo htmlSpecialChars($_control->link("Plan:", array('firma' => $polozka->id_firma))) ?>
 ">Registratúrny plán</a></li>
-						<li><a href="<?php echo htmlSpecialChars($_control->link("Homepage:", array('firma' => 1))) ?>
+						<li><a href="<?php echo htmlSpecialChars($_control->link("Homepage:", array('firma' => $polozka->id_firma))) ?>
 ">Úložné jednotky</a></li>
 					</ul> 
-				</li>
-				<li class="v-sep"><a class="round button dark" href="<?php echo htmlSpecialChars($_control->link("Homepage:", array('firma' => 3))) ?>
-">Union</a>
-					<ul>
-						<li><a href="<?php echo htmlSpecialChars($_control->link("Plan:", array('firma' => 3))) ?>
-">Registratúrny plán</a></li>
-						<li><a href="<?php echo htmlSpecialChars($_control->link("Homepage:", array('firma' => 3))) ?>
-">Úložné jednotky</a></li>
-					</ul> 
-				</li>
-				<li class="v-sep"><a class="round button dark" href="<?php echo htmlSpecialChars($_control->link("Homepage:", array('firma' => 2))) ?>
-">Union ZP</a>
-					<ul>
-						<li><a href="<?php echo htmlSpecialChars($_control->link("Plan:", array('firma' => 2))) ?>
-">Registratúrny plán</a></li>
-						<li><a href="<?php echo htmlSpecialChars($_control->link("Homepage:", array('firma' => 2))) ?>
-">Úložné jednotky</a></li>
-					</ul> 
-				</li>
-				<li class="v-sep"><a class="round button dark" href="<?php echo htmlSpecialChars($_control->link("Homepage:", array('firma' => 4))) ?>
-">ZIPP</a>
-					<ul>
-						<li><a href="<?php echo htmlSpecialChars($_control->link("Plan:", array('firma' => 4))) ?>
-">Registratúrny plán</a></li>
-						<li><a href="<?php echo htmlSpecialChars($_control->link("Homepage:", array('firma' => 4))) ?>
-">Úložné jednotky</a></li>
-					</ul> 
-				</li>
-				<li class="v-sep"><a class="round button dark" href="<?php echo htmlSpecialChars($_control->link("Vypozicky:")) ?>
-">Výpožičky</a>
+				    </li>
+				    
+<?php $iterations++; endforeach ?>
+				
+				<?php if ($admin == TRUE): ?><li class="v-sep"><a class="round button dark" href="<?php echo htmlSpecialChars($_control->link("PrehladVypoziciek:")) ?>
+">Výpožičky</a> <?php endif ?>
+
 					
 				</li>
 			
@@ -81,32 +59,7 @@ if (!function_exists($_l->blocks['content'][] = '_lbe3bf600284_content')) { func
 		</div> <!-- end full-width -->	
 	
 	</div> <!-- end top-bar -->
-	
-	
-	
-	<!-- HEADER -->
-	<!--
-	<div id="header-with-tabs">
-		
-		<div class="page-full-width cf">
-	
-			<ul id="tabs" class="fl">
-				<li><a href="dashboard.html" class="active-tab dashboard-tab">Domov</a></li>
-				<li><a href="page-full-width.html">Full width page</a></li>
-				<li><a href="page-other.html">Other page elements</a></li>
-			</ul> <!-- end tabs -->
-			
-			<!-- Change this image to your own company's logo -->
-			<!-- The logo will automatically be resized to 30px height. -->
-			
-				<!--	<a href="#" id="company-branding-small" class="fr"><img src="images/company-logo.png" alt="Blue Hosting" /></a>
-		<!--	
-		</div> <!-- end full-width -->	
-<!--
-	</div> <!-- end header -->
 
-	
-	
 	<!-- MAIN CONTENT -->
 	<div id="content">
 		
@@ -114,31 +67,13 @@ if (!function_exists($_l->blocks['content'][] = '_lbe3bf600284_content')) { func
 <?php $iterations = 0; foreach ($flashes as $flash): ?>
 			<div class="flash <?php echo htmlSpecialChars($flash->type) ?>"><?php echo Nette\Templating\Helpers::escapeHtml($flash->message, ENT_NOQUOTES) ?></div>
 <?php $iterations++; endforeach ?>
-			<!--<div class="side-menu fl">
-				
-				<h3>Menu</h3>
-				<ul>
-					<li><a href="#">Moje úlohy</a></li>
-					<li><a href="#">US Steel</a></li>
-					<li><a href="#">Union</a></li>
-					<li><a href="#">Union ZP</a></li>
-					<li><a href="#">Zipp</a></li>
-				</ul>
-				
-			</div> <!-- end side-menu -->
-			
-			<!--<div class="side-content fr">
-			
-				<div class="content-module"> -->
-                    
-                  
 				
 					<div class="content-module-heading cf">
 					
 <?php call_user_func(reset($_l->blocks['title']), $_l, get_defined_vars())  ?>
 						
 						
-					<!--	<span class="fr expand-collapse-text initial-expand">Click to expand</span>-->
+					
 					</div> <!-- end content-module-heading -->
 					
 					
@@ -149,6 +84,7 @@ if (!function_exists($_l->blocks['content'][] = '_lbe3bf600284_content')) { func
 					   
 <div id="<?php echo $_control->getSnippetId('') ?>"><?php call_user_func(reset($_l->blocks['_']), $_l, $template->getParameters()) ?>
 </div>					    
+					    
 					</div> <!-- end content-module-main -->
 				
 				</div> <!-- end content-module -->
@@ -181,7 +117,7 @@ if (!function_exists($_l->blocks['content'][] = '_lbe3bf600284_content')) { func
 //
 // block title
 //
-if (!function_exists($_l->blocks['title'][] = '_lb3e841abca7_title')) { function _lb3e841abca7_title($_l, $_args) { extract($_args)
+if (!function_exists($_l->blocks['title'][] = '_lbc48a62576e_title')) { function _lbc48a62576e_title($_l, $_args) { extract($_args)
 ?>						<h3 class="fl">Prehľad úloh</h3>
 <?php
 }}
@@ -189,7 +125,7 @@ if (!function_exists($_l->blocks['title'][] = '_lb3e841abca7_title')) { function
 //
 // block _
 //
-if (!function_exists($_l->blocks['_'][] = '_lbe82b7e5108__')) { function _lbe82b7e5108__($_l, $_args) { extract($_args); $_control->validateControl(false)
+if (!function_exists($_l->blocks['_'][] = '_lb4e3faa410e__')) { function _lb4e3faa410e__($_l, $_args) { extract($_args); $_control->validateControl(false)
 ?>						<table id='ulohy'>
 						
 							<thead>
@@ -219,43 +155,26 @@ if (!function_exists($_l->blocks['_'][] = '_lbe82b7e5108__')) { function _lbe82b
 							</tbody>
 							<!-- FORMULAR PRE PRIDAVANIE ULOH -->
 							<tfoot>
-							    <tr>
-							    <td colspan="3" class="table-footer">
-								
-<?php Nette\Latte\Macros\FormMacros::renderFormBegin($form = $_form = (is_object("addUlohaForm") ? "addUlohaForm" : $_control["addUlohaForm"]), array()) ;if (is_object($form)) $_ctrl = $form; else $_ctrl = $_control->getComponent($form); if ($_ctrl instanceof Nette\Application\UI\IRenderable) $_ctrl->validateControl(); $_ctrl->render('errors') ?>
-								       <fieldset>
-									   
-									  
-<?php $_input = is_object("datum") ? "datum" : $_form["datum"]; if ($_label = $_input->getLabel()) echo $_label->addAttributes(array()) ;$_input = (is_object("datum") ? "datum" : $_form["datum"]); echo $_input->getControl()->addAttributes(array()) ?>
-									
-<?php $_input = is_object("popis") ? "popis" : $_form["popis"]; if ($_label = $_input->getLabel()) echo $_label->addAttributes(array()) ;$_input = (is_object("popis") ? "popis" : $_form["popis"]); echo $_input->getControl()->addAttributes(array()) ?>
-									 
-<?php $_input = (is_object("pridat") ? "pridat" : $_form["pridat"]); echo $_input->getControl()->addAttributes(array()) ?>
-									    
-									</fieldset>
-	
-<?php Nette\Latte\Macros\FormMacros::renderFormEnd($_form) ?>
-								
-								<!--	
-								<form>
-								    <fieldset>
-								    <label for="datum" style="display:inline; padding-right: 10px;">Dátum</label>
-								    <select id="dropdown-actions" style="display:inline;">
-									<option value="option1">Select your action here</option>
-								    </select>
-								    
-								    <label for="popis" style="display:inline; padding-right: 10px; padding-left: 10px;">Úloha</label><input type="text" style="display:inline;  padding-right: 10px;" id="full-width-input" class="round default-width-input">
-								    <input type="submit" value="Pridať úlohu" class="round blue ic-right-arrow" style="display:inline;  padding-left: 10px;">
-								    </fieldset>
-								</form>	
-								-->
-							     </td>
-							    </tr>
+							   
 							</tfoot>
 							<!-- END FORMULAR -->
 							
 						</table>
-<?php
+						
+<?php Nette\Latte\Macros\FormMacros::renderFormBegin($form = $_form = (is_object("addUlohaForm") ? "addUlohaForm" : $_control["addUlohaForm"]), array()) ;if (is_object($form)) $_ctrl = $form; else $_ctrl = $_control->getComponent($form); if ($_ctrl instanceof Nette\Application\UI\IRenderable) $_ctrl->validateControl(); $_ctrl->render('errors') ?>
+								       
+									   
+									   <p>
+<?php $_input = is_object("datum") ? "datum" : $_form["datum"]; if ($_label = $_input->getLabel()) echo $_label->addAttributes(array()) ;$_input = (is_object("datum") ? "datum" : $_form["datum"]); echo $_input->getControl()->addAttributes(array()) ?>
+									   </p>
+									   <p>
+<?php $_input = is_object("popis") ? "popis" : $_form["popis"]; if ($_label = $_input->getLabel()) echo $_label->addAttributes(array()) ;$_input = (is_object("popis") ? "popis" : $_form["popis"]); echo $_input->getControl()->addAttributes(array()) ?>
+									   </p>
+<?php $_input = (is_object("pridat") ? "pridat" : $_form["pridat"]); echo $_input->getControl()->addAttributes(array()) ?>
+									    
+									
+	
+<?php Nette\Latte\Macros\FormMacros::renderFormEnd($_form) ;
 }}
 
 //
