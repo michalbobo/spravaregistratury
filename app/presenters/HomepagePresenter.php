@@ -74,7 +74,7 @@ class HomepagePresenter extends BasePresenter
 		->fetchPairs('rok_vzniku','rok_vzniku');
 	$typPairs = $this->ulozneJednotkyRepository->findByFirma($this->firma)->where(array('vyradenie'=>NULL))->select('typ_jednotky')->order('typ_jednotky ASC')
 		->fetchPairs('typ_jednotky','typ_jednotky');
-	$utvaryPairs = $this->utvaryRepository->findByFirma($this->firma)->fetchPairs('spolocnost','nazov');
+	$utvaryPairs = $this->utvaryRepository->findByFirma($this->firma)->fetchPairs('id_utvar','nazov');
 
         
         $form = new Form();
@@ -87,6 +87,7 @@ class HomepagePresenter extends BasePresenter
                 ->setPrompt('-Vyberte typ-');
 	 $form->addSelect('utvar','  Príslušiaci útvar: ',$utvaryPairs)
 		 ->setPrompt('-Vyberte útvar-');
+	 
 	 
         $form->addSubmit('filtrovat','Filtrovať')
 		->setAttribute('class','button round blue text-upper ic-right-arrow image-right ajax');
@@ -103,11 +104,12 @@ class HomepagePresenter extends BasePresenter
 	    if(!is_null($form->values->znacka)) { $where['reg_znacka LIKE'] = $form->values->znacka; }
 	    if(!is_null($form->values->rok)) { $where['rok_vzniku LIKE'] = $form->values->rok; }
 	    if(!is_null($form->values->typ)) { $where['typ_jednotky LIKE'] = $form->values->typ; }
-	    if(!is_null($form->values->utvar)) { $where['id_utvar LIKE'] = $form->values->utvar; }
-
+	    if(!is_null($form->values->utvar)) { $where['vlastnik LIKE'] = $form->values->utvar; }
+	  
 
 	    
-	     $this->template->jednotky = $this->ulozneJednotkyRepository->findByFirma($this->firma)->where($where);
+	     $this->template->jednotky = $this->ulozneJednotkyRepository->findByFirma($this->firma)->where($where)
+		     ->order('reg_znacka ASC')->order('rok_vzniku DESC');
 	     $this->flashMessage('Vyfiltrované', 'confirmation-box round');
 	     $this->invalidateControl();
 	    

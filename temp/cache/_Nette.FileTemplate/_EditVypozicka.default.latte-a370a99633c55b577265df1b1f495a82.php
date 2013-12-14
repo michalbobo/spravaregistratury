@@ -1,16 +1,16 @@
-<?php //netteCache[01]000411a:2:{s:4:"time";s:21:"0.03260800 1386980736";s:9:"callbacks";a:2:{i:0;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:9:"checkFile";}i:1;s:91:"/Applications/XAMPP/xamppfiles/htdocs/spravaregistratury/app/templates/Upload/default.latte";i:2;i:1386980690;}i:1;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:10:"checkConst";}i:1;s:25:"Nette\Framework::REVISION";i:2;s:28:"$WCREV$ released on $WCDATE$";}}}?><?php
+<?php //netteCache[01]000418a:2:{s:4:"time";s:21:"0.87437000 1386977026";s:9:"callbacks";a:2:{i:0;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:9:"checkFile";}i:1;s:98:"/Applications/XAMPP/xamppfiles/htdocs/spravaregistratury/app/templates/EditVypozicka/default.latte";i:2;i:1386976478;}i:1;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:10:"checkConst";}i:1;s:25:"Nette\Framework::REVISION";i:2;s:28:"$WCREV$ released on $WCDATE$";}}}?><?php
 
-// source file: /Applications/XAMPP/xamppfiles/htdocs/spravaregistratury/app/templates/Upload/default.latte
+// source file: /Applications/XAMPP/xamppfiles/htdocs/spravaregistratury/app/templates/EditVypozicka/default.latte
 
 ?><?php
 // prolog Nette\Latte\Macros\CoreMacros
-list($_l, $_g) = Nette\Latte\Macros\CoreMacros::initRuntime($template, 'pdo60f75xb')
+list($_l, $_g) = Nette\Latte\Macros\CoreMacros::initRuntime($template, 'df55y7plk2')
 ;
 // prolog Nette\Latte\Macros\UIMacros
 //
 // block content
 //
-if (!function_exists($_l->blocks['content'][] = '_lb4c7381654b_content')) { function _lb4c7381654b_content($_l, $_args) { extract($_args)
+if (!function_exists($_l->blocks['content'][] = '_lb1d562dd773_content')) { function _lb1d562dd773_content($_l, $_args) { extract($_args)
 ?><body>
 
     
@@ -21,9 +21,9 @@ if (!function_exists($_l->blocks['content'][] = '_lb4c7381654b_content')) { func
 
 			<ul id="nav" class="fl">
 	
-				<li class="v-sep"><a class="round button dark ic-left-arrow image-left" href="<?php echo htmlSpecialChars($_control->link("Homepage:", array('firma' => $firma))) ?>
+				<li class="v-sep"><a class="round button dark ic-left-arrow image-left" href="<?php echo htmlSpecialChars($_control->link("Vypozicky:", array('firma' => $firma))) ?>
 ">Späť</a></li>
-				<li class="v-sep"><a class="round button dark menu-user image-left" href="<?php echo htmlSpecialChars($_control->link("Choice")) ?>
+				<li class="v-sep"><a class="round button dark menu-user image-left" href="<?php echo htmlSpecialChars($_control->link("Choice:")) ?>
 ">Prihlásený ako <strong><?php echo Nette\Templating\Helpers::escapeHtml($user->getIdentity()->meno, ENT_NOQUOTES) ?>
  <?php echo Nette\Templating\Helpers::escapeHtml($user->getIdentity()->priezvisko, ENT_NOQUOTES) ?></strong></a>
 					<ul>
@@ -33,7 +33,7 @@ if (!function_exists($_l->blocks['content'][] = '_lb4c7381654b_content')) { func
 				</li>
 				<li class="v-sep"><a class="round button dark" href="<?php echo htmlSpecialChars($_control->link("Plan:", array('firma' => $firma))) ?>
 ">Registratúrny plán</a></li>
-				
+				<li><a href="#" class="round button dark menu-email-special image-left">3 nové upozornenia</a></li>
 				<li><a class="round button dark menu-logoff image-left" href="<?php echo htmlSpecialChars($_control->link("signOut!")) ?>
 ">Odhlásiť sa</a></li>
 				
@@ -107,23 +107,33 @@ if (!function_exists($_l->blocks['content'][] = '_lb4c7381654b_content')) { func
 					
 					<div class="content-module-main">
 					    
-					    <p>Upload súboru k jednotke <b>č. <?php echo Nette\Templating\Helpers::escapeHtml($aktualnyZaznam->cislo_jednotky, ENT_NOQUOTES) ?>
-</b> z roku <b><?php echo Nette\Templating\Helpers::escapeHtml($aktualnyZaznam->rok_vzniku, ENT_NOQUOTES) ?>
-</b> firmy <b><?php echo Nette\Templating\Helpers::escapeHtml($spolocnost->nazov, ENT_NOQUOTES) ?></b>. </p>   
 					    
-<?php Nette\Latte\Macros\FormMacros::renderFormBegin($form = $_form = (is_object("uploadForm") ? "uploadForm" : $_control["uploadForm"]), array()) ?>
-				 
-				 
-								     
+					   
+<?php Nette\Latte\Macros\FormMacros::renderFormBegin($form = $_form = (is_object("editVypozickaForm") ? "editVypozickaForm" : $_control["editVypozickaForm"]), array()) ?>
+
+								       <fieldset>
 <?php if (is_object($form)) $_ctrl = $form; else $_ctrl = $_control->getComponent($form); if ($_ctrl instanceof Nette\Application\UI\IRenderable) $_ctrl->validateControl(); $_ctrl->render('errors') ?>
-
-					    
-						    <?php $_input = is_object("subor") ? "subor" : $_form["subor"]; if ($_label = $_input->getLabel()) echo $_label->addAttributes(array()) ;$_input = (is_object("subor") ? "subor" : $_form["subor"]); echo $_input->getControl()->addAttributes(array()) ?>
-
-						    
-<?php $_input = (is_object("upload") ? "upload" : $_form["upload"]); echo $_input->getControl()->addAttributes(array()) ?>
-
-					  
+									   <p>
+<?php $_input = is_object("typ") ? "typ" : $_form["typ"]; if ($_label = $_input->getLabel()) echo $_label->addAttributes(array()) ;$_input = (is_object("typ") ? "typ" : $_form["typ"]); echo $_input->getControl()->addAttributes(array()) ?>
+									   </p>
+									   <p>
+<?php $_input = is_object("ziadatel") ? "ziadatel" : $_form["ziadatel"]; if ($_label = $_input->getLabel()) echo $_label->addAttributes(array()) ;$_input = (is_object("ziadatel") ? "ziadatel" : $_form["ziadatel"]); echo $_input->getControl()->addAttributes(array()) ?>
+									   </p>
+									   <p>
+<?php $_input = is_object("poznamka") ? "poznamka" : $_form["poznamka"]; if ($_label = $_input->getLabel()) echo $_label->addAttributes(array()) ;$_input = (is_object("poznamka") ? "poznamka" : $_form["poznamka"]); echo $_input->getControl()->addAttributes(array()) ?>
+									   </p>
+									   <p>
+<?php $_input = is_object("mnozstvo") ? "mnozstvo" : $_form["mnozstvo"]; if ($_label = $_input->getLabel()) echo $_label->addAttributes(array()) ;$_input = (is_object("mnozstvo") ? "mnozstvo" : $_form["mnozstvo"]); echo $_input->getControl()->addAttributes(array()) ?>
+									   </p>
+									   <p>
+<?php $_input = is_object("cislo_zaznamu") ? "cislo_zaznamu" : $_form["cislo_zaznamu"]; if ($_label = $_input->getLabel()) echo $_label->addAttributes(array()) ;$_input = (is_object("cislo_zaznamu") ? "cislo_zaznamu" : $_form["cislo_zaznamu"]); echo $_input->getControl()->addAttributes(array()) ?>
+									   </p>
+									 
+									   
+<?php $_input = (is_object("ulozit") ? "ulozit" : $_form["ulozit"]); echo $_input->getControl()->addAttributes(array()) ?>
+									   
+									</fieldset>
+	
 <?php Nette\Latte\Macros\FormMacros::renderFormEnd($_form) ?>
 						
 					    
@@ -159,8 +169,8 @@ if (!function_exists($_l->blocks['content'][] = '_lb4c7381654b_content')) { func
 //
 // block title
 //
-if (!function_exists($_l->blocks['title'][] = '_lbaf2fb91668_title')) { function _lbaf2fb91668_title($_l, $_args) { extract($_args)
-?>						<h3 class="fl">Upload súboru</h3>
+if (!function_exists($_l->blocks['title'][] = '_lb267fc0c8c6_title')) { function _lb267fc0c8c6_title($_l, $_args) { extract($_args)
+?>						<h3 class="fl">Editácia výpožičky č. <?php echo Nette\Templating\Helpers::escapeHtml($infoVypozicka->id_vypozicka, ENT_NOQUOTES) ?></h3>
 <?php
 }}
 

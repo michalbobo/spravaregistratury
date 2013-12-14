@@ -1,16 +1,16 @@
-<?php //netteCache[01]000413a:2:{s:4:"time";s:21:"0.17001200 1386352328";s:9:"callbacks";a:2:{i:0;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:9:"checkFile";}i:1;s:93:"/Applications/XAMPP/xamppfiles/htdocs/spravaregistratury/app/templates/Homepage/default.latte";i:2;i:1386352325;}i:1;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:10:"checkConst";}i:1;s:25:"Nette\Framework::REVISION";i:2;s:28:"$WCREV$ released on $WCDATE$";}}}?><?php
+<?php //netteCache[01]000413a:2:{s:4:"time";s:21:"0.60574300 1386980706";s:9:"callbacks";a:2:{i:0;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:9:"checkFile";}i:1;s:93:"/Applications/XAMPP/xamppfiles/htdocs/spravaregistratury/app/templates/Homepage/default.latte";i:2;i:1386980690;}i:1;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:10:"checkConst";}i:1;s:25:"Nette\Framework::REVISION";i:2;s:28:"$WCREV$ released on $WCDATE$";}}}?><?php
 
 // source file: /Applications/XAMPP/xamppfiles/htdocs/spravaregistratury/app/templates/Homepage/default.latte
 
 ?><?php
 // prolog Nette\Latte\Macros\CoreMacros
-list($_l, $_g) = Nette\Latte\Macros\CoreMacros::initRuntime($template, 'g3cagzk2jm')
+list($_l, $_g) = Nette\Latte\Macros\CoreMacros::initRuntime($template, 'ldb59oi6fh')
 ;
 // prolog Nette\Latte\Macros\UIMacros
 //
 // block content
 //
-if (!function_exists($_l->blocks['content'][] = '_lb9cbf4537e0_content')) { function _lb9cbf4537e0_content($_l, $_args) { extract($_args)
+if (!function_exists($_l->blocks['content'][] = '_lbf6c268e6de_content')) { function _lbf6c268e6de_content($_l, $_args) { extract($_args)
 ?><body>
 
 	<!-- TOP BAR -->
@@ -32,7 +32,7 @@ if (!function_exists($_l->blocks['content'][] = '_lb9cbf4537e0_content')) { func
 				</li>
 				<li class="v-sep"><a class="round button dark" href="<?php echo htmlSpecialChars($_control->link("Plan:", array('firma' => $firma))) ?>
 ">Registratúrny plán</a></li>
-				<li><a href="#" class="round button dark menu-email-special image-left">3 nové upozornenia</a></li>
+				
 				<li><a class="round button dark menu-logoff image-left" href="<?php echo htmlSpecialChars($_control->link("signOut!")) ?>
 ">Odhlásiť sa</a></li>
 				
@@ -63,7 +63,7 @@ if (!function_exists($_l->blocks['content'][] = '_lb9cbf4537e0_content')) { func
 			
 			<!-- Change this image to your own company's logo -->
 			<!-- The logo will automatically be resized to 30px height. -->
-			<a href="#" id="company-branding-small" class="fr"><img src="<?php echo htmlSpecialChars($basePath) ?>/images/company-logo.png" alt="Blue Hosting" /></a>
+			<a href="#" id="company-branding-small" class="fr"><img src="<?php echo htmlSpecialChars($basePath) ?>/images/company-logo.png" alt="NP publication, a.s." /></a>
 			
 		</div> <!-- end full-width -->	
 
@@ -150,7 +150,7 @@ if (!function_exists($_l->blocks['content'][] = '_lb9cbf4537e0_content')) { func
 //
 // block title
 //
-if (!function_exists($_l->blocks['title'][] = '_lbbf98642c61_title')) { function _lbbf98642c61_title($_l, $_args) { extract($_args)
+if (!function_exists($_l->blocks['title'][] = '_lbe84490f93a_title')) { function _lbe84490f93a_title($_l, $_args) { extract($_args)
 ?>			<h3 class="fl">Úložné jednotky - <?php echo Nette\Templating\Helpers::escapeHtml($infoFirma -> nazov, ENT_NOQUOTES) ?></h3>
 <?php
 }}
@@ -158,7 +158,7 @@ if (!function_exists($_l->blocks['title'][] = '_lbbf98642c61_title')) { function
 //
 // block _
 //
-if (!function_exists($_l->blocks['_'][] = '_lbd1f8c8bf56__')) { function _lbd1f8c8bf56__($_l, $_args) { extract($_args); $_control->validateControl(false)
+if (!function_exists($_l->blocks['_'][] = '_lbe176727cb6__')) { function _lbe176727cb6__($_l, $_args) { extract($_args); $_control->validateControl(false)
 ;$iterations = 0; foreach ($flashes as $flash): ?>
 						    <div class="flash <?php echo htmlSpecialChars($flash->type) ?>"><?php echo Nette\Templating\Helpers::escapeHtml($flash->message, ENT_NOQUOTES) ?></div>
 <?php $iterations++; endforeach ?>

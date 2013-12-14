@@ -1,16 +1,16 @@
-<?php //netteCache[01]000414a:2:{s:4:"time";s:21:"0.94935400 1386364470";s:9:"callbacks";a:2:{i:0;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:9:"checkFile";}i:1;s:94:"/Applications/XAMPP/xamppfiles/htdocs/spravaregistratury/app/templates/Vypozicky/default.latte";i:2;i:1386364468;}i:1;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:10:"checkConst";}i:1;s:25:"Nette\Framework::REVISION";i:2;s:28:"$WCREV$ released on $WCDATE$";}}}?><?php
+<?php //netteCache[01]000414a:2:{s:4:"time";s:21:"0.73909000 1386980716";s:9:"callbacks";a:2:{i:0;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:9:"checkFile";}i:1;s:94:"/Applications/XAMPP/xamppfiles/htdocs/spravaregistratury/app/templates/Vypozicky/default.latte";i:2;i:1386980690;}i:1;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:10:"checkConst";}i:1;s:25:"Nette\Framework::REVISION";i:2;s:28:"$WCREV$ released on $WCDATE$";}}}?><?php
 
 // source file: /Applications/XAMPP/xamppfiles/htdocs/spravaregistratury/app/templates/Vypozicky/default.latte
 
 ?><?php
 // prolog Nette\Latte\Macros\CoreMacros
-list($_l, $_g) = Nette\Latte\Macros\CoreMacros::initRuntime($template, '5zv1r1v3uj')
+list($_l, $_g) = Nette\Latte\Macros\CoreMacros::initRuntime($template, 'xeen59jy51')
 ;
 // prolog Nette\Latte\Macros\UIMacros
 //
 // block content
 //
-if (!function_exists($_l->blocks['content'][] = '_lb3d66c670ab_content')) { function _lb3d66c670ab_content($_l, $_args) { extract($_args)
+if (!function_exists($_l->blocks['content'][] = '_lb4e953e16a3_content')) { function _lb4e953e16a3_content($_l, $_args) { extract($_args)
 ?><body>
 
 	<!-- TOP BAR -->
@@ -32,7 +32,6 @@ if (!function_exists($_l->blocks['content'][] = '_lb3d66c670ab_content')) { func
 				</li>
 				<li class="v-sep"><a class="round button dark" href="<?php echo htmlSpecialChars($_control->link("Plan:", array('firma' => $firma))) ?>
 ">Registratúrny plán</a></li>
-				<li><a href="#" class="round button dark menu-email-special image-left">3 nové upozornenia</a></li>
 				<li><a class="round button dark menu-logoff image-left" href="<?php echo htmlSpecialChars($_control->link("signOut!")) ?>
 ">Odhlásiť sa</a></li>
 				
@@ -63,7 +62,7 @@ if (!function_exists($_l->blocks['content'][] = '_lb3d66c670ab_content')) { func
 			
 			<!-- Change this image to your own company's logo -->
 			<!-- The logo will automatically be resized to 30px height. -->
-			<a href="#" id="company-branding-small" class="fr"><img src="images/company-logo.png" alt="Blue Hosting" /></a>
+			<a href="#" id="company-branding-small" class="fr"><img src="<?php echo htmlSpecialChars($basePath) ?>/images/company-logo.png" alt="NP publication, a.s." /></a>
 			
 		</div> <!-- end full-width -->	
 
@@ -86,7 +85,7 @@ if (!function_exists($_l->blocks['content'][] = '_lb3d66c670ab_content')) { func
 <?php $iterations = 0; foreach ($flashes as $flash): ?>
 			<div class="flash <?php echo htmlSpecialChars($flash->type) ?>"><?php echo Nette\Templating\Helpers::escapeHtml($flash->message, ENT_NOQUOTES) ?></div>
 <?php $iterations++; endforeach ?>
-			
+		    
 		    <br />
 		    <p>Výpožičky, ktoré zatiaľ neboli vybavené, po nahraní všetkých scanov alebo odoslaní originálu 
 		    výpožičku dokončite tlačítkom vybavené. Zadávateľovi sa následne odošle informačný mail.</p>
@@ -116,7 +115,7 @@ if (!function_exists($_l->blocks['content'][] = '_lb3d66c670ab_content')) { func
 //
 // block title
 //
-if (!function_exists($_l->blocks['title'][] = '_lbd9896731d8_title')) { function _lbd9896731d8_title($_l, $_args) { extract($_args)
+if (!function_exists($_l->blocks['title'][] = '_lb1b8af0c984_title')) { function _lb1b8af0c984_title($_l, $_args) { extract($_args)
 ?>			<h3 class="fl">Výpožičky - <?php echo Nette\Templating\Helpers::escapeHtml($infoFirma -> nazov, ENT_NOQUOTES) ?> - Nevybavené</h3>
 <?php
 }}
@@ -124,7 +123,7 @@ if (!function_exists($_l->blocks['title'][] = '_lbd9896731d8_title')) { function
 //
 // block _
 //
-if (!function_exists($_l->blocks['_'][] = '_lba2695144d8__')) { function _lba2695144d8__($_l, $_args) { extract($_args); $_control->validateControl(false)
+if (!function_exists($_l->blocks['_'][] = '_lb1e84b1f38f__')) { function _lb1e84b1f38f__($_l, $_args) { extract($_args); $_control->validateControl(false)
 ?>				<div class="content-module">
 				
 					<!--<div class="content-module-heading cf">
@@ -143,7 +142,7 @@ if (!function_exists($_l->blocks['_'][] = '_lba2695144d8__')) { function _lba269
 							<thead>
 						
 								<tr>
-									
+									<th>Číslo výpožičky</th>
 									<th>Typ</th>
 									<th>Dátum žiadosti</th>
 									<th>Žiadatel</th>
@@ -163,6 +162,7 @@ if (!function_exists($_l->blocks['_'][] = '_lba2695144d8__')) { function _lba269
 							<tbody>
 <?php $iterations = 0; foreach ($iterator = $_l->its[] = new Nette\Iterators\CachingIterator($vypozicky) as $vypozicka): ?>
 								     <tr<?php if ($_l->tmp = array_filter(array($iterator->isOdd() ? 'odd' : 'even'))) echo ' class="' . htmlSpecialChars(implode(" ", array_unique($_l->tmp))) . '"' ?>>
+									<td><?php echo Nette\Templating\Helpers::escapeHtml($vypozicka->id_vypozicka, ENT_NOQUOTES) ?></td>
 									<td><?php echo Nette\Templating\Helpers::escapeHtml($vypozicka->typ, ENT_NOQUOTES) ?></td>
 									<td><?php echo Nette\Templating\Helpers::escapeHtml($template->date($vypozicka->datum_ziadosti, 'j. n. Y'), ENT_NOQUOTES) ?></td>
 									<td><?php echo Nette\Templating\Helpers::escapeHtml($vypozicka->ziadatel, ENT_NOQUOTES) ?></td>
@@ -180,7 +180,8 @@ if (!function_exists($_l->blocks['_'][] = '_lba2695144d8__')) { function _lba269
 									   <?php if ($vypozicka->typ == "scan"): ?> <a class="table-actions-button ic-table-upload-dark" href="<?php echo htmlSpecialChars($_control->link("Upload:", array('jednotka' => $vypozicka->id_jednotka, 'firma' => $firma, 'src' => 'vypozicky' ))) ?>
 "></a> <?php endif ?>
 
-									    <a href="#" class="table-actions-button ic-table-edit"></a>							
+									    <a class="table-actions-button ic-table-edit" href="<?php echo htmlSpecialChars($_control->link("EditVypozicka:", array('vypozicka' => $vypozicka->id_vypozicka, 'firma' => $firma))) ?>
+"></a>							
 									</td>
 								    </tr>
 <?php $iterations++; endforeach; array_pop($_l->its); $iterator = end($_l->its) ?>
@@ -226,6 +227,7 @@ if (!function_exists($_l->blocks['_'][] = '_lba2695144d8__')) { function _lba269
 							<thead>
 						
 								<tr>
+									<th>Číslo výpožičky</th>
 									<th>Typ</th>
 									<th>Dátum žiadosti</th>
 									<th>Dátum vybavenia</th>
@@ -237,7 +239,7 @@ if (!function_exists($_l->blocks['_'][] = '_lba2695144d8__')) { function _lba269
 									<th>Číslo jednotky</th>
 									<th>Lokácia</th>
 									<th>Názov</th>
-									<th>Akcie</th>
+									
 								</tr>
 							
 							</thead>
@@ -245,6 +247,7 @@ if (!function_exists($_l->blocks['_'][] = '_lba2695144d8__')) { function _lba269
 							<tbody>
 <?php $iterations = 0; foreach ($iterator = $_l->its[] = new Nette\Iterators\CachingIterator($vybavene) as $vyb): ?>
 								     <tr<?php if ($_l->tmp = array_filter(array($iterator->isOdd() ? 'odd' : 'even'))) echo ' class="' . htmlSpecialChars(implode(" ", array_unique($_l->tmp))) . '"' ?>>
+									<td><?php echo Nette\Templating\Helpers::escapeHtml($vypozicka->id_vypozicka, ENT_NOQUOTES) ?></td>
 									<td><?php echo Nette\Templating\Helpers::escapeHtml($vyb->typ, ENT_NOQUOTES) ?></td>
 									<td><?php echo Nette\Templating\Helpers::escapeHtml($template->date($vyb->datum_ziadosti, 'j. n. Y'), ENT_NOQUOTES) ?></td>
 									<td><?php echo Nette\Templating\Helpers::escapeHtml($template->date($vyb->datum_vybavenia, 'j. n. Y'), ENT_NOQUOTES) ?></td>
@@ -257,7 +260,7 @@ if (!function_exists($_l->blocks['_'][] = '_lba2695144d8__')) { function _lba269
 									<td><?php echo Nette\Templating\Helpers::escapeHtml($vyb->jednotka, ENT_NOQUOTES) ?></td>
 									<td><?php echo Nette\Templating\Helpers::escapeHtml($vyb->lokacia, ENT_NOQUOTES) ?></td>
 									<td><?php echo Nette\Templating\Helpers::escapeHtml($vyb->nazovJednotky, ENT_NOQUOTES) ?></td>
-									<td></td>
+									
 								    </tr>
 <?php $iterations++; endforeach; array_pop($_l->its); $iterator = end($_l->its) ?>
 							    

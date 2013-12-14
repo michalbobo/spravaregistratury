@@ -12,7 +12,7 @@
 
 			<ul id="nav" class="fl">
 	
-				<li class="v-sep"><a n:href="Homepage: firma => $firma" class="round button dark ic-left-arrow image-left">Späť</a></li>
+				<li class="v-sep"><a n:href="Vypozicky: firma => $firma" class="round button dark ic-left-arrow image-left">Späť</a></li>
 				<li class="v-sep"><a n:href="Choice:" class="round button dark menu-user image-left">Prihlásený ako <strong>{$user->getIdentity()->meno} {$user->getIdentity()->priezvisko}</strong></a>
 					<ul>
 						<li><a n:href="Password:">Zmeniť heslo</a></li>
@@ -20,7 +20,7 @@
 					</ul> 
 				</li>
 				<li class="v-sep"><a n:href="Plan: firma => $firma" class="round button dark">Registratúrny plán</a></li>
-				
+
 				<li><a n:href="signOut!" class="round button dark menu-logoff image-left">Odhlásiť sa</a></li>
 				
 			</ul> <!-- end nav -->
@@ -83,7 +83,7 @@
 				
 					<div class="content-module-heading cf">
 					
-						<h3 class="fl" n:block="title">Editácia záznamu</h3>
+						<h3 class="fl" n:block="title">Editácia výpožičky č. {$infoVypozicka->id_vypozicka}</h3>
 						
 						
 					<!--	<span class="fr expand-collapse-text initial-expand">Click to expand</span>-->
@@ -95,39 +95,31 @@
 					    
 					    
 					   
-					    {form editJednotkaForm}
+					    {form editVypozickaForm}
 
 								       <fieldset>
 									    {control $form errors}
 									   <p>
-									    {label znacka/}
-									    {input znacka}
-									   </p>
-									   <p>
-									    {label nazov/}
-									    {input nazov}
-									   </p>
-									   <p>
-									   {label rok/}
-									   {input rok}
-									   </p>
-									   <p>
-									    {label rozsah/}
-									    {input rozsah}
-									   </p>
-									   <p>
 									    {label typ/}
 									    {input typ}
-									    <em>Napr. RK - registratúrna krabica</em>
 									   </p>
 									   <p>
-									   {label cislo/}
-									   {input cislo}
+									    {label ziadatel/}
+									    {input ziadatel}
 									   </p>
 									   <p>
-									   {label lokacia/}
-									   {input lokacia}
+									   {label poznamka/}
+									   {input poznamka}
 									   </p>
+									   <p>
+									    {label mnozstvo/}
+									    {input mnozstvo}
+									   </p>
+									   <p>
+									    {label cislo_zaznamu/}
+									    {input cislo_zaznamu}
+									   </p>
+									 
 									   
 									    {input ulozit}
 									   

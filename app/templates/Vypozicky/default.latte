@@ -20,7 +20,6 @@
 					</ul> 
 				</li>
 				<li class="v-sep"><a n:href="Plan: firma => $firma" class="round button dark">Registratúrny plán</a></li>
-				<li><a href="#" class="round button dark menu-email-special image-left">3 nové upozornenia</a></li>
 				<li><a n:href="signOut!" class="round button dark menu-logoff image-left">Odhlásiť sa</a></li>
 				
 			</ul> <!-- end nav -->
@@ -47,7 +46,7 @@
 			
 			<!-- Change this image to your own company's logo -->
 			<!-- The logo will automatically be resized to 30px height. -->
-			<a href="#" id="company-branding-small" class="fr"><img src="images/company-logo.png" alt="Blue Hosting" /></a>
+			<a href="#" id="company-branding-small" class="fr"><img src="{$basePath}/images/company-logo.png" alt="NP publication, a.s." /></a>
 			
 		</div> <!-- end full-width -->	
 
@@ -70,7 +69,7 @@
 		    {foreach $flashes as $flash}
 			<div class="flash {$flash->type}">{$flash->message}</div>
 		    {/foreach}
-			
+		    
 		    <br>
 		    <p>Výpožičky, ktoré zatiaľ neboli vybavené, po nahraní všetkých scanov alebo odoslaní originálu 
 		    výpožičku dokončite tlačítkom vybavené. Zadávateľovi sa následne odošle informačný mail.</p>
@@ -95,7 +94,7 @@
 							<thead>
 						
 								<tr>
-									
+									<th>Číslo výpožičky</th>
 									<th>Typ</th>
 									<th>Dátum žiadosti</th>
 									<th>Žiadatel</th>
@@ -115,6 +114,7 @@
 							<tbody>
 								{foreach $vypozicky as $vypozicka}    
 								     <tr n:class="$iterator->isOdd() ? odd : even">
+									<td>{$vypozicka->id_vypozicka}</td>
 									<td>{$vypozicka->typ}</td>
 									<td>{$vypozicka->datum_ziadosti|date:'j. n. Y'}</td>
 									<td>{$vypozicka->ziadatel}</td>
@@ -128,7 +128,7 @@
 									<td>
 									    <a n:href="Done! id => $vypozicka->id_vypozicka" class="ic-table-done table-actions-button ajax"></a>
 									   {if $vypozicka->typ == "scan"} <a n:href="Upload: jednotka => $vypozicka->id_jednotka, firma => $firma, src => 'vypozicky' " class="table-actions-button ic-table-upload-dark"></a> {/if}
-									    <a href="#" class="table-actions-button ic-table-edit"></a>							
+									    <a n:href="EditVypozicka: vypozicka => $vypozicka->id_vypozicka, firma => $firma" class="table-actions-button ic-table-edit"></a>							
 									</td>
 								    </tr>
 								{/foreach}
@@ -174,6 +174,7 @@
 							<thead>
 						
 								<tr>
+									<th>Číslo výpožičky</th>
 									<th>Typ</th>
 									<th>Dátum žiadosti</th>
 									<th>Dátum vybavenia</th>
@@ -185,7 +186,7 @@
 									<th>Číslo jednotky</th>
 									<th>Lokácia</th>
 									<th>Názov</th>
-									<th>Akcie</th>
+									
 								</tr>
 							
 							</thead>
@@ -193,6 +194,7 @@
 							<tbody>
 								    {foreach $vybavene as $vyb}    
 								     <tr n:class="$iterator->isOdd() ? odd : even">
+									<td>{$vypozicka->id_vypozicka}</td>
 									<td>{$vyb->typ}</td>
 									<td>{$vyb->datum_ziadosti|date:'j. n. Y'}</td>
 									<td>{$vyb->datum_vybavenia|date:'j. n. Y'}</td>
@@ -204,7 +206,7 @@
 									<td>{$vyb->jednotka}</td>
 									<td>{$vyb->lokacia}</td>
 									<td>{$vyb->nazovJednotky}</td>
-									<td></td>
+									
 								    </tr>
 								{/foreach}
 							    

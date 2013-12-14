@@ -6,6 +6,7 @@
 abstract class BasePresenter extends Nette\Application\UI\Presenter
 {
 
+	public $adminFirma = 5;
     
     public function handleSignOut(){
             $this->getUser()->logout();

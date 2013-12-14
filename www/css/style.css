@@ -501,7 +501,7 @@ ul#tabs li a.active-tab, ul#tabs li a.active-tab:hover {
 table { width: 100%; margin-bottom: 1.25em; /* 20/16 */ }
 
 	tr.even td{
-	    background-color:  #F1F6EF;
+	    background-color:  /*#F1F6EF*/#e4f4de;
 	} 
 	
 

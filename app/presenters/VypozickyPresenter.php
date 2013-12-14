@@ -63,9 +63,11 @@ class VypozickyPresenter extends BasePresenter{
 	    $mail->setFrom($from->email, 'NP publication')
 		   ->addTo($to->email)
 		   ->setSubject('Vybavenie výpožičky z '.$to->datum_ziadosti)
-		   ->setBody("Dobrý deň, \n Vaša výpožička zo dňa $to->datum_ziadosti jednotky  $to->jednotka $to->nazovJednotky"
-			   . "bola vybavená pracovníkmi registratúrneho strediska. V prípade, že typ výpožičky bol scan, túto výpožičku"
-			   . "máte nahranú k požadovanej jednotke. V prípade výpožičky typu originál bola táto odoslaná kuriérom.")
+		   ->setBody("Dobrý deň, \n Vaša výpožička zo dňa $to->datum_ziadosti jednotky $to->jednotka $to->nazovJednotky"
+			   . " bola vybavená pracovníkmi registratúrneho strediska. V prípade, že typ výpožičky bol scan, túto výpožičku"
+			   . " máte nahranú k požadovanej jednotke. V prípade výpožičky typu originál bola táto odoslaná kuriérom.\n"
+			   . "\n"
+			   . "Táto správa bola vygenerovaná systémom pre správu registratúry spoločnosti NP publication, a.s.")
 		   ->send();
 
 	   

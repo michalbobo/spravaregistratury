@@ -54,6 +54,35 @@ class VypozickyRepository extends Repository {
 	    'datum_vybavenia' => $datum));
     }
     
+    public function newVypozicka($typ,$datum_ziadosti,$ziadatel,$poznamka,$mnozstvo,$cislo_zaznamu,$zadavatel,
+	    $jednotka){
+	    
+	    return $this->getTable()->insert(array(
+		'id_vypozicka' => '',
+		'typ' => $typ,
+		'datum_ziadosti' => $datum_ziadosti,
+		'datum_vybavenia' => '',
+		'ziadatel' => $ziadatel,
+		'poznamka' => $poznamka,
+		'mnozstvo' => $mnozstvo,
+		'cislo_zaznamu' => $cislo_zaznamu,
+		'zadavatel' => $zadavatel,
+		'ulozna_jednotka' => $jednotka,
+		'vybavene' => ''
+		    ));
+	}
+	
+
+    public function updateVypozicka($typ,$ziadatel,$poznamka,$mnozstvo,$cislo_zaznamu, $id_vypozicka){
+	$this->findBy(array('id_vypozicka' => $id_vypozicka))->
+		update(array('typ' => $typ,
+			    'ziadatel' => $ziadatel,
+			    'poznamka' => $poznamka,
+			    'mnozstvo' => $mnozstvo,
+			    'cislo_zaznamu' => $cislo_zaznamu
+	  ));
+    }
+    
    
     
 }

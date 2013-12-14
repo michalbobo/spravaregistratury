@@ -1,16 +1,16 @@
-<?php //netteCache[01]000411a:2:{s:4:"time";s:21:"0.63516700 1386352339";s:9:"callbacks";a:2:{i:0;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:9:"checkFile";}i:1;s:91:"/Applications/XAMPP/xamppfiles/htdocs/spravaregistratury/app/templates/Choice/default.latte";i:2;i:1385908078;}i:1;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:10:"checkConst";}i:1;s:25:"Nette\Framework::REVISION";i:2;s:28:"$WCREV$ released on $WCDATE$";}}}?><?php
+<?php //netteCache[01]000411a:2:{s:4:"time";s:21:"0.34737300 1386973449";s:9:"callbacks";a:2:{i:0;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:9:"checkFile";}i:1;s:91:"/Applications/XAMPP/xamppfiles/htdocs/spravaregistratury/app/templates/Choice/default.latte";i:2;i:1385908078;}i:1;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:10:"checkConst";}i:1;s:25:"Nette\Framework::REVISION";i:2;s:28:"$WCREV$ released on $WCDATE$";}}}?><?php
 
 // source file: /Applications/XAMPP/xamppfiles/htdocs/spravaregistratury/app/templates/Choice/default.latte
 
 ?><?php
 // prolog Nette\Latte\Macros\CoreMacros
-list($_l, $_g) = Nette\Latte\Macros\CoreMacros::initRuntime($template, '9no4g08yaf')
+list($_l, $_g) = Nette\Latte\Macros\CoreMacros::initRuntime($template, 'k83suewf4e')
 ;
 // prolog Nette\Latte\Macros\UIMacros
 //
 // block content
 //
-if (!function_exists($_l->blocks['content'][] = '_lbfd4f21ce8b_content')) { function _lbfd4f21ce8b_content($_l, $_args) { extract($_args)
+if (!function_exists($_l->blocks['content'][] = '_lbe3bf600284_content')) { function _lbe3bf600284_content($_l, $_args) { extract($_args)
 ?><body>
 
 
@@ -181,7 +181,7 @@ if (!function_exists($_l->blocks['content'][] = '_lbfd4f21ce8b_content')) { func
 //
 // block title
 //
-if (!function_exists($_l->blocks['title'][] = '_lbba8c6b9966_title')) { function _lbba8c6b9966_title($_l, $_args) { extract($_args)
+if (!function_exists($_l->blocks['title'][] = '_lb3e841abca7_title')) { function _lb3e841abca7_title($_l, $_args) { extract($_args)
 ?>						<h3 class="fl">Prehľad úloh</h3>
 <?php
 }}
@@ -189,7 +189,7 @@ if (!function_exists($_l->blocks['title'][] = '_lbba8c6b9966_title')) { function
 //
 // block _
 //
-if (!function_exists($_l->blocks['_'][] = '_lb97736edc04__')) { function _lb97736edc04__($_l, $_args) { extract($_args); $_control->validateControl(false)
+if (!function_exists($_l->blocks['_'][] = '_lbe82b7e5108__')) { function _lbe82b7e5108__($_l, $_args) { extract($_args); $_control->validateControl(false)
 ?>						<table id='ulohy'>
 						
 							<thead>
