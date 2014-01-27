@@ -40,12 +40,8 @@ class HomepagePresenter extends BasePresenter
 	public function renderDefault()
 	{
 		
-		
-		
 		 $this->template->infoFirma = $this->firmyRepository->find($this->firma);
-		
-		
-		    
+			    
 	}
 	
 	public function actionDefault($firma){
@@ -109,22 +105,24 @@ class HomepagePresenter extends BasePresenter
 	public function filterJednotiekFormSubmitted($form){
 	    
 	    $where = array();
+	    //podmienka pre vypis len nevyradenych jednotiek
 	    $where['vyradenie'] = NULL;
+	    
+	    //pokial hodnota formulara nie je null tak sa prida novy prvok pola
 	    if(!is_null($form->values->znacka)) { $where['reg_znacka LIKE'] = $form->values->znacka; }
 	    if(!is_null($form->values->rok)) { $where['rok_vzniku LIKE'] = $form->values->rok; }
 	    if(!is_null($form->values->typ)) { $where['typ_jednotky LIKE'] = $form->values->typ; }
 	    if(!is_null($form->values->utvar)) { $where['vlastnik LIKE'] = $form->values->utvar; }
-	  
-
 	    
-	     $this->template->jednotky = $this->ulozneJednotkyRepository->findByFirma($this->firma)->where($where)
-		     ->order('reg_znacka ASC')->order('rok_vzniku DESC');
+	    //do template sa odoslu aktualizovane jednotky, namiesto podmienok sa preda $where
+	     $this->template->jednotky = $this->ulozneJednotkyRepository->findByFirma($this->firma)
+		     ->where($where)->order('reg_znacka ASC')->order('rok_vzniku DESC');
+	     
+	     //vypise sa flashmessage
 	     $this->flashMessage('Vyfiltrované', 'confirmation-box round');
-	     $this->invalidateControl();
-	    
-	    
+	     //ajaxom sa aktualizuje vypis
+	     $this->invalidateControl();   
 	}
-	
     }  
 
 

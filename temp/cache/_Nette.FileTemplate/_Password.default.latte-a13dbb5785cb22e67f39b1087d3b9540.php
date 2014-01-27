@@ -1,16 +1,16 @@
-<?php //netteCache[01]000413a:2:{s:4:"time";s:21:"0.69872000 1387046437";s:9:"callbacks";a:2:{i:0;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:9:"checkFile";}i:1;s:93:"/Applications/XAMPP/xamppfiles/htdocs/spravaregistratury/app/templates/Password/default.latte";i:2;i:1387046273;}i:1;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:10:"checkConst";}i:1;s:25:"Nette\Framework::REVISION";i:2;s:28:"$WCREV$ released on $WCDATE$";}}}?><?php
+<?php //netteCache[01]000413a:2:{s:4:"time";s:21:"0.31130600 1388627525";s:9:"callbacks";a:2:{i:0;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:9:"checkFile";}i:1;s:93:"/Applications/XAMPP/xamppfiles/htdocs/spravaregistratury/app/templates/Password/default.latte";i:2;i:1388627429;}i:1;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:10:"checkConst";}i:1;s:25:"Nette\Framework::REVISION";i:2;s:28:"$WCREV$ released on $WCDATE$";}}}?><?php
 
 // source file: /Applications/XAMPP/xamppfiles/htdocs/spravaregistratury/app/templates/Password/default.latte
 
 ?><?php
 // prolog Nette\Latte\Macros\CoreMacros
-list($_l, $_g) = Nette\Latte\Macros\CoreMacros::initRuntime($template, 'gckl3vws9s')
+list($_l, $_g) = Nette\Latte\Macros\CoreMacros::initRuntime($template, 'ihlm0rvrma')
 ;
 // prolog Nette\Latte\Macros\UIMacros
 //
 // block content
 //
-if (!function_exists($_l->blocks['content'][] = '_lba1a7cd64de_content')) { function _lba1a7cd64de_content($_l, $_args) { extract($_args)
+if (!function_exists($_l->blocks['content'][] = '_lb4d020ec1b5_content')) { function _lb4d020ec1b5_content($_l, $_args) { extract($_args)
 ?><body>
 
     
@@ -57,49 +57,13 @@ if (!function_exists($_l->blocks['content'][] = '_lba1a7cd64de_content')) { func
 		</div> <!-- end full-width -->	
 	
 	</div> <!-- end top-bar -->
-	
-	
-	
-	<!-- HEADER -->
-	<!--
-	<div id="header-with-tabs">
-		
-		<div class="page-full-width cf">
-	
-			<ul id="tabs" class="fl">
-				<li><a href="dashboard.html" class="active-tab dashboard-tab">Domov</a></li>
-				<li><a href="page-full-width.html">Full width page</a></li>
-				<li><a href="page-other.html">Other page elements</a></li>
-			</ul> <!-- end tabs -->
-			
-			<!-- Change this image to your own company's logo -->
-			<!-- The logo will automatically be resized to 30px height. -->
-			
-				<!--	<a href="#" id="company-branding-small" class="fr"><img src="images/company-logo.png" alt="Blue Hosting" /></a>
-		<!--	
-		</div> <!-- end full-width -->	
-<!--
-	</div> <!-- end header -->
 
-	
 	
 	<!-- MAIN CONTENT -->
 	<div id="content">
 		
 		<div class="page-full-width cf">
 
-			<!--<div class="side-menu fl">
-				
-				<h3>Menu</h3>
-				<ul>
-					<li><a href="#">Moje úlohy</a></li>
-					<li><a href="#">US Steel</a></li>
-					<li><a href="#">Union</a></li>
-					<li><a href="#">Union ZP</a></li>
-					<li><a href="#">Zipp</a></li>
-				</ul>
-				
-			</div> <!-- end side-menu -->
 			
 			<!--<div class="side-content fr">
 			
@@ -174,7 +138,7 @@ if (!function_exists($_l->blocks['content'][] = '_lba1a7cd64de_content')) { func
 //
 // block title
 //
-if (!function_exists($_l->blocks['title'][] = '_lbef6240698b_title')) { function _lbef6240698b_title($_l, $_args) { extract($_args)
+if (!function_exists($_l->blocks['title'][] = '_lb5927ece912_title')) { function _lb5927ece912_title($_l, $_args) { extract($_args)
 ?>						<h3 class="fl">Zmena hesla</h3>
 <?php
 }}

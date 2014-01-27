@@ -84,8 +84,9 @@ class AddVypozickaPresenter extends BasePresenter{
 		     $form->values->poznamka,$form->values->mnozstvo,$form->values->cislo_zaznamu,
 		     $this->getUser()->getId(),$this->jednotka);
 	     
-	     
+	    //získanie prihláseného užívateľa
 	    $from = $this->uzivateliaRepository->find($this->user->id);
+	    //získanie admina
 	    $to = $this->uzivateliaRepository->findBy(array('zamestnavatel' => $this->adminFirma))->fetch();
 	    $datum = date('d.m.Y');
 	    $mail = new Message;

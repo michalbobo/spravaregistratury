@@ -60,7 +60,7 @@ class PrehladVypoziciekPresenter extends BasePresenter{
 	    
 	    $from = $this->uzivateliaRepository->find($this->user->id);
 	    $to = $this->vypozickyRepository->findById($id)->fetch();
-	    
+	    //odoslanie info mailu
 	    $mail = new Message;
 	    $mail->setFrom($from->email, 'NP publication')
 		   ->addTo($to->email)

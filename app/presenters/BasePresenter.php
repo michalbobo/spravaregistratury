@@ -5,7 +5,7 @@
  */
 abstract class BasePresenter extends Nette\Application\UI\Presenter
 {
-
+    //globalna premenna oznacujuca administratora
 	public $adminFirma = 5;
 	public $idAdmin = 1;
     

@@ -30,7 +30,6 @@ class DownloadPresenter extends BasePresenter
 	public function renderDefault()
 	{
 		
-	    
 	    $this->s = $this->suboryRepository->find($this->subor);
 	    header("Content-type: {$this->s->typ_suboru}");
 	    header("Content-length: {$this->s->velkost}");

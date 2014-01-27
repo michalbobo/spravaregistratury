@@ -1,16 +1,16 @@
-<?php //netteCache[01]000414a:2:{s:4:"time";s:21:"0.73909000 1386980716";s:9:"callbacks";a:2:{i:0;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:9:"checkFile";}i:1;s:94:"/Applications/XAMPP/xamppfiles/htdocs/spravaregistratury/app/templates/Vypozicky/default.latte";i:2;i:1386980690;}i:1;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:10:"checkConst";}i:1;s:25:"Nette\Framework::REVISION";i:2;s:28:"$WCREV$ released on $WCDATE$";}}}?><?php
+<?php //netteCache[01]000414a:2:{s:4:"time";s:21:"0.08156000 1388627507";s:9:"callbacks";a:2:{i:0;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:9:"checkFile";}i:1;s:94:"/Applications/XAMPP/xamppfiles/htdocs/spravaregistratury/app/templates/Vypozicky/default.latte";i:2;i:1388627429;}i:1;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:10:"checkConst";}i:1;s:25:"Nette\Framework::REVISION";i:2;s:28:"$WCREV$ released on $WCDATE$";}}}?><?php
 
 // source file: /Applications/XAMPP/xamppfiles/htdocs/spravaregistratury/app/templates/Vypozicky/default.latte
 
 ?><?php
 // prolog Nette\Latte\Macros\CoreMacros
-list($_l, $_g) = Nette\Latte\Macros\CoreMacros::initRuntime($template, 'xeen59jy51')
+list($_l, $_g) = Nette\Latte\Macros\CoreMacros::initRuntime($template, 'oimjmgwypg')
 ;
 // prolog Nette\Latte\Macros\UIMacros
 //
 // block content
 //
-if (!function_exists($_l->blocks['content'][] = '_lb4e953e16a3_content')) { function _lb4e953e16a3_content($_l, $_args) { extract($_args)
+if (!function_exists($_l->blocks['content'][] = '_lb0496f6f120_content')) { function _lb0496f6f120_content($_l, $_args) { extract($_args)
 ?><body>
 
 	<!-- TOP BAR -->
@@ -115,7 +115,7 @@ if (!function_exists($_l->blocks['content'][] = '_lb4e953e16a3_content')) { func
 //
 // block title
 //
-if (!function_exists($_l->blocks['title'][] = '_lb1b8af0c984_title')) { function _lb1b8af0c984_title($_l, $_args) { extract($_args)
+if (!function_exists($_l->blocks['title'][] = '_lb8733b0b6bd_title')) { function _lb8733b0b6bd_title($_l, $_args) { extract($_args)
 ?>			<h3 class="fl">Výpožičky - <?php echo Nette\Templating\Helpers::escapeHtml($infoFirma -> nazov, ENT_NOQUOTES) ?> - Nevybavené</h3>
 <?php
 }}
@@ -123,17 +123,9 @@ if (!function_exists($_l->blocks['title'][] = '_lb1b8af0c984_title')) { function
 //
 // block _
 //
-if (!function_exists($_l->blocks['_'][] = '_lb1e84b1f38f__')) { function _lb1e84b1f38f__($_l, $_args) { extract($_args); $_control->validateControl(false)
+if (!function_exists($_l->blocks['_'][] = '_lbab112950aa__')) { function _lbab112950aa__($_l, $_args) { extract($_args); $_control->validateControl(false)
 ?>				<div class="content-module">
 				
-					<!--<div class="content-module-heading cf">
-					
-						<h3 class="fl">Table design</h3>
-						<span class="fr expand-collapse-text">Click to collapse</span>
-						<span class="fr expand-collapse-text initial-expand">Click to expand</span>
-					
-					</div> <!-- end content-module-heading -->
-					
 					
 					<div class="content-module-main">
 						
@@ -211,13 +203,7 @@ if (!function_exists($_l->blocks['_'][] = '_lb1e84b1f38f__')) { function _lb1e84
 			
 				<div class="content-module">
 				
-					<!--<div class="content-module-heading cf">
 					
-						<h3 class="fl">Table design</h3>
-						<span class="fr expand-collapse-text">Click to collapse</span>
-						<span class="fr expand-collapse-text initial-expand">Click to expand</span>
-					
-					</div> <!-- end content-module-heading -->
 					
 					
 					<div class="content-module-main">

@@ -1,16 +1,16 @@
-<?php //netteCache[01]000409a:2:{s:4:"time";s:21:"0.84794500 1386980713";s:9:"callbacks";a:2:{i:0;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:9:"checkFile";}i:1;s:89:"/Applications/XAMPP/xamppfiles/htdocs/spravaregistratury/app/templates/Plan/default.latte";i:2;i:1386980690;}i:1;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:10:"checkConst";}i:1;s:25:"Nette\Framework::REVISION";i:2;s:28:"$WCREV$ released on $WCDATE$";}}}?><?php
+<?php //netteCache[01]000409a:2:{s:4:"time";s:21:"0.96981100 1388627501";s:9:"callbacks";a:2:{i:0;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:9:"checkFile";}i:1;s:89:"/Applications/XAMPP/xamppfiles/htdocs/spravaregistratury/app/templates/Plan/default.latte";i:2;i:1388627429;}i:1;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:10:"checkConst";}i:1;s:25:"Nette\Framework::REVISION";i:2;s:28:"$WCREV$ released on $WCDATE$";}}}?><?php
 
 // source file: /Applications/XAMPP/xamppfiles/htdocs/spravaregistratury/app/templates/Plan/default.latte
 
 ?><?php
 // prolog Nette\Latte\Macros\CoreMacros
-list($_l, $_g) = Nette\Latte\Macros\CoreMacros::initRuntime($template, 'ulwk7sdbsk')
+list($_l, $_g) = Nette\Latte\Macros\CoreMacros::initRuntime($template, 'w55pbevrh2')
 ;
 // prolog Nette\Latte\Macros\UIMacros
 //
 // block content
 //
-if (!function_exists($_l->blocks['content'][] = '_lb03359fb369_content')) { function _lb03359fb369_content($_l, $_args) { extract($_args)
+if (!function_exists($_l->blocks['content'][] = '_lbce3407e105_content')) { function _lbce3407e105_content($_l, $_args) { extract($_args)
 ?><body>
 
 	<!-- TOP BAR -->
@@ -56,18 +56,6 @@ if (!function_exists($_l->blocks['content'][] = '_lb03359fb369_content')) { func
 		
 		<div class="page-full-width cf">
 
-			<!--<div class="side-menu fl">
-				
-				<h3>Menu</h3>
-				<ul>
-					<li><a href="#">Moje úlohy</a></li>
-					<li><a href="#">US Steel</a></li>
-					<li><a href="#">Union</a></li>
-					<li><a href="#">Union ZP</a></li>
-					<li><a href="#">Zipp</a></li>
-				</ul>
-				
-			</div> <!-- end side-menu -->
 			
 			<!--<div class="side-content fr"> -->
 			
@@ -149,7 +137,7 @@ if (!function_exists($_l->blocks['content'][] = '_lb03359fb369_content')) { func
 //
 // block title
 //
-if (!function_exists($_l->blocks['title'][] = '_lbaa14a0c58b_title')) { function _lbaa14a0c58b_title($_l, $_args) { extract($_args)
+if (!function_exists($_l->blocks['title'][] = '_lb5b0b95849b_title')) { function _lb5b0b95849b_title($_l, $_args) { extract($_args)
 ?>						<h3 class="fl"><?php echo Nette\Templating\Helpers::escapeHtml($titulok['nazov'], ENT_NOQUOTES) ?> - Registratúrny plán</h3>
 <?php
 }}

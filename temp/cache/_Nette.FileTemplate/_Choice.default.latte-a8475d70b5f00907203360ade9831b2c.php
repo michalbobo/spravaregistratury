@@ -1,16 +1,16 @@
-<?php //netteCache[01]000411a:2:{s:4:"time";s:21:"0.16482500 1387054913";s:9:"callbacks";a:2:{i:0;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:9:"checkFile";}i:1;s:91:"/Applications/XAMPP/xamppfiles/htdocs/spravaregistratury/app/templates/Choice/default.latte";i:2;i:1387054909;}i:1;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:10:"checkConst";}i:1;s:25:"Nette\Framework::REVISION";i:2;s:28:"$WCREV$ released on $WCDATE$";}}}?><?php
+<?php //netteCache[01]000411a:2:{s:4:"time";s:21:"0.33876600 1388627488";s:9:"callbacks";a:2:{i:0;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:9:"checkFile";}i:1;s:91:"/Applications/XAMPP/xamppfiles/htdocs/spravaregistratury/app/templates/Choice/default.latte";i:2;i:1388627429;}i:1;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:10:"checkConst";}i:1;s:25:"Nette\Framework::REVISION";i:2;s:28:"$WCREV$ released on $WCDATE$";}}}?><?php
 
 // source file: /Applications/XAMPP/xamppfiles/htdocs/spravaregistratury/app/templates/Choice/default.latte
 
 ?><?php
 // prolog Nette\Latte\Macros\CoreMacros
-list($_l, $_g) = Nette\Latte\Macros\CoreMacros::initRuntime($template, 'ghhxdiwha9')
+list($_l, $_g) = Nette\Latte\Macros\CoreMacros::initRuntime($template, '7oadkf5xpd')
 ;
 // prolog Nette\Latte\Macros\UIMacros
 //
 // block content
 //
-if (!function_exists($_l->blocks['content'][] = '_lb866bf6e229_content')) { function _lb866bf6e229_content($_l, $_args) { extract($_args)
+if (!function_exists($_l->blocks['content'][] = '_lb2a6f6c2d05_content')) { function _lb2a6f6c2d05_content($_l, $_args) { extract($_args)
 ?><body>
 
 
@@ -21,7 +21,7 @@ if (!function_exists($_l->blocks['content'][] = '_lb866bf6e229_content')) { func
 
 			<ul id="nav" class="fl">
 	
-				<!--<li class="v-sep"><a href="#" class="round button dark ic-left-arrow image-left">Go to website</a></li>-->
+				
 				<li class="v-sep"><a href="#" class="round button dark menu-user image-left">Prihlásený ako <strong><?php echo Nette\Templating\Helpers::escapeHtml($user->getIdentity()->meno, ENT_NOQUOTES) ?>
  <?php echo Nette\Templating\Helpers::escapeHtml($user->getIdentity()->priezvisko, ENT_NOQUOTES) ?></strong></a>
 					<ul>
@@ -117,7 +117,7 @@ if (!function_exists($_l->blocks['content'][] = '_lb866bf6e229_content')) { func
 //
 // block title
 //
-if (!function_exists($_l->blocks['title'][] = '_lbc48a62576e_title')) { function _lbc48a62576e_title($_l, $_args) { extract($_args)
+if (!function_exists($_l->blocks['title'][] = '_lb3622d6fb8e_title')) { function _lb3622d6fb8e_title($_l, $_args) { extract($_args)
 ?>						<h3 class="fl">Prehľad úloh</h3>
 <?php
 }}
@@ -125,7 +125,7 @@ if (!function_exists($_l->blocks['title'][] = '_lbc48a62576e_title')) { function
 //
 // block _
 //
-if (!function_exists($_l->blocks['_'][] = '_lb4e3faa410e__')) { function _lb4e3faa410e__($_l, $_args) { extract($_args); $_control->validateControl(false)
+if (!function_exists($_l->blocks['_'][] = '_lbd51e47f691__')) { function _lbd51e47f691__($_l, $_args) { extract($_args); $_control->validateControl(false)
 ?>						<table id='ulohy'>
 						
 							<thead>

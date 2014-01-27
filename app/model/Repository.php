@@ -48,7 +48,7 @@ abstract class Repository extends Nette\Object
     }
     
         /**
-    * Vrací řádek podle primárního klíče.
+    * Vracia riadok podla primarneho kluca.
     * @return TableSelection
     */
     public function find($id)

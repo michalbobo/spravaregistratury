@@ -1,16 +1,16 @@
-<?php //netteCache[01]000413a:2:{s:4:"time";s:21:"0.84720400 1386980718";s:9:"callbacks";a:2:{i:0;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:9:"checkFile";}i:1;s:93:"/Applications/XAMPP/xamppfiles/htdocs/spravaregistratury/app/templates/Vyradene/default.latte";i:2;i:1386980574;}i:1;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:10:"checkConst";}i:1;s:25:"Nette\Framework::REVISION";i:2;s:28:"$WCREV$ released on $WCDATE$";}}}?><?php
+<?php //netteCache[01]000413a:2:{s:4:"time";s:21:"0.47024800 1388627508";s:9:"callbacks";a:2:{i:0;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:9:"checkFile";}i:1;s:93:"/Applications/XAMPP/xamppfiles/htdocs/spravaregistratury/app/templates/Vyradene/default.latte";i:2;i:1388627429;}i:1;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:10:"checkConst";}i:1;s:25:"Nette\Framework::REVISION";i:2;s:28:"$WCREV$ released on $WCDATE$";}}}?><?php
 
 // source file: /Applications/XAMPP/xamppfiles/htdocs/spravaregistratury/app/templates/Vyradene/default.latte
 
 ?><?php
 // prolog Nette\Latte\Macros\CoreMacros
-list($_l, $_g) = Nette\Latte\Macros\CoreMacros::initRuntime($template, 'njzxy1pvrr')
+list($_l, $_g) = Nette\Latte\Macros\CoreMacros::initRuntime($template, 'bq6ohih1fz')
 ;
 // prolog Nette\Latte\Macros\UIMacros
 //
 // block content
 //
-if (!function_exists($_l->blocks['content'][] = '_lb702720b3dc_content')) { function _lb702720b3dc_content($_l, $_args) { extract($_args)
+if (!function_exists($_l->blocks['content'][] = '_lb00be0d3c7c_content')) { function _lb00be0d3c7c_content($_l, $_args) { extract($_args)
 ?><body>
 
 	<!-- TOP BAR -->
@@ -112,13 +112,7 @@ if (!function_exists($_l->blocks['content'][] = '_lb702720b3dc_content')) { func
 			
 				<div class="content-module">
 				
-					<!--<div class="content-module-heading cf">
 					
-						<h3 class="fl">Table design</h3>
-						<span class="fr expand-collapse-text">Click to collapse</span>
-						<span class="fr expand-collapse-text initial-expand">Click to expand</span>
-					
-					</div> <!-- end content-module-heading -->
 					
 					
 					<div class="content-module-main">
@@ -152,7 +146,7 @@ if (!function_exists($_l->blocks['content'][] = '_lb702720b3dc_content')) { func
 //
 // block title
 //
-if (!function_exists($_l->blocks['title'][] = '_lb386b01da75_title')) { function _lb386b01da75_title($_l, $_args) { extract($_args)
+if (!function_exists($_l->blocks['title'][] = '_lb4e9168e0d8_title')) { function _lb4e9168e0d8_title($_l, $_args) { extract($_args)
 ?>			<h3 class="fl">Jednotky na vyradenie - <?php echo Nette\Templating\Helpers::escapeHtml($infoFirma -> nazov, ENT_NOQUOTES) ?></h3>
 <?php
 }}
@@ -160,7 +154,7 @@ if (!function_exists($_l->blocks['title'][] = '_lb386b01da75_title')) { function
 //
 // block _
 //
-if (!function_exists($_l->blocks['_'][] = '_lb436096977e__')) { function _lb436096977e__($_l, $_args) { extract($_args); $_control->validateControl(false)
+if (!function_exists($_l->blocks['_'][] = '_lb9323d2b53d__')) { function _lb9323d2b53d__($_l, $_args) { extract($_args); $_control->validateControl(false)
 ;$iterations = 0; foreach ($flashes as $flash): ?>
 						    <div class="flash <?php echo htmlSpecialChars($flash->type) ?>"><?php echo Nette\Templating\Helpers::escapeHtml($flash->message, ENT_NOQUOTES) ?></div>
 <?php $iterations++; endforeach ?>

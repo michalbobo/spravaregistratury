@@ -76,30 +76,30 @@ class UploadPresenter extends BasePresenter{
     public function uploadFormSubmitted($form){
 	$tempfile = $_FILES['subor']['tmp_name'] ;
                 
-            // addslashes so as not to break anything :)
+            // pridá úvodzovky
             $data = addslashes(fread(fopen($tempfile, "rb"), filesize($tempfile)));
             
-            // pull out useful bits in case they are needed. 
+            // ziskam charakteristiky suboru
             $filetype = $_FILES['subor']['type'];
             $filesize = $_FILES['subor']['size'];
             $filename = $_FILES['subor']['name'];
 	    
+	    //nahranie suboru do tabulky subory
 		$date = date('Y-m-d');
 		$this->suboryRepository->upload($data,$filetype,$filesize,$filename,$date);
+		
+		//zistim id_suboru, ktory bol prave nahrany
 		$lastId = $this->suboryRepository->findMax()->fetch();
+		
+		//vytvorim novy zaznam kopia
 		$this->kopieRepository->newKopia($this->jednotka,$lastId->id_subor);
 		$this->flashMessage('Súbor bol úspešne nahraný.','confirmation-box round');
-		
+		//presmerovanie tam odkial som prisiel
 		if($this->src == 'vypozicky'){
-		    
 		    $this->redirect('Vypozicky:', array('firma' => $this->firma));
-		    
 		} else {
-
 		    $this->redirect('Homepage:', array('firma' => $this->firma));
-	  
-		}
-		
+		}	
     }
     
 	
